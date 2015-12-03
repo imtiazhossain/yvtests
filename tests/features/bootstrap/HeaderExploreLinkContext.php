@@ -8,7 +8,7 @@ require "vendor/autoload.php";
  * Date: 12/3/15
  * Time: 10:51 AM
  */
-class HeaderExploreLinkSteps extends FeatureContext
+class HeaderExploreLinkContext extends FeatureContext
 {
 
     /**
