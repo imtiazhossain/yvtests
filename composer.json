@@ -1,0 +1,20 @@
+{
+	"require": {
+      "phpunit/phpunit": "*",
+      "behat/behat":"*",
+      "behat/mink":"*",
+      "behat/mink-extension":"*",
+      "behat/mink-sahi-driver": "*",
+      "behat/mink-goutte-driver":"*",
+      "behat/mink-browserkit-driver":"*",
+      "behat/mink-zombie-driver":"*",
+      "behat/symfony2-extension":"*",
+      "behat/mink-selenium2-driver":  "*",
+      "emuse/behat-html-formatter": "*",
+      "facebook/webdriver": "dev-master"
+	},
+
+      "autoload": {
+            "psr-4": {"Constants\\":"src/"}
+      }
+}
