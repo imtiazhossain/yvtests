@@ -21,6 +21,75 @@ use Behat\Gherkin\Node\TableNode;
  */
 class MinkContext extends RawMinkContext implements TranslatableContext
 {
+    /***************************
+     ** START CUSTOM FUNCTIONS**
+     ***************************/
+
+    //Wait for Ajax to load function
+    public function waitForAjax()
+    {
+        $this->getSession()->wait(5000, '(0 === jQuery.active)');
+    }
+
+    /**
+     * Click on the element with the provided xpath query
+     *
+     * @When /^I click on the element with xpath "([^"]*)"$/
+     */
+    public function clickOnTheElementWithXPath($xpath)
+    {
+        $session = $this->getSession(); // get the mink session
+        $element = $session->getPage()->find(
+            'xpath',
+            $session->getSelectorsHandler()->selectorToXpath('xpath', $xpath)
+        ); // runs the actual query and returns the element
+
+        // errors must not pass silently
+        if (null === $element) {
+            throw new \InvalidArgumentException(sprintf('Could not evaluate XPath: "%s"', $xpath));
+        }
+
+        // ok, let's click on it
+        $element->click();
+    }
+
+    /**
+     * Click on the element with the provided CSS Selector
+     *
+     * @When /^I click on the element with css selector "([^"]*)"$/
+     */
+    public function clickOnTheElementWithCSSSelector($locator)
+    {
+        $session = $this->getSession();
+//        $element = $session->getPage()->find(
+//            'xpath',
+//            $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
+//        );
+//        if (null === $element) {
+//            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+//        }
+        $element = $session->getPage()->find('css', $locator);
+
+        $element->click();
+    }
+
+    public function hoverOverTheElement($locator)
+    {
+        $session = $this->getSession(); // get the mink session
+        $element = $session->getPage()->find('css', $locator); // runs the actual query and returns the element
+
+        // errors must not pass silently
+        if (null === $element) {
+            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $locator));
+        }
+
+        // ok, let's hover it
+        $element->mouseOver();
+    }
+    /**************************
+     ** END CUSTOM FUNCTIONS **
+     **************************/
+
     /**
      * Opens homepage.
      *
@@ -104,6 +173,8 @@ class MinkContext extends RawMinkContext implements TranslatableContext
      */
     public function fillField($field, $value)
     {
+        $this->getSession()->wait(5000, '(0 === jQuery.active)');
+        sleep(1);
         $field = $this->fixStepArgument($field);
         $value = $this->fixStepArgument($value);
         $this->getSession()->getPage()->fillField($field, $value);
@@ -263,6 +334,7 @@ class MinkContext extends RawMinkContext implements TranslatableContext
      */
     public function assertPageMatchesText($pattern)
     {
+        $this->waitForAjax();
         $this->assertSession()->pageTextMatches($this->fixStepArgument($pattern));
     }
 
@@ -484,49 +556,4 @@ class MinkContext extends RawMinkContext implements TranslatableContext
         return str_replace('\\"', '"', $argument);
     }
 
-    /**************************
-     ***** CUSTOM FUNCTIONS****
-     **************************/
-
-    /**
-     * Click on the element with the provided xpath query
-     *
-     * @When /^I click on the element with xpath "([^"]*)"$/
-     */
-    public function clickOnTheElementWithXPath($xpath)
-    {
-        $session = $this->getSession(); // get the mink session
-        $element = $session->getPage()->find(
-            'xpath',
-            $session->getSelectorsHandler()->selectorToXpath('xpath', $xpath)
-        ); // runs the actual query and returns the element
-
-        // errors must not pass silently
-        if (null === $element) {
-            throw new \InvalidArgumentException(sprintf('Could not evaluate XPath: "%s"', $xpath));
-        }
-
-        // ok, let's click on it
-        $element->click();
-    }
-
-    /**
-     * Click on the element with the provided CSS Selector
-     *
-     * @When /^I click on the element with css selector "([^"]*)"$/
-     */
-    public function clickOnTheElementWithCSSSelector($cssSelector)
-    {
-        $session = $this->getSession();
-        $element = $session->getPage()->find(
-            'xpath',
-            $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
-        );
-        if (null === $element) {
-            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
-        }
-
-        $element->click();
-
-    }
 }

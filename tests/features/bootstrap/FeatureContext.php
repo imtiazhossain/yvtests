@@ -11,7 +11,10 @@ require "vendor/autoload.php";
  */
 class FeatureContext extends MinkContext implements SnippetAcceptingContext
 {
-
+    public function test()
+    {
+        $this->getSession()->maximizeWindow();
+    }
     /**
      * Initializes context.
      *
@@ -36,7 +39,6 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
 //            closedir($handle);
 //        }
 //    }
-
 
 
 
