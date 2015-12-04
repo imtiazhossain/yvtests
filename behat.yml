@@ -8,9 +8,9 @@ default:
         - %paths.base%/tests/features
       contexts:
         - DeleteTour
-  formatters:
-      html:
-        output_path: %paths.base%/build/html/behat
+#  formatters:
+#      html:
+#        output_path: %paths.base%/build/html/behat
   extensions:
     Behat\MinkExtension:
       base_url: http://qa.dev.youvisit.com/
@@ -18,11 +18,11 @@ default:
       selenium2:
         wd_host: http://localhost:4444/wd/hub
         browser: firefox
-    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
-            name: html
-            renderer: Twig,Behat2
-            file_name: Index
-            print_args: true
-            print_outp: true
-            loop_break: true
+#    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+#            name: html
+#            renderer: Twig,Behat2
+#            file_name: Index
+#            print_args: true
+#            print_outp: true
+#            loop_break: true
 
