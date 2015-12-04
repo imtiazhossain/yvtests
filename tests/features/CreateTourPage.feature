@@ -8,9 +8,9 @@ Feature: Create then delete new Tour
 #    And I follow "Get Started"
 #    And I follow "Log In"
     And I click on the log in button
-#    And I fill in "identifier" with "qa@youvisit.com"
-#    And I fill in password
-#    And I press "loginButton"
+    And I fill in "identifier" with "qa@youvisit.com"
+    And I fill in password
+    And I press "loginButton"
 #    And I click New Tour
 #    And I fill in "location[name]" with "Test"
 #    And I select "User" from Tour Type

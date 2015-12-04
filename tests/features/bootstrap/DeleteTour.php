@@ -20,20 +20,11 @@ class DeleteTour extends LogIn
      */
     public function iClickTheDeleteButton()
     {
-        $tester = '#delete-dialog > span.button.primary.deletetour_action';
-        $driver = $this->getSession();
-        if ($driver instanceof Selenium2Driver) {
-            $driver->wait(5000, );
-        }
+        sleep(1);
         $this->hoverOverTheElement("#gridview > div > form > div.tour");
         $this->clickOnTheElementWithCSSSelector("#gridview > div > form > div.tour > div.actions > div.delete-button.action.icon-button");
-
-        $test = "#delete-dialog > span.button.primary.deletetour_action";
-        $driver = $this->getSession()->getDriver();
-        if ($driver instanceof Selenium2Driver) {
-            $driver->wait(5000, $test);
-        }
-        $this->clickOnTheElementWithCSSSelector($test);
+        sleep(1);
+        $this->clickOnTheElementWithCSSSelector("#delete-dialog > span.button.primary.deletetour_action");
     }
 
     /**

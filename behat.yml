@@ -16,7 +16,7 @@ default:
       base_url: http://qa.dev.youvisit.com/
       goutte: ~
       selenium2:
-        wd_host: http://localhost:4444/wd/hub
+#        wd_host: http://localhost:4444/wd/hub
         browser: firefox
 #    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
 #            name: html
