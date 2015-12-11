@@ -36,7 +36,7 @@ class MinkContext extends RawMinkContext implements TranslatableContext
      *
      * @When /^I click on the element with xpath "([^"]*)"$/
      */
-    public function clickOnTheElementWithXPath($xpath)
+    public function clickByXPath($xpath)
     {
         $session = $this->getSession(); // get the mink session
         $element = $session->getPage()->find(
@@ -58,7 +58,7 @@ class MinkContext extends RawMinkContext implements TranslatableContext
      *
      * @When /^I click on the element with css selector "([^"]*)"$/
      */
-    public function clickOnTheElementWithCSSSelector($locator)
+    public function clickByCSSSelector($locator)
     {
         $session = $this->getSession();
 //        $element = $session->getPage()->find(
@@ -73,7 +73,7 @@ class MinkContext extends RawMinkContext implements TranslatableContext
         $element->click();
     }
 
-    public function hoverOverTheElement($locator)
+    public function hoverOver($locator)
     {
         $session = $this->getSession(); // get the mink session
         $element = $session->getPage()->find('css', $locator); // runs the actual query and returns the element

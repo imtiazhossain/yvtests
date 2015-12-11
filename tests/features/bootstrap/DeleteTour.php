@@ -21,10 +21,10 @@ class DeleteTour extends LogIn
     public function iClickTheDeleteButton()
     {
         sleep(1);
-        $this->hoverOverTheElement("#gridview > div > form > div.tour");
-        $this->clickOnTheElementWithCSSSelector("#gridview > div > form > div.tour > div.actions > div.delete-button.action.icon-button");
+        $this->hoverOver("#gridview > div > form > div.tour");
+        $this->clickByCSSSelector("#gridview > div > form > div.tour > div.actions > div.delete-button.action.icon-button");
         sleep(1);
-        $this->clickOnTheElementWithCSSSelector("#delete-dialog > span.button.primary.deletetour_action");
+        $this->clickByCSSSelector("#delete-dialog > span.button.primary.deletetour_action");
     }
 
     /**

@@ -11,10 +11,12 @@ require "vendor/autoload.php";
  */
 class FeatureContext extends MinkContext implements SnippetAcceptingContext
 {
-    public function test()
+    /** @BeforeScenario */
+    public function before()
     {
         $this->getSession()->maximizeWindow();
     }
+
     /**
      * Initializes context.
      *
@@ -24,7 +26,7 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
      */
     public function __construct()
     {
-//        $this->loadSpecificContexts();
+
     }
 
 //    private function loadSpecificContexts() {

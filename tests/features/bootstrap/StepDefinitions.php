@@ -20,14 +20,6 @@ class StepDefinitions extends FeatureContext
 //        $this->clickOnTheElementWithCSSSelector(".header-content-navlist > li:nth-of-type(2)");
     }
 
-    /**
-     * @When I fill in password
-     */
-    public function iFillInPassword()
-    {
-        $input = $this->getSession()->getPage()->find('xpath', "//*[@id=\"loginForm\"]/input[2]");
-        $input->setValue("12345");
-    }
 
     /**
      * @When I click New Tour
@@ -35,7 +27,7 @@ class StepDefinitions extends FeatureContext
     public function iClickNewTour()
     {
         $this->waitForAjax();
-        $this->clickOnTheElementWithCSSSelector("#gridview > a");
+        $this->clickByCSSSelector("#gridview > a");
     }
 
     /**
@@ -43,9 +35,9 @@ class StepDefinitions extends FeatureContext
      */
     public function iSelectFromTourType($arg1)
     {
-        $this->clickOnTheElementWithCSSSelector("#tour-type-select");
-        $this->clickOnTheElementWithCSSSelector("#location-info > div > ul.tour-type-primary.open > li.other-btn > span");
-        $this->clickOnTheElementWithCSSSelector("#location-info > div > ul.tour-type-secondary.open > li:nth-of-type(4)");
+        $this->clickByCSSSelector("#tour-type-select");
+        $this->clickByCSSSelector("#location-info > div > ul.tour-type-primary.open > li.other-btn > span");
+        $this->clickByCSSSelector("#location-info > div > ul.tour-type-secondary.open > li:nth-of-type(4)");
 //        $this->pressButton("CREATE TOUR");
     }
 

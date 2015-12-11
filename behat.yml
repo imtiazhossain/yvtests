@@ -7,17 +7,19 @@ default:
       paths:
         - %paths.base%/tests/features
       contexts:
-        - DeleteTour
+        - TourSteps
   formatters:
       html:
         output_path: %paths.base%/build/html/behat
   extensions:
     Behat\MinkExtension:
       base_url: http://qa.dev.youvisit.com/
+#      base_url: http://www.youvisit.com/
       goutte: ~
       selenium2:
         wd_host: http://localhost:4444/wd/hub
-        browser: firefox
+#        wd_session: maximize
+#        browser: chrome
     emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
             name: html
             renderer: Twig,Behat2
@@ -25,4 +27,19 @@ default:
             print_args: true
             print_outp: true
             loop_break: true
+
+chrome:
+    extensions:
+        Behat\MinkExtension:
+            browser_name: chrome
+
+firefox:
+    extensions:
+        Behat\MinkExtension:
+            browser_name: firefox
+
+safari:
+    extensions:
+        Behat\MinkExtension:
+            browser_name: safari
 
