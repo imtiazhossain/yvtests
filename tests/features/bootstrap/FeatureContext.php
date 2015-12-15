@@ -2,7 +2,6 @@
 
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\MinkExtension\Context\MinkContext;
-use Constants\Selectors;
 
 require "vendor/autoload.php";
 
@@ -11,12 +10,6 @@ require "vendor/autoload.php";
  */
 class FeatureContext extends MinkContext implements SnippetAcceptingContext
 {
-    /** @BeforeScenario */
-    public function before()
-    {
-        $this->getSession()->maximizeWindow();
-    }
-
     /**
      * Initializes context.
      *
@@ -29,19 +22,30 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
 
     }
 
-//    private function loadSpecificContexts() {
-//        $base_dir = dirname(__FILE__);
-//        if ($handle = opendir( $base_dir )) {
-//            while (false !== ($file = readdir($handle))) {
-//                echo $base_dir . "/" . $file . "\n";
-//                if (!in_array($file, array(".", "..")) && strpos($file, ".php") !== false) {
-//                    include_once($base_dir . "/". $file);
-//                }
-//            }
-//            closedir($handle);
-//        }
+//    /** @AfterScenario */
+//    public function after()
+//    {
+//        $this->getSession()->getDriver()->stop();
 //    }
 
+    /** @BeforeScenario */
+    public function before()
+    {
+        $this->getSession()->getDriver()->maximizeWindow();
+    }
 
+    /**
+     * Download remote file to local for use in Automated Tests...
+     * @param $remote_url (string) of resource to download
+     * @return string (string) local path of remote url
+     */
+    public function getLocalCopy($remote_url) {
+        $file_path = sys_get_temp_dir() . "/" . md5($remote_url) . "." . pathinfo($remote_url, PATHINFO_EXTENSION);
+        if (!file_exists($file_path)){
+            echo "Writing: {$remote_url} to {$file_path}\n";
+            file_put_contents($file_path, fopen($remote_url, 'r'));
+        }
+        return $file_path;
+    }
 
 }

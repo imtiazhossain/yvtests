@@ -36,8 +36,11 @@ class StepDefinitions extends FeatureContext
     public function iSelectFromTourType($arg1)
     {
         $this->clickByCSSSelector("#tour-type-select");
-        $this->clickByCSSSelector("#location-info > div > ul.tour-type-primary.open > li.other-btn > span");
+        sleep(1);
+        $this->clickByCSSSelector("#location-info > div > ul.tour-type-primary.open > li.other-btn");
+        sleep(1);
         $this->clickByCSSSelector("#location-info > div > ul.tour-type-secondary.open > li:nth-of-type(4)");
+        sleep(1);
 //        $this->pressButton("CREATE TOUR");
     }
 

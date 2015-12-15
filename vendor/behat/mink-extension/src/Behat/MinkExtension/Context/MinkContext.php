@@ -53,6 +53,37 @@ class MinkContext extends RawMinkContext implements TranslatableContext
         $element->click();
     }
 
+//    public function clickByXPath($xpath)
+//    {
+//        $session = $this->getSession()->getPage()->find('xpath', $xpath);
+//        $element = $this->getSession()->getDriver()->wait(1000, $session);
+////        ->find('xpath', $session->getSelectorsHandler()->selectorToXpath('xpath', $xpath));
+//
+//        // errors must not pass silently
+//        if (null === $element) {
+//            throw new \InvalidArgumentException(sprintf('Could not evaluate XPath: "%s"', $xpath));
+//        }
+//
+//        // ok, let's click on it
+//        $element->click();
+//    }
+//
+//    public function clickByCSSSelector($locator)
+//    {
+//
+//        $element = $this->getSession()->getPage()->waitFor(1000, $this->element($locator));
+////        ->find('xpath', $session->getSelectorsHandler()->selectorToXpath('xpath', $xpath));
+//
+//        // errors must not pass silently
+//        if (null === $element) {
+//            throw new \InvalidArgumentException(sprintf('Could not evaluate XPath: "%s"', $locator));
+//        }
+//
+//
+//        // ok, let's click on it
+//        $element->click();
+//    }
+
     /**
      * Click on the element with the provided CSS Selector
      *
@@ -73,6 +104,17 @@ class MinkContext extends RawMinkContext implements TranslatableContext
         $element->click();
     }
 
+
+    public function css($test)
+    {
+        $this->getSession()->getPage()->waitFor(1000, $this->getSession()->getPage()->find("css", $test));
+
+    }
+
+//    public function test()
+//    {
+//        $this->checkLive();
+//    }
     public function hoverOver($locator)
     {
         $session = $this->getSession(); // get the mink session
@@ -248,7 +290,7 @@ class MinkContext extends RawMinkContext implements TranslatableContext
         $field = $this->fixStepArgument($field);
 
         if ($this->getMinkParameter('files_path')) {
-            $fullPath = rtrim(realpath($this->getMinkParameter('files_path')), DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.$path;
+            $fullPath = rtrim(realpath($this->getMinkParameter('files_path')), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $path;
             if (is_file($fullPath)) {
                 $path = $fullPath;
             }
@@ -502,8 +544,8 @@ class MinkContext extends RawMinkContext implements TranslatableContext
      */
     public function printLastResponse()
     {
-        echo (
-            $this->getSession()->getCurrentUrl()."\n\n".
+        echo(
+            $this->getSession()->getCurrentUrl() . "\n\n" .
             $this->getSession()->getPage()->getContent()
         );
     }
@@ -519,7 +561,7 @@ class MinkContext extends RawMinkContext implements TranslatableContext
             throw new \RuntimeException('Set "show_cmd" parameter in behat.yml to be able to open page in browser (ex.: "show_cmd: firefox %s")');
         }
 
-        $filename = rtrim($this->getMinkParameter('show_tmp_dir'), DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.uniqid().'.html';
+        $filename = rtrim($this->getMinkParameter('show_tmp_dir'), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . uniqid() . '.html';
         file_put_contents($filename, $this->getSession()->getPage()->getContent());
         system(sprintf($this->getMinkParameter('show_cmd'), escapeshellarg($filename)));
     }
@@ -541,7 +583,7 @@ class MinkContext extends RawMinkContext implements TranslatableContext
      */
     public static function getMinkTranslationResources()
     {
-        return glob(__DIR__.'/../../../../i18n/*.xliff');
+        return glob(__DIR__ . '/../../../../i18n/*.xliff');
     }
 
     /**

@@ -8,38 +8,47 @@ default:
         - %paths.base%/tests/features
       contexts:
         - TourSteps
-  formatters:
-      html:
-        output_path: %paths.base%/build/html/behat
+#  formatters:
+#      html:
+#        output_path: %paths.base%/build/html/behat
   extensions:
     Behat\MinkExtension:
-      base_url: http://qa.dev.youvisit.com/
-#      base_url: http://www.youvisit.com/
+      base_url: http://www.youvisit.com/
       goutte: ~
       selenium2:
         wd_host: http://localhost:4444/wd/hub
-#        wd_session: maximize
-#        browser: chrome
-    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
-            name: html
-            renderer: Twig,Behat2
-            file_name: Index
-            print_args: true
-            print_outp: true
-            loop_break: true
+        browser: chrome
+#    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+#            name: html
+#            renderer: Twig,Behat2
+#            file_name: Index
+#            print_args: true
+#            print_outp: true
+#            loop_break: true
+
+qa:
+    extensions:
+        Behat\MinkExtension:
+            base_url: http://qa.dev.youvisit.com/
 
 chrome:
     extensions:
         Behat\MinkExtension:
-            browser_name: chrome
+          selenium2:
+            wd_host: http://localhost:4444/wd/hub
+            browser: chrome
 
 firefox:
     extensions:
         Behat\MinkExtension:
-            browser_name: firefox
+          selenium2:
+            wd_host: http://localhost:4444/wd/hub
+            browser: firefox
 
 safari:
     extensions:
         Behat\MinkExtension:
-            browser_name: safari
+          selenium2:
+            wd_host: http://localhost:4444/wd/hub
+            browser: safari
 

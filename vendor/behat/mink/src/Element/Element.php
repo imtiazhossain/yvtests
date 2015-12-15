@@ -74,6 +74,50 @@ abstract class Element implements ElementInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function has($selector, $locator)
+    {
+        return null !== $this->find($selector, $locator);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function find($selector, $locator)
+    {
+//        $items = $this->waitFor(100000, $this->findAll($selector, $locator));
+//        $items = $this->waitFor(100000,
+//            function ($selector, $locator){
+//                return $this->findAll($selector, $locator);
+//            }
+//        );
+        $items = $this->findAll($selector, $locator);
+
+        return count($items) ? current($items) : null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function findAll($selector, $locator)
+    {
+        if ('named' === $selector) {
+            $items = $this->findAll('named_exact', $locator);
+            if (empty($items)) {
+                $items = $this->findAll('named_partial', $locator);
+            }
+
+            return $items;
+        }
+
+        $xpath = $this->selectorsHandler->selectorToXpath($selector, $locator);
+        $xpath = $this->xpathManipulator->prepend($xpath, $this->getXpath());
+
+        return $this->getDriver()->find($xpath);
+    }
+
+    /**
      * Returns element's driver.
      *
      * @return DriverInterface
@@ -81,28 +125,6 @@ abstract class Element implements ElementInterface
     protected function getDriver()
     {
         return $this->driver;
-    }
-
-    /**
-     * Returns selectors handler.
-     *
-     * @return SelectorsHandler
-     *
-     * @deprecated Accessing the selectors handler in the element is deprecated as of 1.7 and will be impossible in 2.0.
-     */
-    protected function getSelectorsHandler()
-    {
-        @trigger_error(sprintf('The method %s is deprecated as of 1.7 and will be removed in 2.0', __METHOD__), E_USER_DEPRECATED);
-
-        return $this->selectorsHandler;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function has($selector, $locator)
-    {
-        return null !== $this->find($selector, $locator);
     }
 
     /**
@@ -141,36 +163,6 @@ abstract class Element implements ElementInterface
     /**
      * {@inheritdoc}
      */
-    public function find($selector, $locator)
-    {
-        $items = $this->findAll($selector, $locator);
-
-        return count($items) ? current($items) : null;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function findAll($selector, $locator)
-    {
-        if ('named' === $selector) {
-            $items = $this->findAll('named_exact', $locator);
-            if (empty($items)) {
-                $items = $this->findAll('named_partial', $locator);
-            }
-
-            return $items;
-        }
-
-        $xpath = $this->selectorsHandler->selectorToXpath($selector, $locator);
-        $xpath = $this->xpathManipulator->prepend($xpath, $this->getXpath());
-
-        return $this->getDriver()->find($xpath);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getText()
     {
         return $this->getDriver()->getText($this->getXpath());
@@ -192,6 +184,20 @@ abstract class Element implements ElementInterface
     public function getOuterHtml()
     {
         return $this->getDriver()->getOuterHtml($this->getXpath());
+    }
+
+    /**
+     * Returns selectors handler.
+     *
+     * @return SelectorsHandler
+     *
+     * @deprecated Accessing the selectors handler in the element is deprecated as of 1.7 and will be impossible in 2.0.
+     */
+    protected function getSelectorsHandler()
+    {
+        @trigger_error(sprintf('The method %s is deprecated as of 1.7 and will be removed in 2.0', __METHOD__), E_USER_DEPRECATED);
+
+        return $this->selectorsHandler;
     }
 
     /**
