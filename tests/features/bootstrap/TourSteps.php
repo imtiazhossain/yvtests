@@ -40,16 +40,6 @@ class TourSteps extends DeleteTour
         sleep(2);
     }
 
-    /**
-     * @Given I upload a Photo
-     */
-    public function iUploadAPhoto()
-    {
-        $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/Photo-1.jpg";
-        $this->fileUpload( $this->getLocalCopy($file_url) );
-        $this->checkLive();
-    }
-
     public function fileUpload($file)
     {
         $this->getSession()->getDriver()->executeScript("$('#mediaBinContainer .addmedia .fileInput').css({'display':'block'})");
@@ -74,6 +64,15 @@ class TourSteps extends DeleteTour
         echo "Upload time = $timediff seconds";
     }
 
+    /**
+     * @Given I upload a Photo
+     */
+    public function iUploadAPhoto()
+    {
+        $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/Photo-1.jpg";
+        $this->fileUpload( $this->getLocalCopy($file_url) );
+        $this->checkLive();
+    }
     /**
      * @Given I assert that the photo exists
      */
