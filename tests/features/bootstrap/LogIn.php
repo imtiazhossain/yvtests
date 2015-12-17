@@ -13,7 +13,7 @@ class LogIn extends StepDefinitions
      */
     public function iClickOnTheLogInButton()
     {
-        $this->clickByCSSSelector("#container > header > nav > ul > li:nth-of-type(6) > div");
+        $this->clickByCSS("#container > header > nav > ul > li:nth-of-type(6) > div");
 //        $this->css("#container > header > nav > ul > li:nth-of-type(6) > div");
     }
 

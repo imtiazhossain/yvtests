@@ -16,7 +16,7 @@ class TourSteps extends DeleteTour
         sleep(2);
         $this->hoverOver("#gridview > div > form > div.tour");
         sleep(1);
-        $this->clickByCSSSelector("#gridview > div > form > div.tour > div.actions > div.rounded > div.edit-button.action.icon-button.icon-svg.dashed");
+        $this->clickByCSS("#gridview > div > form > div.tour > div.actions > div.rounded > div.edit-button.action.icon-button.icon-svg.dashed");
         sleep(5);
     }
 
@@ -25,7 +25,7 @@ class TourSteps extends DeleteTour
      */
     public function iClickAddStop()
     {
-        $this->clickByCSSSelector("#stops > div.stop.add > span.title");
+        $this->clickByCSS("#stops > div.stop.add > span.title");
         sleep(2);
     }
 
@@ -34,10 +34,20 @@ class TourSteps extends DeleteTour
      */
     public function iDeleteStop()
     {
-        $this->clickByCSSSelector("#stops > div.ng-isolate-scope > div.ui-sortable > div > div.stop.ng-isolate-scope.ui-droppable.selected > span.delete");
+        $this->clickByCSS("#stops > div.ng-isolate-scope > div.ui-sortable > div > div.stop.ng-isolate-scope.ui-droppable.selected > span.delete");
         sleep(2);
-        $this->clickByCSSSelector("body > div.appcontainer.ng-scope > div.modal_wrapper.animated.ngfade.ng-scope > div > div > a");
+        $this->clickByCSS("body > div.appcontainer.ng-scope > div.modal_wrapper.animated.ngfade.ng-scope > div > div > a");
         sleep(2);
+    }
+
+    /**
+     * @Given I upload a Photo
+     */
+    public function iUploadAPhoto()
+    {
+        $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/Photo-1.jpg";
+        $this->fileUpload( $this->getLocalCopy($file_url) );
+        $this->checkLive();
     }
 
     public function fileUpload($file)
@@ -65,19 +75,11 @@ class TourSteps extends DeleteTour
     }
 
     /**
-     * @Given I upload a Photo
-     */
-    public function iUploadAPhoto()
-    {
-        $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/Photo-1.jpg";
-        $this->fileUpload( $this->getLocalCopy($file_url) );
-        $this->checkLive();
-    }
-    /**
      * @Given I assert that the photo exists
      */
     public function iAssertThatThePhotoExists()
     {
+        sleep(1);
         $this->assertElementOnPage("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
     }
 
@@ -89,7 +91,7 @@ class TourSteps extends DeleteTour
         sleep(1);
         $this->hoverOver("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
         sleep(2);
-        $this->clickByCSSSelector("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
+        $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
 
         $this->getSession()->getPage()->waitFor(100000,
             function (){
@@ -115,6 +117,7 @@ class TourSteps extends DeleteTour
      */
     public function iAssertThatTheVideoExists()
     {
+        sleep(1);
         $this->assertElementOnPage("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
     }
 
@@ -123,9 +126,10 @@ class TourSteps extends DeleteTour
      */
     public function iDeleteTheVideo()
     {
+        sleep(1);
         $this->hoverOver("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
         sleep(1);
-        $this->clickByCSSSelector("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
+        $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
         sleep(2);
     }
 
@@ -134,7 +138,7 @@ class TourSteps extends DeleteTour
      */
     public function iUploadAPanos()
     {
-        $this->clickByCSSSelector("#gallery_bottom > div.ng-isolate-scope.bar-control > div.bar_items > a.bar_item.panorama");
+        $this->clickByCSS("#gallery_bottom > div.ng-isolate-scope.bar-control > div.bar_items > a.bar_item.panorama");
         sleep(1);
         $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/Pano-1.jpg";
         $this->fileUpload( $this->getLocalCopy($file_url) );
@@ -146,6 +150,7 @@ class TourSteps extends DeleteTour
      */
     public function iAssertThatThePanosExists()
     {
+        sleep(1);
         $this->assertElementOnPage("#mediaBinContainer > div:nth-of-type(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
     }
 
@@ -154,9 +159,10 @@ class TourSteps extends DeleteTour
      */
     public function iDeleteThePanos()
     {
+        sleep(1);
         $this->hoverOver("#mediaBinContainer > div:nth-of-type(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
         sleep(1);
-        $this->clickByCSSSelector("#mediaBinContainer > div:nth-of-type(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-of-type(1) > div > a:nth-of-type(2)");
+        $this->clickByCSS("#mediaBinContainer > div:nth-of-type(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-of-type(1) > div > a:nth-of-type(2)");
         sleep(1);
     }
 
@@ -177,6 +183,7 @@ class TourSteps extends DeleteTour
      */
     public function iAssertThatTheThreeSixtyExists()
     {
+        sleep(1);
         $this->assertElementOnPage("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
     }
 
@@ -185,9 +192,10 @@ class TourSteps extends DeleteTour
      */
     public function iDeleteTheThreeSixty()
     {
+        sleep(1);
         $this->hoverOver("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
         sleep(1);
-        $this->clickByCSSSelector("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
+        $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
         sleep(1);
     }
 
@@ -211,6 +219,7 @@ class TourSteps extends DeleteTour
      */
     public function iAssertThatTheAudioExists()
     {
+        sleep(1);
         $this->assertElementOnPage("#audioPlayer > div > div > div.audio_container.animated.fast.ngfade > div.buttons > span:nth-child(2)");
     }
 
@@ -219,7 +228,8 @@ class TourSteps extends DeleteTour
      */
     public function iDeleteTheAudio()
     {
-        $this->clickByCSSSelector("#audioPlayer > div > div > div.audio_container.animated.fast.ngfade > div.buttons > span.delete");
+        sleep(1);
+        $this->clickByCSS("#audioPlayer > div > div > div.audio_container.animated.fast.ngfade > div.buttons > span.delete");
         sleep(1);
     }
 }

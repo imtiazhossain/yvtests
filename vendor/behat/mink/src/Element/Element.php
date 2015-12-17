@@ -86,12 +86,6 @@ abstract class Element implements ElementInterface
      */
     public function find($selector, $locator)
     {
-//        $items = $this->waitFor(100000, $this->findAll($selector, $locator));
-//        $items = $this->waitFor(100000,
-//            function ($selector, $locator){
-//                return $this->findAll($selector, $locator);
-//            }
-//        );
         $items = $this->findAll($selector, $locator);
 
         return count($items) ? current($items) : null;

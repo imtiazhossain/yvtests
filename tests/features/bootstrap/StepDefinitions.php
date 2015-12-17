@@ -27,7 +27,7 @@ class StepDefinitions extends FeatureContext
     public function iClickNewTour()
     {
         $this->waitForAjax();
-        $this->clickByCSSSelector("#gridview > a");
+        $this->clickByCSS("#gridview > a");
     }
 
     /**
@@ -35,11 +35,11 @@ class StepDefinitions extends FeatureContext
      */
     public function iSelectFromTourType($arg1)
     {
-        $this->clickByCSSSelector("#tour-type-select");
+        $this->clickByCSS("#tour-type-select");
         sleep(1);
-        $this->clickByCSSSelector("#location-info > div > ul.tour-type-primary.open > li.other-btn");
+        $this->clickByCSS("#location-info > div > ul.tour-type-primary.open > li.other-btn");
         sleep(1);
-        $this->clickByCSSSelector("#location-info > div > ul.tour-type-secondary.open > li:nth-of-type(4)");
+        $this->clickByCSS("#location-info > div > ul.tour-type-secondary.open > li:nth-of-type(4)");
         sleep(1);
 //        $this->pressButton("CREATE TOUR");
     }

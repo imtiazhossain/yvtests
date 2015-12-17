@@ -1,5 +1,5 @@
 <?php
-use Behat\Mink\Driver\Selenium2Driver;
+
 /**
  * Created by PhpStorm.
  * User: imtiazhossain
@@ -22,9 +22,9 @@ class DeleteTour extends LogIn
     {
         sleep(1);
         $this->hoverOver("#gridview > div > form > div.tour");
-        $this->clickByCSSSelector("#gridview > div > form > div.tour > div.actions > div.delete-button.action.icon-button");
+        $this->clickByCSS("#gridview > div > form > div.tour > div.actions > div.delete-button.action.icon-button");
         sleep(1);
-        $this->clickByCSSSelector("#delete-dialog > span.button.primary.deletetour_action");
+        $this->clickByCSS("#delete-dialog > span.button.primary.deletetour_action");
     }
 
     /**

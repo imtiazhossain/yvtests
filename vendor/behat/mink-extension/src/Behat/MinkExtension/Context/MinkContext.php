@@ -31,6 +31,11 @@ class MinkContext extends RawMinkContext implements TranslatableContext
         $this->getSession()->wait(5000, '(0 === jQuery.active)');
     }
 
+    public function findByCSS($locator)
+    {
+        return $this->getSession()->getPage()->find('css', $locator);
+    }
+
     /**
      * Click on the element with the provided xpath query
      *
@@ -53,55 +58,14 @@ class MinkContext extends RawMinkContext implements TranslatableContext
         $element->click();
     }
 
-//    public function clickByXPath($xpath)
-//    {
-//        $session = $this->getSession()->getPage()->find('xpath', $xpath);
-//        $element = $this->getSession()->getDriver()->wait(1000, $session);
-////        ->find('xpath', $session->getSelectorsHandler()->selectorToXpath('xpath', $xpath));
-//
-//        // errors must not pass silently
-//        if (null === $element) {
-//            throw new \InvalidArgumentException(sprintf('Could not evaluate XPath: "%s"', $xpath));
-//        }
-//
-//        // ok, let's click on it
-//        $element->click();
-//    }
-//
-//    public function clickByCSSSelector($locator)
-//    {
-//
-//        $element = $this->getSession()->getPage()->waitFor(1000, $this->element($locator));
-////        ->find('xpath', $session->getSelectorsHandler()->selectorToXpath('xpath', $xpath));
-//
-//        // errors must not pass silently
-//        if (null === $element) {
-//            throw new \InvalidArgumentException(sprintf('Could not evaluate XPath: "%s"', $locator));
-//        }
-//
-//
-//        // ok, let's click on it
-//        $element->click();
-//    }
-
     /**
      * Click on the element with the provided CSS Selector
      *
      * @When /^I click on the element with css selector "([^"]*)"$/
      */
-    public function clickByCSSSelector($locator)
+    public function clickByCSS($locator)
     {
-        $session = $this->getSession();
-//        $element = $session->getPage()->find(
-//            'xpath',
-//            $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
-//        );
-//        if (null === $element) {
-//            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
-//        }
-        $element = $session->getPage()->find('css', $locator);
-
-        $element->click();
+        $this->findByCSS($locator)->click();
     }
 
 
@@ -216,7 +180,6 @@ class MinkContext extends RawMinkContext implements TranslatableContext
     public function fillField($field, $value)
     {
         $this->getSession()->wait(5000, '(0 === jQuery.active)');
-        sleep(1);
         $field = $this->fixStepArgument($field);
         $value = $this->fixStepArgument($value);
         $this->getSession()->getPage()->fillField($field, $value);

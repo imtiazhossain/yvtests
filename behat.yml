@@ -7,7 +7,7 @@ default:
       paths:
         - %paths.base%/tests/features
       contexts:
-        - TourSteps
+        - FinalContext
 #  formatters:
 #      html:
 #        output_path: %paths.base%/build/html/behat
