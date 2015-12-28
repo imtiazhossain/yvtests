@@ -9,6 +9,7 @@ Feature: Upload a Map file
     And I fill in password
     And I press "loginButton"
     And I edit a tour
-#    And I upload an Map file
-#    Then I assert that the map exists
-#    Then I delete the map
+    And I click Map tab
+    And I upload a Map file
+    Then I assert that the map exists
+    Then I delete the map

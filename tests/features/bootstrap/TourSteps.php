@@ -232,4 +232,62 @@ class TourSteps extends DeleteTour
         $this->clickByCSS("#audioPlayer > div > div > div.audio_container.animated.fast.ngfade > div.buttons > span.delete");
         sleep(1);
     }
+
+    /**
+     * @Given I click Map tab
+     */
+    public function iClickMapTab()
+    {
+        $this->clickByCSS("#sidebar_container > div > div.text-center.ng-isolate-scope.bar-control > div.bar_items > a.bar_item.map");
+    }
+
+    /**
+     * @Given I upload a Map file
+     */
+    public function iUploadAMapFile()
+    {
+        $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/Pano-1.jpg";
+
+        $this->getSession()->getDriver()->executeScript("$('.map_upload_uploader .map_upload_padding > input').css({'display':'block'})");
+        $this->getSession()
+            ->getPage()
+            ->find("xpath", "//*[@id=\"file_dropper\"]/div/div[1]/div[3]/input")
+            ->attachFile($this->getLocalCopy($file_url));
+        $this->getSession()->getDriver()->executeScript("$('.map_upload_uploader .map_upload_padding > input').css({'display':'none'})");
+
+
+
+        $starttime = microtime(true);
+
+        $this->getSession()->getPage()->waitFor(100000,
+            function (){
+                return $this->getSession()->getDriver()->evaluateScript("$('.maploader.ng-hide')");
+            }
+        );
+
+        $endtime = microtime(true);
+        $timediff = $endtime - $starttime;
+        echo "Upload time = $timediff seconds";
+    }
+
+    /**
+     * @Then I assert that the map exists
+     */
+    public function iAssertThatTheMapExists()
+    {
+//        throw new PendingException();
+    }
+
+    /**
+     * @Then I delete the map
+     */
+    public function iDeleteTheMap()
+    {
+        sleep(1);
+        $this->clickByCSS("body > div.appcontainer.ng-scope > div.app.ng-scope > div.map_uploader.animated.ngfade.ng-scope > div > div.delete_map");
+        sleep(2);
+        $this->clickByCSS("body > div.appcontainer.ng-scope > div.modal_wrapper.animated.ngfade.ng-scope > div > div > a");
+        sleep(10);
+    }
+
 }
