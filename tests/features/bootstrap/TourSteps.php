@@ -75,7 +75,7 @@ class TourSteps extends DeleteTour
     public function checkLive(){
         $starttime = microtime(true);
 
-        $this->getSession()->getPage()->waitFor(10,
+        $this->getSession()->getPage()->waitFor(300,
             function (){
                 return $this->getSession()->getDriver()->evaluateScript("$('.uploadstatus.live')");
             }
@@ -105,7 +105,7 @@ class TourSteps extends DeleteTour
         sleep(2);
         $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
 
-        $this->getSession()->getPage()->waitFor(360,
+        $this->getSession()->getPage()->waitFor(100,
             function (){
                 $text = $this->getSession()->getDriver()->evaluateScript("$('.flash').not('.ng-hide').find('.flashloading').html()");
                 return stripos($text, "Deleted") !== false;
@@ -271,7 +271,7 @@ class TourSteps extends DeleteTour
 
         $starttime = microtime(true);
 
-        $this->getSession()->getPage()->waitFor(10,
+        $this->getSession()->getPage()->waitFor(100,
             function (){
                 return $this->getSession()->getDriver()->evaluateScript("$('.maploader.ng-hide')");
             }
