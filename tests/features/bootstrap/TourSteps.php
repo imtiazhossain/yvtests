@@ -75,7 +75,7 @@ class TourSteps extends DeleteTour
     public function checkLive(){
         $starttime = microtime(true);
 
-        $this->getSession()->getPage()->waitFor(360,
+        $this->getSession()->getPage()->waitFor(10,
             function (){
                 return $this->getSession()->getDriver()->evaluateScript("$('.uploadstatus.live')");
             }
@@ -271,7 +271,7 @@ class TourSteps extends DeleteTour
 
         $starttime = microtime(true);
 
-        $this->getSession()->getPage()->waitFor(100000,
+        $this->getSession()->getPage()->waitFor(10,
             function (){
                 return $this->getSession()->getDriver()->evaluateScript("$('.maploader.ng-hide')");
             }
