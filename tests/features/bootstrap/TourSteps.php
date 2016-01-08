@@ -21,6 +21,18 @@ class TourSteps extends DeleteTour
     }
 
     /**
+     * @Given I go to tour settings
+     */
+    public function iGoToTourSettings()
+    {
+        sleep(2);
+        $this->hoverOver("#gridview > div > form > div.tour");
+        sleep(1);
+        $this->clickByCSS("#gridview > div > form > div.tour > div.actions > div.location-details-button.action.icon-button.gtm-profile-settings");
+        sleep(3);
+    }
+
+    /**
      * @Given I click Add Stop
      */
     public function iClickAddStop()
@@ -63,7 +75,7 @@ class TourSteps extends DeleteTour
     public function checkLive(){
         $starttime = microtime(true);
 
-        $this->getSession()->getPage()->waitFor(100000,
+        $this->getSession()->getPage()->waitFor(360,
             function (){
                 return $this->getSession()->getDriver()->evaluateScript("$('.uploadstatus.live')");
             }
@@ -93,7 +105,7 @@ class TourSteps extends DeleteTour
         sleep(2);
         $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
 
-        $this->getSession()->getPage()->waitFor(100000,
+        $this->getSession()->getPage()->waitFor(360,
             function (){
                 $text = $this->getSession()->getDriver()->evaluateScript("$('.flash').not('.ng-hide').find('.flashloading').html()");
                 return stripos($text, "Deleted") !== false;
@@ -228,7 +240,7 @@ class TourSteps extends DeleteTour
      */
     public function iDeleteTheAudio()
     {
-        sleep(1);
+        sleep(2);
         $this->clickByCSS("#audioPlayer > div > div > div.audio_container.animated.fast.ngfade > div.buttons > span.delete");
         sleep(1);
     }
