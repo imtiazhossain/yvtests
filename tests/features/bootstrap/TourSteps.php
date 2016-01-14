@@ -75,7 +75,7 @@ class TourSteps extends DeleteTour
     public function checkLive(){
         $starttime = microtime(true);
 
-        $this->getSession()->getPage()->waitFor(240,
+        $this->getSession()->getPage()->waitFor(300,
             function (){
                 return $this->getSession()->getDriver()->evaluateScript("$('.uploadstatus.live')");
             }
