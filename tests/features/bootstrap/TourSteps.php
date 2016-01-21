@@ -17,7 +17,19 @@ class TourSteps extends DeleteTour
         $this->hoverOver("#gridview > div > form > div.tour");
         sleep(1);
         $this->clickByCSS("#gridview > div > form > div.tour > div.actions > div.rounded > div.edit-button.action.icon-button.icon-svg.dashed");
-        sleep(5);
+        sleep(10);
+    }
+
+    /**
+     * @Given I click preview
+     */
+    public function iClickPreview()
+    {
+        $this->clickByCSS("body > div.appcontainer.ng-scope > div.app.ng-scope > div.header.ng-scope > div.rightheader > a.btn.preview");
+        sleep(10);
+        $this->hoverOver("#tour");
+        sleep(10);
+
     }
 
     /**
