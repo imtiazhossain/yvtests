@@ -307,11 +307,11 @@ class TourSteps extends DeleteTour
      */
     public function iDeleteTheMap()
     {
-        sleep(1);
+        sleep(2);
         $this->clickByCSS("body > div.appcontainer.ng-scope > div.app.ng-scope > div.map_uploader.animated.ngfade.ng-scope > div > div.delete_map");
         sleep(2);
         $this->clickByCSS("body > div.appcontainer.ng-scope > div.modal_wrapper.animated.ngfade.ng-scope > div > div > a");
-        sleep(10);
+        sleep(5);
     }
 
 }
