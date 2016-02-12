@@ -22,17 +22,21 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
 
     }
 
-//    /** @AfterScenario */
-//    public function after()
-//    {
-//        $this->getSession()->getDriver()->stop();
-//    }
-
     /** @BeforeScenario */
     public function before()
     {
         $this->getSession()->getDriver()->maximizeWindow();
+
+        $host= gethostname();
+        $ip = gethostbyname($host);
+        echo "IP Address = $ip";
     }
+
+//        /** @AfterScenario */
+//    public function after()
+//    {
+//        $this->getSession()->getDriver()->sc
+//    }
 
     /**
      * Download remote file to local for use in Automated Tests...
