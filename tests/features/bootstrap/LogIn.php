@@ -41,6 +41,7 @@ class LogIn extends StepDefinitions
      */
     public function iFillInId()
     {
+        sleep(2);
         $this->fillField('identifier', "qa@youvisit.com");
     }
 
