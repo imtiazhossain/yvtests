@@ -14,7 +14,7 @@ class LogIn extends StepDefinitions
     public function iLogIn()
     {
         $this->iClickOnTheLogInButton();
-        sleep(1);
+        sleep(5);
         $this->iFillInId();
         $this->iFillInPassword();
     }
