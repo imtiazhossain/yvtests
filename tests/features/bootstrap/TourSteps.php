@@ -29,7 +29,6 @@ class TourSteps extends DeleteTour
         sleep(10);
         $this->hoverOver("#tour");
         sleep(10);
-
     }
 
     /**
@@ -76,12 +75,12 @@ class TourSteps extends DeleteTour
 
     public function fileUpload($file)
     {
-        $this->getSession()->getDriver()->executeScript("$('#mediaBinContainer .addmedia .fileInput').css({'display':'block'})");
+//        $this->getSession()->getDriver()->executeScript("$('#mediaBinContainer .file-upload .fileInput').css({'display':'block'})");
         $this->getSession()
             ->getPage()
-            ->find("xpath", "//div[contains(@id, 'mediaBinContainer')]//input[contains(@class, 'fileInput')]")
+            ->find("xpath", "//*[@id=\"gallery_bottom\"]/div[1]/div[1]/div[2]/div[1]/input")
             ->attachFile($file);
-        $this->getSession()->getDriver()->executeScript("$('#mediaBinContainer .addmedia .fileInput').css({'display':'none'})");
+//        $this->getSession()->getDriver()->executeScript("$('#mediaBinContainer .file-upload .fileInput').css({'display':'none'})");
     }
 
     public function checkLive(){
@@ -112,10 +111,7 @@ class TourSteps extends DeleteTour
      */
     public function iDeleteThePhoto()
     {
-        sleep(1);
-        $this->hoverOver("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
-        sleep(2);
-        $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
+        $this->iDeleteThePanos();
 
         $this->getSession()->getPage()->waitFor(100,
             function (){
@@ -130,10 +126,28 @@ class TourSteps extends DeleteTour
      */
     public function iUploadAVideo()
     {
-        $this->clickByXPath("//*[@id=\"gallery_bottom\"]/div[1]/div[2]/a[2]");
         $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/Video-1.mp4";
         $this->fileUpload( $this->getLocalCopy($file_url) );
         $this->checkLive();
+    }
+
+    /**
+     * @Given I upload a Video via url
+     */
+    public function iUploadAVideoViaUrl()
+    {
+        $this->clickByXPath("//*[@id=\"gallery_bottom\"]/div[1]/div[2]/a[2]");
+
+        $file_url = "https://www.youtube.com/watch?v=cXwmoeO9HeE";
+//        $this->fileUpload( $this->getLocalCopy($file_url) );
+        $this->getSession()->getDriver()->executeScript("$('#mediaBinContainer .videoUrlInput .fileInput').css({'display':'block'})");
+        $this->getSession()
+            ->getPage()
+            ->find("xpath", "//div[contains(@id, 'mediaBinContainer')]//input[contains(@class, 'videoUrlInput')]")
+            ->attachFile($this->getLocalCopy($file_url));
+        $this->getSession()->getDriver()->executeScript("$('#mediaBinContainer .videoUrlInput .fileInput').css({'display':'none'})");
+        $this->checkLive();
+        sleep(50);
     }
 
     /**
@@ -142,19 +156,23 @@ class TourSteps extends DeleteTour
     public function iAssertThatTheVideoExists()
     {
         sleep(1);
-        $this->assertElementOnPage("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
+        $this->assertElementOnPage("#mediaBinContainer > div:nth-child(1) > ul > li > div");
     }
 
+    public function clickDelete()
+    {
+        sleep(1);
+        $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li > div > div:nth-child(1) > div > div.delete.ng-scope");
+        sleep(2);
+    }
     /**
      * @Then I delete the video
      */
     public function iDeleteTheVideo()
     {
         sleep(1);
-        $this->hoverOver("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
-        sleep(1);
-        $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
-        sleep(2);
+        $this->hoverOver("#mediaBinContainer > div:nth-child(1) > ul > li:nth-child(1) > div > img");
+        $this->clickDelete();
     }
 
     /**
@@ -162,8 +180,8 @@ class TourSteps extends DeleteTour
      */
     public function iUploadAPanos()
     {
-        $this->clickByCSS("#gallery_bottom > div.ng-isolate-scope.bar-control > div.bar_items > a.bar_item.panorama");
-        sleep(1);
+//        $this->clickByCSS("#gallery_bottom > div.ng-isolate-scope.bar-control > div.bar_items > a.bar_item.panorama");
+//        sleep(1);
         $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/Pano-1.jpg";
         $this->fileUpload( $this->getLocalCopy($file_url) );
         $this->checkLive();
@@ -184,10 +202,8 @@ class TourSteps extends DeleteTour
     public function iDeleteThePanos()
     {
         sleep(1);
-        $this->hoverOver("#mediaBinContainer > div:nth-of-type(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
-        sleep(1);
-        $this->clickByCSS("#mediaBinContainer > div:nth-of-type(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-of-type(1) > div > a:nth-of-type(2)");
-        sleep(1);
+        $this->hoverOver("#mediaBinContainer > div:nth-child(1) > ul > li > div > img");
+        $this->clickDelete();
     }
 
     /**
@@ -195,8 +211,6 @@ class TourSteps extends DeleteTour
      */
     public function iUploadAThreeSixty()
     {
-        $this->clickByXPath("//*[@id=\"gallery_bottom\"]/div[1]/div[2]/a[4]");
-        sleep(1);
         $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/360Video-1.mp4";
         $this->fileUpload( $this->getLocalCopy($file_url) );
         $this->checkLive();
@@ -219,7 +233,7 @@ class TourSteps extends DeleteTour
         sleep(1);
         $this->hoverOver("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div");
         sleep(1);
-        $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li.mediagroup.ng-scope.ng-isolate-scope > div > div:nth-child(1) > div > a:nth-child(2)");
+        $this->clickByCSS("#mediaBinContainer > div:nth-child(1) > ul > li > div > div:nth-child(1) > div > div.delete.ng-scope");
         sleep(1);
     }
 
@@ -228,8 +242,6 @@ class TourSteps extends DeleteTour
      */
     public function iUploadAnAudio()
     {
-        $this->clickByXPath("//*[@id=\"gallery_bottom\"]/div[1]/div[2]/a[5]");
-        sleep(1);
         $file_url = "https://s3.amazonaws.com/youvisit-qa/Assets/Audio-1.mp3";
         $this->getSession()
             ->getPage()
