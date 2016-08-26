@@ -17,7 +17,7 @@ class TourSteps extends DeleteTour
         $this->hoverOver("#gridview > div > form > div.tour");
         sleep(1);
         $this->clickByCSS("#gridview > div > form > div.tour > div.actions > div.rounded > div.edit-button.action.icon-button.icon-svg.dashed");
-        sleep(10);
+//        sleep(10);
     }
 
     /**
@@ -83,7 +83,7 @@ class TourSteps extends DeleteTour
 //        $this->getSession()->getDriver()->executeScript("$('#mediaBinContainer .file-upload .fileInput').css({'display':'none'})");
     }
 
-    
+
     public function checkLive(){
         $starttime = microtime(true);
 
