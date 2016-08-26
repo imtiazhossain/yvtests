@@ -83,6 +83,7 @@ class TourSteps extends DeleteTour
 //        $this->getSession()->getDriver()->executeScript("$('#mediaBinContainer .file-upload .fileInput').css({'display':'none'})");
     }
 
+    
     public function checkLive(){
         $starttime = microtime(true);
 
