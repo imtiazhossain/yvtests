@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Demo Flow" verbose="1" >
+    <test name="Demo Flow firefox">
+        <parameter name="browser2" value="Firefox"/>
+        <classes>
+            <class name="tests.single.DemoFlow" />
+        </classes>
+    </test>
+    <test name="Demo Flow chrome">
+        <parameter name="browser2" value="chrome"/>
+        <classes>
+            <class name="tests.single.DemoFlow" />
+        </classes>
+    </test>
+</suite>
