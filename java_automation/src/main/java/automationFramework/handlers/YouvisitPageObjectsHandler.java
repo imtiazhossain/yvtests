@@ -13,10 +13,8 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
     private LoginPage loginPage;
     private MyAccountPage myAccountPage;
     private Header header;
-    private Cart cart;
     private SearchResultPage searchResultPage;
     private ProductPage productpage;
-    private CartPage cartpage;
     private StonybrookRegistrationPage stonybrookRegistrationPage;
 
     protected YouvisitPageObjectsHandler(WebDriver driver, Eyes eyes) {
@@ -80,21 +78,7 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
         }
         return header;
     }
-    
-    public CartPage getCartPage() {
-        if (cartpage == null) {
-            cartpage = new CartPage(driver, instance);
-            PageFactory.initElements(driver, cartpage);
-        }
-        return cartpage;
-    }
-    public Cart getCart() {
-        if (cart == null) {
-            cart = new Cart(driver, instance);
-            PageFactory.initElements(driver, cart);
-        }
-        return cart;
-    }
+
 
     public StonybrookRegistrationPage getStonybrookRegistrationPage(){
         if (stonybrookRegistrationPage == null){

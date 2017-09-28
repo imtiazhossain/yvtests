@@ -10,13 +10,11 @@ public abstract class YouvisitBasePage extends BasePage {
 
     protected static YouvisitPageObjectsHandler pageObjectsHandler;
     protected Header header;
-    protected Cart cart;
 
     public YouvisitBasePage(WebDriver driver, YouvisitPageObjectsHandler handler) {
         super(driver);
         YouvisitBasePage.pageObjectsHandler = handler;
         header = getPageObjectsHandler().getHeaderPage();
-        cart = getPageObjectsHandler().getCart();
     }
 
     public YouvisitPageObjectsHandler getPageObjectsHandler() {

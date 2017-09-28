@@ -44,9 +44,4 @@ public class Header extends YouvisitBaseElement {
         addWait(Wait.SHORT_WAIT);
         return getPageObjectsHandler().getSearchResultPage();
     }
-
-    public CartPage showCart(){
-        cartButton.click();
-        return getPageObjectsHandler().getCartPage();
-    }
 }
