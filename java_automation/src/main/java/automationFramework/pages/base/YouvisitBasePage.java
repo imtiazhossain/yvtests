@@ -1,13 +1,10 @@
 package automationFramework.pages.base;
 
+import automationFramework.pages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import automationFramework.handlers.YouvisitPageObjectsHandler;
-import automationFramework.pages.Cart;
-import automationFramework.pages.Header;
-import automationFramework.pages.HomePage;
-import automationFramework.pages.LoginPage;
-import automationFramework.pages.SearchResultPage;
+import automationFramework.pages.StonybrookHomePage;
 
 public abstract class YouvisitBasePage extends BasePage {
 
@@ -29,7 +26,7 @@ public abstract class YouvisitBasePage extends BasePage {
         this.pageObjectsHandler = pageObjectsHandler;
     }
 
-    public HomePage goToHome(){
+    public StonybrookHomePage goToHome(){
         return header.goToHome();
     }
 

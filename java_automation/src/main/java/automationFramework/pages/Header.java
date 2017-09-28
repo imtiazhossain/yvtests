@@ -32,10 +32,10 @@ public class Header extends YouvisitBaseElement {
         super(driver, instance);
     }
 
-    public HomePage goToHome(){
+    public StonybrookHomePage goToHome(){
         logo.click();
         addWait(Wait.SHORT_WAIT);
-        return getPageObjectsHandler().getHomePage();
+        return getPageObjectsHandler().getStonybrookHomePage();
     }
 
     public SearchResultPage search(String product){

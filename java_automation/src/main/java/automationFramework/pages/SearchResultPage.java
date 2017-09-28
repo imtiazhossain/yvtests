@@ -20,7 +20,7 @@ public class SearchResultPage extends YouvisitBasePage {
         super(driver, handler);
         header = getPageObjectsHandler().getHeaderPage();
         if(!this.isLoaded()){
-            throw new IllegalStateException("This is not HomePage");
+            throw new IllegalStateException("This is not StonybrookHomePage");
         }
     }
 

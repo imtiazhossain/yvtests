@@ -1,6 +1,6 @@
 package tests.single;
 
-import automationFramework.pages.StonybrookPage;
+import automationFramework.pages.StonybrookRegistrationPage;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
@@ -9,25 +9,29 @@ import tests.base.YouvisitBaseTest;
 import static org.testng.Assert.assertTrue;
 
 public class SubmittingRegistrationForm extends YouvisitBaseTest{
-    private StonybrookPage stonybrookPage;
+    private StonybrookRegistrationPage stonybrookRegistrationPage;
 
 
     @Severity(SeverityLevel.NORMAL)
     @Test
     public void submittingRegistrationForm() throws Exception {
-        stonybrookPage = pageObjectsHandler.getStonybrookPage();
-        stonybrookPage.navigate();
-        stonybrookPage.getPageLoadedLocator();
-        stonybrookPage.clickImA();
-        stonybrookPage.clickOptionProspectiveStudent();
-        stonybrookPage.clickOptionHighSchoolGraduate();
-        stonybrookPage.writeCompleteName("testing","testing");
-        stonybrookPage.writeEmail("testing182kmsy2Aakj@gmail.com");
-        stonybrookPage.selectEnrollmentYear("2017");
-        stonybrookPage.selectMajor("Computer Engineering");
-        stonybrookPage.selectGender("Male");
-        stonybrookPage.writeDateOfBirth("11/22/1993");
-        stonybrookPage.writePhone("+59892555555");
-        stonybrookPage.selectCountry("Uruguay");
+        stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
+        stonybrookRegistrationPage.navigate();
+        stonybrookRegistrationPage.getPageLoadedLocator();
+        stonybrookRegistrationPage.clickImA();
+        stonybrookRegistrationPage.clickOptionProspectiveStudent();
+        stonybrookRegistrationPage.clickOptionHighSchoolGraduate();
+        stonybrookRegistrationPage.writeCompleteName("testing","testing");
+        stonybrookRegistrationPage.writeEmail("testing182kmsy2Aakjwe@gmail.com");
+        stonybrookRegistrationPage.selectEnrollmentYear("2017");
+        stonybrookRegistrationPage.selectMajor("Computer Engineering");
+        stonybrookRegistrationPage.selectGender("Male");
+        stonybrookRegistrationPage.writeDateOfBirth("Sep 28, 1993");
+        stonybrookRegistrationPage.writePhone("+59892555555");
+        stonybrookRegistrationPage.selectCountry("Uruguay");
+        stonybrookRegistrationPage.submitForm();
+        assertTrue(stonybrookRegistrationPage.getConfirmationMessageDisplayed(),
+                "After submitting registration user was not shown the confirmation screen.");
+
     }
 }

@@ -9,7 +9,7 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
 
     private static YouvisitPageObjectsHandler instance = null;
 
-    private HomePage homePage;
+    private StonybrookHomePage stonybrookHomePage;
     private LoginPage loginPage;
     private MyAccountPage myAccountPage;
     private Header header;
@@ -17,7 +17,7 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
     private SearchResultPage searchResultPage;
     private ProductPage productpage;
     private CartPage cartpage;
-    private StonybrookPage stonybrookPage;
+    private StonybrookRegistrationPage stonybrookRegistrationPage;
 
     protected YouvisitPageObjectsHandler(WebDriver driver, Eyes eyes) {
         super(driver, eyes);
@@ -30,13 +30,13 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
         return instance;
     }
 
-    public HomePage getHomePage() {
-        if (homePage == null) {
-            homePage = new HomePage(driver, instance);
-            PageFactory.initElements(driver, homePage);
-            homePage.setEyes(eyes);
+    public StonybrookHomePage getStonybrookHomePage() {
+        if (stonybrookHomePage == null) {
+            stonybrookHomePage = new StonybrookHomePage(driver, instance);
+            PageFactory.initElements(driver, stonybrookHomePage);
+            stonybrookHomePage.setEyes(eyes);
         }
-        return homePage;
+        return stonybrookHomePage;
     }
     
     public LoginPage getLoginPage() {
@@ -96,12 +96,12 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
         return cart;
     }
 
-    public StonybrookPage getStonybrookPage(){
-        if (stonybrookPage == null){
-            stonybrookPage = new StonybrookPage(driver, instance);
-            PageFactory.initElements(driver, stonybrookPage);
+    public StonybrookRegistrationPage getStonybrookRegistrationPage(){
+        if (stonybrookRegistrationPage == null){
+            stonybrookRegistrationPage = new StonybrookRegistrationPage(driver, instance);
+            PageFactory.initElements(driver, stonybrookRegistrationPage);
         }
-        return stonybrookPage;
+        return stonybrookRegistrationPage;
     }
 
     public static void setInstanceNull() {
