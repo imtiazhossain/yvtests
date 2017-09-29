@@ -25,6 +25,8 @@ public class StonybrookHomePage extends YouvisitBasePage {
     WebElement avatar;
     @FindBy(how = How.CSS, using = ".activationZone")
     WebElement tourNamesActivation;
+    @FindBy(how = How.CSS, using = ".stopslist")
+    WebElement stopsList;
 
 
     public void navigate(){
@@ -47,5 +49,9 @@ public class StonybrookHomePage extends YouvisitBasePage {
     public void hoverOverTourNamesActivation(){
         Actions builder = new Actions(driver);
         builder.moveToElement(tourNamesActivation).build().perform();
+    }
+
+    public boolean stopsListIsDisplayed() {
+        return stopsList.isDisplayed();
     }
 }

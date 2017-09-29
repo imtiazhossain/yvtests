@@ -19,6 +19,7 @@ public class VerifyScenePanelOpensOnHover extends YouvisitBaseTest{
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.navigate();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
-        assertTrue(stonybrookHomePage.navigateForwardButtonIsDisplayed(), "Navigate forward button was not detected.");
+        stonybrookHomePage.hoverOverTourNamesActivation();
+        assertTrue(stonybrookHomePage.stopsListIsDisplayed(), "Navigate forward button was not detected.");
     }
 }
