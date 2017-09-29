@@ -13,7 +13,7 @@ public class SubmittingRegistrationForm extends YouvisitBaseTest{
 
 
     @Severity(SeverityLevel.NORMAL)
-    @Test
+    //@Test
     public void submittingRegistrationForm() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.navigate();

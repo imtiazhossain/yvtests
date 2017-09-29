@@ -14,7 +14,7 @@ public class VerifyingThatTourLoads extends YouvisitBaseTest{
     private StonybrookHomePage stonybrookHomePage;
 
     @Severity(SeverityLevel.NORMAL)
-    @Test
+    //@Test
     public void verifyingThatTourLoads() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.navigate();

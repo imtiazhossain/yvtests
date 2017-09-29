@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.concurrent.TimeUnit;
+
 public class StonybrookRegistrationPage extends YouvisitBasePage {
     public StonybrookRegistrationPage(WebDriver driver, YouvisitPageObjectsHandler handler) {
         super(driver, handler);
@@ -124,7 +126,16 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
         return pageObjectsHandler.getStonybrookHomePage();
     }
     public StonybrookHomePage clickExitButton(){
+        wait.until(ExpectedConditions.visibilityOf(exitButton));
         exitButton.click();
         return pageObjectsHandler.getStonybrookHomePage();
+    }
+
+
+    public boolean assertPopupIsShown() {
+       if(exitButton.isDisplayed()){
+           return true;
+       }
+        return false;
     }
 }
