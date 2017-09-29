@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import automationFramework.pages.base.YouvisitBasePage;
 import automationFramework.handlers.YouvisitPageObjectsHandler;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -35,6 +36,13 @@ public class StonybrookHomePage extends YouvisitBasePage {
 
     @FindBy(how = How.ID, using = "action_action3")
     WebElement applyOnlineButton;
+
+    @FindBy(how = How.CSS, using = ".activationZone")
+    WebElement tourNamesActivation;
+    @FindBy(how = How.CSS, using = ".stopslist")
+    WebElement stopsList;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"avatar\"]")
+    WebElement avatar;
 
     public void navigate(){
         driver.get("http://qa.dev.youvisit.com/tour/stonybrook");
@@ -89,8 +97,19 @@ public class StonybrookHomePage extends YouvisitBasePage {
         driver.close();
         changeFocusToLastTab();
     }
+    public void hoverOverTourNamesActivation(){
+        Actions builder = new Actions(driver);
+        builder.moveToElement(tourNamesActivation).build().perform();
+    }
+
+    public boolean stopsListIsDisplayed() {
+        return stopsList.isDisplayed();
+    }
 
     public void clickOnThirdButton() {
         applyOnlineButton.click();
+    }
+    public boolean avatarIsDisplayed(){
+        return avatar.isDisplayed();
     }
 }
