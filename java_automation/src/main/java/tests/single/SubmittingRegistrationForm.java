@@ -13,7 +13,7 @@ public class SubmittingRegistrationForm extends YouvisitBaseTest{
 
 
     @Severity(SeverityLevel.NORMAL)
-    //@Test
+    @Test
     public void submittingRegistrationForm() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.navigate();
@@ -22,7 +22,7 @@ public class SubmittingRegistrationForm extends YouvisitBaseTest{
         stonybrookRegistrationPage.clickOptionProspectiveStudent();
         stonybrookRegistrationPage.clickOptionHighSchoolGraduate();
         stonybrookRegistrationPage.writeCompleteName("testing","testing");
-        stonybrookRegistrationPage.writeEmail("testing182kmsy2Aakjwe@gmail.com");
+        stonybrookRegistrationPage.writeEmail("testingyv+" + Math.random() + "@gmail.com");
         stonybrookRegistrationPage.selectEnrollmentYear("2017");
         stonybrookRegistrationPage.selectMajor("Computer Engineering");
         stonybrookRegistrationPage.selectGender("Male");

@@ -18,7 +18,7 @@ public class VerifyThatActionButtonsShowAtTheTopOfThePage extends YouvisitBaseTe
     private StonybrookHomePage stonybrookHomePage;
 
     @Severity(SeverityLevel.NORMAL)
-    //@Test
+    @Test
     public void VerifyThatActionButtonsShowAtTheTopOfThePage() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.navigate();

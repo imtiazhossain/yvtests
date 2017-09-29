@@ -9,7 +9,7 @@ import tests.base.YouvisitBaseTest;
 
 import static org.testng.Assert.assertTrue;
 
-public class VerifyingThatTourLoads extends YouvisitBaseTest{
+public class VerifyScenePanelOpensOnHover extends YouvisitBaseTest{
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookHomePage stonybrookHomePage;
 
@@ -19,6 +19,7 @@ public class VerifyingThatTourLoads extends YouvisitBaseTest{
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.navigate();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
-        assertTrue(stonybrookHomePage.navigateForwardButtonIsDisplayed(), "Navigate forward button was not detected.");
+        stonybrookHomePage.hoverOverTourNamesActivation();
+        assertTrue(stonybrookHomePage.stopsListIsDisplayed(), "Navigate forward button was not detected.");
     }
 }
