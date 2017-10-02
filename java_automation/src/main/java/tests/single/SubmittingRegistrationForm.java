@@ -26,7 +26,7 @@ public class SubmittingRegistrationForm extends YouvisitBaseTest{
         stonybrookRegistrationPage.selectEnrollmentYear("2017");
         stonybrookRegistrationPage.selectMajor("Computer Engineering");
         stonybrookRegistrationPage.selectGender("Male");
-        stonybrookRegistrationPage.writeDateOfBirth("Sep 28, 1993");
+        stonybrookRegistrationPage.selectDateOfBirth("1996", "Nov", "22");
         stonybrookRegistrationPage.writePhone("+59892555555");
         stonybrookRegistrationPage.selectCountry("Uruguay");
         stonybrookRegistrationPage.submitForm();

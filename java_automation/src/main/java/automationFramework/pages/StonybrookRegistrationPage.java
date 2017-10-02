@@ -26,7 +26,6 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     @FindBy(how = How.XPATH, using = "//*[@item-value=\"hs_grad\"]") //item-value="hs_grad"
     WebElement optionHighSchoolGraduate;
 
-    //alumni
     @FindBy(how = How.XPATH, using = "//*[@item-value=\"alumni\"]") //item-value="hs_grad"
     WebElement optionAlumni;
 
@@ -44,6 +43,12 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     WebElement majorSelect;
     @FindBy(how = How.XPATH, using = "//*[@title=\"Date of Birth *\"]/input")
     WebElement dateOfBirth;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"ui-datepicker-div\"]/div/div/select[2]")
+    WebElement birthYearSelect;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"ui-datepicker-div\"]/div/div/select[1]")
+    WebElement birthMonthSelect;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"ui-datepicker-div\"]/table/tbody")
+    WebElement birthAllDays;
     @FindBy(how = How.XPATH, using = "//*[@id=\"registration-phone\"]/div[1]/input")
     WebElement phone;
     @FindBy(how = How.XPATH, using = "//*[@id=\"registration-country\"]/div[1]/select")
@@ -54,6 +59,8 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     WebElement confirmationDone;
     @FindBy(how = How.XPATH, using = "//*[@alt=\"exit\"]")
     WebElement exitButton;
+
+    ////*[@id="ui-datepicker-div"]/div/div/select[2]
 
     public void navigate(){
         driver.get("http://qa.dev.youvisit.com/tour/stonybrook");
@@ -102,7 +109,17 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     }
     public void writeDateOfBirth(String date){
         dateOfBirth.sendKeys(date);
-        dateOfBirth.sendKeys(Keys.RETURN);
+        dateOfBirth.sendKeys(Keys.RETURN); 
+    }
+    public void selectDateOfBirth(String year, String month, String day){
+        dateOfBirth.click();
+        birthAllDays.findElement(By.xpath("//*[contains(text(), \"" + day + "\")]")).click();
+        birthYearSelect.click();
+        birthYearSelect.findElement(By.xpath("//*[contains(text(), \"" + year + "\")]")).click();
+        birthMonthSelect.click();
+        birthMonthSelect.findElement(By.xpath("//*[contains(text(), \"" + month + "\")]")).click();
+
+
     }
     public void writePhone(String phone){
         this.phone.sendKeys(phone);

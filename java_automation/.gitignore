@@ -9,3 +9,9 @@
 # Maven
 log/
 target/
+
+# Drivers
+chromedriver
+chromedriver.exe
+geckodriver
+geckodriver.exe
