@@ -39,10 +39,18 @@ public class StonybrookHomePage extends YouvisitBasePage {
 
     @FindBy(how = How.CSS, using = ".activationZone")
     WebElement tourNamesActivation;
+
     @FindBy(how = How.CSS, using = ".stopslist")
     WebElement stopsList;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"avatar\"]")
     WebElement avatar;
+
+    @FindBy(how = How.CSS, using = "#vr_button > div > svg")
+    WebElement vrButton;
+
+    @FindBy(how = How.ID, using = "close_button")
+    WebElement vrClosePanel;
 
     public void navigate(){
         driver.get("http://qa.dev.youvisit.com/tour/stonybrook");
@@ -112,4 +120,25 @@ public class StonybrookHomePage extends YouvisitBasePage {
     public boolean avatarIsDisplayed(){
         return avatar.isDisplayed();
     }
+
+    public void clickOnVRButton() {
+        vrButton.click();
+    }
+
+    public boolean checkIfVRpanelIsPresent() throws InterruptedException {
+        Thread.sleep(2000);
+        try {
+            if (vrClosePanel.isDisplayed()) {
+                return true;
+            }
+            return false;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+    public void closeVRpanel() {
+        vrClosePanel.click();
+    }
+
 }
