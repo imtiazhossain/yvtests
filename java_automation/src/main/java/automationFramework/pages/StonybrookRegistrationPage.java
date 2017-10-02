@@ -9,7 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class StonybrookRegistrationPage extends YouvisitBasePage {
@@ -59,6 +61,12 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     WebElement confirmationDone;
     @FindBy(how = How.XPATH, using = "//*[@alt=\"exit\"]")
     WebElement exitButton;
+    @FindBy(how = How.CLASS_NAME, using = "ui-datepicker-year")
+    WebElement yearSelect;
+    @FindBy(how = How.CLASS_NAME, using = "ui-datepicker-month")
+    WebElement monthSelect;
+    @FindBy(how = How.CLASS_NAME, using = "ui-state-default")
+    List<WebElement> datePicker;
 
     ////*[@id="ui-datepicker-div"]/div/div/select[2]
 
@@ -113,13 +121,15 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     }
     public void selectDateOfBirth(String year, String month, String day){
         dateOfBirth.click();
-        birthAllDays.findElement(By.xpath("//*[contains(text(), \"" + day + "\")]")).click();
-        birthYearSelect.click();
-        birthYearSelect.findElement(By.xpath("//*[contains(text(), \"" + year + "\")]")).click();
-        birthMonthSelect.click();
-        birthMonthSelect.findElement(By.xpath("//*[contains(text(), \"" + month + "\")]")).click();
-
-
+        Select yearAge = new Select(yearSelect);
+        yearAge.selectByValue(year);
+        Select monthAge = new Select(monthSelect);
+        monthAge.selectByVisibleText(month);
+        for(WebElement element : datePicker){
+            if(element.getText().contentEquals(day)){
+                element.click();
+            }
+        }
     }
     public void writePhone(String phone){
         this.phone.sendKeys(phone);
