@@ -9,12 +9,10 @@ import automationFramework.pages.StonybrookHomePage;
 public abstract class YouvisitBasePage extends BasePage {
 
     protected static YouvisitPageObjectsHandler pageObjectsHandler;
-    protected Header header;
 
     public YouvisitBasePage(WebDriver driver, YouvisitPageObjectsHandler handler) {
         super(driver);
         YouvisitBasePage.pageObjectsHandler = handler;
-        header = getPageObjectsHandler().getHeaderPage();
     }
 
     public YouvisitPageObjectsHandler getPageObjectsHandler() {
@@ -22,18 +20,6 @@ public abstract class YouvisitBasePage extends BasePage {
     }
     public void setPageObjectsHandler(YouvisitPageObjectsHandler pageObjectsHandler) {
         this.pageObjectsHandler = pageObjectsHandler;
-    }
-
-    public StonybrookHomePage goToHome(){
-        return header.goToHome();
-    }
-
-//    public LoginPage goToLogin(){
-//        return header.goToLogin();
-//    }
-
-    public SearchResultPage search(String item){
-        return header.search(item);
     }
 
     public abstract By getPageLoadedLocator();

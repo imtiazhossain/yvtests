@@ -10,11 +10,6 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
     private static YouvisitPageObjectsHandler instance = null;
 
     private StonybrookHomePage stonybrookHomePage;
-    private LoginPage loginPage;
-    private MyAccountPage myAccountPage;
-    private Header header;
-    private SearchResultPage searchResultPage;
-    private ProductPage productpage;
     private StonybrookRegistrationPage stonybrookRegistrationPage;
 
     protected YouvisitPageObjectsHandler(WebDriver driver, Eyes eyes) {
@@ -36,49 +31,6 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
         }
         return stonybrookHomePage;
     }
-    
-    public LoginPage getLoginPage() {
-        if (loginPage == null) {
-            loginPage = new LoginPage(driver, instance);
-            PageFactory.initElements(driver, loginPage);
-            loginPage.setEyes(eyes);
-        }
-        return loginPage;
-    }
-    
-    public MyAccountPage getMyAccountPage() {
-        if (myAccountPage == null) {
-            myAccountPage = new MyAccountPage(driver, instance);
-            PageFactory.initElements(driver, myAccountPage);
-            myAccountPage.setEyes(eyes);
-        }
-        return myAccountPage;
-    }
-    public ProductPage getProductPage(){
-        if (productpage == null) {
-            productpage = new ProductPage(driver, instance);
-            PageFactory.initElements(driver, productpage);
-            productpage.setEyes(eyes);
-        }
-        return productpage;
-    }
-    public SearchResultPage getSearchResultPage() {
-        if (searchResultPage == null) {
-            searchResultPage = new SearchResultPage(driver, instance);
-            PageFactory.initElements(driver, searchResultPage);
-            searchResultPage.setEyes(eyes);
-        }
-        return searchResultPage;
-    }
-
-    public Header getHeaderPage() {
-        if (header == null) {
-            header = new Header(driver, instance);
-            PageFactory.initElements(driver, header);
-        }
-        return header;
-    }
-
 
     public StonybrookRegistrationPage getStonybrookRegistrationPage(){
         if (stonybrookRegistrationPage == null){
