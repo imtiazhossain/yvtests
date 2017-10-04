@@ -11,6 +11,8 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
 
     private StonybrookHomePage stonybrookHomePage;
     private StonybrookRegistrationPage stonybrookRegistrationPage;
+    private StonybrookSharePage stonybrookSharePage;
+
 
     protected YouvisitPageObjectsHandler(WebDriver driver, Eyes eyes) {
         super(driver, eyes);
@@ -30,6 +32,14 @@ public class YouvisitPageObjectsHandler extends PageObjectsHandler {
             stonybrookHomePage.setEyes(eyes);
         }
         return stonybrookHomePage;
+    }
+    public StonybrookSharePage getStonybrookSharePage() {
+        if (stonybrookSharePage == null) {
+            stonybrookSharePage = new StonybrookSharePage(driver, instance);
+            PageFactory.initElements(driver, stonybrookSharePage);
+            stonybrookHomePage.setEyes(eyes);
+        }
+        return stonybrookSharePage;
     }
 
     public StonybrookRegistrationPage getStonybrookRegistrationPage(){

@@ -52,6 +52,12 @@ public class StonybrookHomePage extends YouvisitBasePage {
     @FindBy(how = How.ID, using = "close_button")
     WebElement vrClosePanel;
 
+    @FindBy(how = How.ID, using = "share_desktop_button")
+    WebElement shareDesktopButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"share_menu\"]/div[2]/div[1]/div")
+    WebElement shareEmailButton;
+
     public void navigate(){
         driver.get("http://qa.dev.youvisit.com/tour/stonybrook");
     }
@@ -140,5 +146,11 @@ public class StonybrookHomePage extends YouvisitBasePage {
     public void closeVRpanel() {
         vrClosePanel.click();
     }
-
+    public void clickShareDesktopButton(){
+        shareDesktopButton.click();
+    }
+    public StonybrookSharePage clickShareEmail(){
+        shareEmailButton.click();
+        return pageObjectsHandler.getStonybrookSharePage();
+    }
 }
