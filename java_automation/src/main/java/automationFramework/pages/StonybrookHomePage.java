@@ -71,7 +71,7 @@ public class StonybrookHomePage extends YouvisitBasePage {
     @FindBy(how = How.ID, using = "scene-description")
     WebElement sceneDescriptionDiv;
 
-    @FindBy(how = How.ID, using = "stop_12226")
+    @FindBy(how = How.ID, using = "stop_241")
     WebElement markerButton;
 
     public void navigate(){
