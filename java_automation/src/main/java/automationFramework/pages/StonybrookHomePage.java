@@ -1,5 +1,6 @@
 package automationFramework.pages;
 
+import com.applitools.eyes.Eyes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -83,6 +84,10 @@ public class StonybrookHomePage extends YouvisitBasePage {
 
     public boolean navigateForwardButtonIsDisplayed(){
         return navigateForwardButton.isDisplayed();
+    }
+
+    public void clickNavigateForward(){
+        navigateForwardButton.click();
     }
 
     public boolean checkIfTopButtonsArePresent() {
@@ -201,4 +206,5 @@ public class StonybrookHomePage extends YouvisitBasePage {
     public void clickMarkOnMap() {
         markerButton.click();
     }
+
 }
