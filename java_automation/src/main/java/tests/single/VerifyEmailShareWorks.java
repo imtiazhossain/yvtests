@@ -1,9 +1,7 @@
 package tests.single;
 
-import automationFramework.pages.GmailLoginPage;
-import automationFramework.pages.StonybrookHomePage;
-import automationFramework.pages.StonybrookRegistrationPage;
-import automationFramework.pages.StonybrookSharePage;
+import automationFramework.pages.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
@@ -36,7 +34,10 @@ public class VerifyEmailShareWorks extends YouvisitBaseTest{
         gmailLoginPage.writeEmail(recipiantEmail);
         gmailLoginPage.clickNextEmail();
         gmailLoginPage.writePassword("abstracta");
-        gmailLoginPage.clickNextPassword();
-
+        GmailInboxPage gmailInboxPage = gmailLoginPage.clickNextPassword();
+        Assert.assertTrue(gmailInboxPage.checkIfFirstMailIsFromYouVisit());
+        gmailInboxPage.clickOnYouVisitMail();
+        Assert.assertTrue(gmailInboxPage.isMessageTheSame("Testing test message"));
+        gmailInboxPage.deleteMail();
     }
 }

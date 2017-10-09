@@ -28,7 +28,7 @@ public class StonybrookSharePage extends YouvisitBasePage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"modalsContainer\"]/div/div/div/div/div[3]/input")
     WebElement recipientInput;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"modalsContainer\"]/div/div/div/div/div[4]/div/textarea")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"modalsContainer\"]/div/div/div/div/div[4]/div/textarea[2]")
     WebElement messageArea;
 
     @FindBy(how = How.ID, using = "undefined_button")
