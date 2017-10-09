@@ -114,7 +114,6 @@ public class BaseTest {
         } finally {
             eyes.abortIfNotClosed();
             driver.quit();
-
         }
     }
 }
