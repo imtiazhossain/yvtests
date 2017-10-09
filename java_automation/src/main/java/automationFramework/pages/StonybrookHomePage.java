@@ -58,6 +58,21 @@ public class StonybrookHomePage extends YouvisitBasePage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"share_menu\"]/div[2]/div[1]/div")
     WebElement shareEmailButton;
 
+    @FindBy(how = How.ID, using = "campusmap")
+    WebElement miniMapDiv;
+
+    @FindBy(how = How.CSS, using = "#mapFull_button")
+    WebElement expandMapButton;
+
+    @FindBy(how = How.ID, using = "campusmap")
+    WebElement campusMapDiv;
+
+    @FindBy(how = How.ID, using = "scene-description")
+    WebElement sceneDescriptionDiv;
+
+    @FindBy(how = How.ID, using = "stop_12226")
+    WebElement markerButton;
+
     public void navigate(){
         driver.get("http://qa.dev.youvisit.com/tour/stonybrook");
     }
@@ -152,5 +167,38 @@ public class StonybrookHomePage extends YouvisitBasePage {
     public StonybrookSharePage clickShareEmail(){
         shareEmailButton.click();
         return pageObjectsHandler.getStonybrookSharePage();
+    }
+
+    public boolean checkMiniMapIsPresent() {
+        return miniMapDiv.isDisplayed();
+    }
+
+    public int returnMapHeight() {
+        return miniMapDiv.getSize().getHeight();
+    }
+
+    public void hoverOnMiniMap() {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(miniMapDiv).build().perform();
+    }
+
+    public int returnMapWidth() {
+        return miniMapDiv.getSize().getWidth();
+    }
+
+    public void clickOnExpandMap() {
+        expandMapButton.click();
+    }
+
+    public boolean checkIfCampusMapIsPresent() {
+        return campusMapDiv.isDisplayed();
+    }
+
+    public String getSceneDescriptionText() {
+        return  sceneDescriptionDiv.getText();
+    }
+
+    public void clickMarkOnMap() {
+        markerButton.click();
     }
 }
