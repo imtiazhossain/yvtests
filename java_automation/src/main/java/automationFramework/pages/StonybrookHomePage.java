@@ -30,7 +30,7 @@ public class StonybrookHomePage extends YouvisitBasePage {
     @FindBy(how = How.CLASS_NAME, using = "actionButtons")
     WebElement actionButtonsDiv;
 
-    @FindBy(how = How.ID, using = "action_action1")
+    @FindBy(how = How.ID, using = "action_register")
     WebElement registerNowButton;
 
     @FindBy(how = How.ID, using = "action_action2")
