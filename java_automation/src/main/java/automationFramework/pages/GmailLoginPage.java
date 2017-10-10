@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class GmailLoginPage extends GmailBasePage {
     public GmailLoginPage(WebDriver driver, GmailPageObjectsHandler handler) {
@@ -44,6 +45,7 @@ public class GmailLoginPage extends GmailBasePage {
         passwordInput.sendKeys(password);
     }
     public GmailInboxPage clickNextPassword(){
+        wait.until(ExpectedConditions.elementToBeClickable(nextPassword));
         nextPassword.click();
         return pageObjectsHandler.getGmailInboxPage();
     }
