@@ -21,9 +21,7 @@ public class VerifyThatActionButtonsOpenLinksToaNewPage extends YouvisitBaseTest
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.waitSevenSeconds();
         stonybrookHomePage.clickOnFirstButton();
-        stonybrookHomePage.changeFocusToLastTab();
-        Assert.assertTrue(stonybrookHomePage.assertPageIsNotHomePage());
-        stonybrookHomePage.closeLastTab();
+        stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.clickOnSecondButton();
         stonybrookHomePage.changeFocusToLastTab();
         Assert.assertTrue(stonybrookHomePage.assertPageIsNotHomePage());
