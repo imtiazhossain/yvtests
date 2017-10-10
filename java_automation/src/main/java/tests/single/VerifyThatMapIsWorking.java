@@ -25,11 +25,11 @@ public class VerifyThatMapIsWorking extends YouvisitBaseTest{
             stonybrookHomePage.hoverOnMiniMap();
             int heightMapBig = stonybrookHomePage.returnMapHeight();
             int widthMapBig = stonybrookHomePage.returnMapWidth();
-            Assert.assertTrue(heightMapSmall<heightMapBig && widthMapSmall<widthMapBig);
+            Assert.assertTrue(heightMapSmall<heightMapBig && widthMapSmall<widthMapBig, "Map was same size on hover.");
             stonybrookHomePage.clickOnExpandMap();
             int heightMapMax = stonybrookHomePage.returnMapHeight();
             int widthMapMax = stonybrookHomePage.returnMapWidth();
-            Assert.assertTrue(heightMapBig<heightMapMax && widthMapBig<widthMapMax);
+            Assert.assertTrue(heightMapBig<heightMapMax && widthMapBig<widthMapMax, "Map was same size after clicking fullscreen");
             Assert.assertTrue(stonybrookHomePage.checkIfCampusMapIsPresent());
             stonybrookHomePage.clickMarkOnMap();
             String sceneDescriptionChanged = stonybrookHomePage.getSceneDescriptionText();
