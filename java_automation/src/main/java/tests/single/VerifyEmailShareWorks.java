@@ -35,7 +35,7 @@ public class VerifyEmailShareWorks extends YouvisitBaseTest{
         gmailLoginPage.clickNextEmail();
         gmailLoginPage.writePassword("abstracta");
         GmailInboxPage gmailInboxPage = gmailLoginPage.clickNextPassword();
-        Assert.assertTrue(gmailInboxPage.checkIfFirstMailIsFromYouVisit());
+        Assert.assertTrue(gmailInboxPage.checkIfFirstMailIsFromYouVisit(),"First email was not from youvisit.");
         gmailInboxPage.clickOnYouVisitMail();
         Assert.assertTrue(gmailInboxPage.isMessageTheSame("Testing test message"));
         gmailInboxPage.deleteMail();

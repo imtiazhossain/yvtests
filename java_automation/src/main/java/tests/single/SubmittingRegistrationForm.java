@@ -24,9 +24,10 @@ public class SubmittingRegistrationForm extends YouvisitBaseTest{
         stonybrookRegistrationPage.writeCompleteName("testing","testing");
         stonybrookRegistrationPage.writeEmail("testingyv+" + Math.random() + "@gmail.com");
         stonybrookRegistrationPage.selectEnrollmentYear("2017");
+        stonybrookRegistrationPage.writeAndSelectCurrentSchool("Dodgeville high school");
         stonybrookRegistrationPage.selectMajor("Computer Engineering");
         stonybrookRegistrationPage.selectGender("Male");
-        stonybrookRegistrationPage.selectDateOfBirth("1996", "Nov", "22");
+        stonybrookRegistrationPage.selectDateOfBirth("1996", "Nov", "3");
         stonybrookRegistrationPage.writePhone("+59892555555");
         stonybrookRegistrationPage.selectCountry("Uruguay");
         stonybrookRegistrationPage.submitForm();

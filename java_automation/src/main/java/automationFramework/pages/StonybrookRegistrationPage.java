@@ -39,6 +39,10 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     WebElement email;
     @FindBy(how = How.XPATH, using = "//*[@id=\"registration-gender\"]/div[1]/select")
     WebElement genderSelect;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"registration-school\"]/div[1]/input")
+    WebElement highschool;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"ui-id-1\"]/li/a[1]")
+    WebElement firstSchool;
     @FindBy(how = How.XPATH, using = "//*[@id=\"registration-enrollyear\"]/div[1]/select")
     WebElement enrollmentYearSelect;
     @FindBy(how = How.XPATH, using = "//*[@id=\"registration-major\"]/div[1]/select")
@@ -109,6 +113,10 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     public void selectEnrollmentYear(String year){
         enrollmentYearSelect.click();
         enrollmentYearSelect.findElement(By.xpath("//*[contains(text(), \"" + year + "\")]")).click();
+    }
+    public void writeAndSelectCurrentSchool(String school){
+        highschool.sendKeys(school);
+        firstSchool.click();
     }
 
     public void selectMajor(String major) {
