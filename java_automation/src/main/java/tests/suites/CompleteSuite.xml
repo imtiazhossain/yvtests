@@ -1,13 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Demo Flow" verbose="1" >
-    <!--<test name="Demo Flow firefox">-->
-        <!--<parameter name="browser2" value="Firefox"/>-->
-        <!--<classes>-->
-            <!--<class name="tests.single.SubmittingRegistrationForm" />-->
-            <!--<class name="tests.single.VerifyingThatTourLoads" />-->
-        <!--</classes>-->
-    <!--</test>-->
     <!--<test name="Demo Flow chrome">-->
         <!--<parameter name="browser2" value="chrome"/>-->
         <!--<parameter name="platform2" value="mac"/>-->
@@ -25,17 +18,17 @@
     <!--</test>-->
     <test name="Demo Flow safari">
         <parameter name="browser2" value="safari"/>
-        <parameter name="platform2" value="mac"/>
+        <parameter name="platform2" value="ios"/>
         <classes>
-            <class name="tests.single.SubmittingRegistrationForm" />
-            <class name="tests.single.VerifyEmailShareWorks" />
+            <!--<class name="tests.single.SubmittingRegistrationForm" />-->
+            <!--<class name="tests.single.VerifyEmailShareWorks" />-->
             <class name="tests.single.VerifyingThatTourLoads" />
             <class name="tests.single.VerifyingThatTourNavigates" />
             <class name="tests.single.VerifyScenePanelOpensOnHover" />
             <class name="tests.single.VerifyThatActionButtonsOpenLinksToaNewPage" />
             <class name="tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage" />
-            <class name="tests.single.VerifyThatMapIsWorking" />
-            <class name="tests.single.VerifyThatTheVRpanelOpens" />
+            <!--<class name="tests.single.VerifyThatMapIsWorking" />-->
+            <!--<class name="tests.single.VerifyThatTheVRpanelOpens" />-->
         </classes>
     </test>
 </suite>

@@ -166,7 +166,12 @@ public class BaseTest {
         }
         try {
             eyes.close();
-        } finally {
+        }
+        catch (com.applitools.eyes.NewTestException e){
+            System.out.println("New test baseline, please accept them.");
+//            System.out.println(e.getMessage());
+        }
+        finally {
             eyes.abortIfNotClosed();
             driver.quit();
         }

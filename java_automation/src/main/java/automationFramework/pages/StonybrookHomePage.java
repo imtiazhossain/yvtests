@@ -122,6 +122,11 @@ public class StonybrookHomePage extends YouvisitBasePage {
     }
 
     public void changeFocusToLastTab() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         for(String winHandle : driver.getWindowHandles()){
             driver.switchTo().window(winHandle);
         }
