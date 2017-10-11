@@ -170,7 +170,6 @@ public class StonybrookHomePage extends YouvisitBasePage {
     public void clickShareDesktopButton(){
         wait.until(ExpectedConditions.elementToBeClickable(shareDesktopButton));
         shareDesktopButton.click();
-        shareDesktopButton.click();
 //        shareDesktopButton.click();
 
     }

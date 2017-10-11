@@ -89,10 +89,20 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     }
     public void clickOptionProspectiveStudent(){
         wait.until(ExpectedConditions.elementToBeClickable(optionProspectiveStudent));
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         optionProspectiveStudent.click();
     }
     public void clickOptionHighSchoolGraduate(){
         wait.until(ExpectedConditions.elementToBeClickable(optionHighSchoolGraduate));
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         optionHighSchoolGraduate.click();
     }
     public void clickOptionAlumni(){
@@ -112,11 +122,7 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     }
     public void selectEnrollmentYear(String year){
         enrollmentYearSelect.click();
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        enrollmentYearSelect.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER);
         enrollmentYearSelect.findElement(By.xpath("//*[contains(text(), \"" + year + "\")]")).click();
     }
     public void writeAndSelectCurrentSchool(String school){
