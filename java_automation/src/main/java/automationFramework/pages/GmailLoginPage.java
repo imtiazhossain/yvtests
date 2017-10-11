@@ -42,6 +42,7 @@ public class GmailLoginPage extends GmailBasePage {
         nextEmail.click();
     }
     public void writePassword(String password){
+        wait.until(ExpectedConditions.visibilityOf(passwordInput));
         passwordInput.sendKeys(password);
     }
     public GmailInboxPage clickNextPassword(){

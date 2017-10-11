@@ -1,10 +1,14 @@
 package tests.base;
 
+import automationFramework.utils.AppiumServerJava;
 import automationFramework.utils.GetProperties;
 import automationFramework.utils.datatypes.BrowserType;
+import automationFramework.utils.datatypes.PlatformType;
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.Eyes;
 import com.applitools.eyes.MatchLevel;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -28,20 +33,38 @@ public class BaseTest {
     private static String environment = applyDefaultIfMissing(System.getProperty("environment"), "QA");
     protected static GetProperties properties = new GetProperties(environment);
     private static String browser = properties.getString("BROWSER").toUpperCase();
+    private static String platform = properties.getString("PLATFORM").toUpperCase();
     private static String appName = properties.getString("APP_NAME");
     private static String apiKey = properties.getString("API_KEY");
+    private static int port = properties.getInteger("APPIUM_PORT");
+    private AppiumServerJava appiumServer;
+
     private BatchInfo batch;
 
-    @Parameters({ "browser2" }) //Added to parametrize browser
+    @Parameters({ "browser2", "platform2" }) //Added to parametrize browser
     @BeforeMethod
-    public void setUp(Method method, @Optional("browser2") String browser2) throws Exception {
+    public void setUp(Method method, @Optional("browser2") String browser2, @Optional("platform2") String platform2) throws Exception {
         //BrowserType browserType = BrowserType.valueOf(browser.toUpperCase());
         BrowserType browserType = BrowserType.valueOf(browser.toUpperCase());
         try {
             browserType = BrowserType.valueOf(browser2.toUpperCase());
-        }
-        catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
 
+        }
+        PlatformType platformType = PlatformType.valueOf(platform.toUpperCase());
+        try {
+            platformType = PlatformType.valueOf(platform2.toUpperCase());
+        } catch (IllegalArgumentException e) {
+
+        }
+        if (platformType.equals(PlatformType.IOS) || platformType.equals(PlatformType.ANDROID)){
+            appiumServer=new AppiumServerJava();
+
+            if(!appiumServer.checkIfServerIsRunnning(port)) {
+                appiumServer.startServer();
+            } else {
+                System.out.println("Appium Server already running on Port - " + port);
+            }
         }
         DesiredCapabilities capabilities;
         String baseline = method.getName();
@@ -54,35 +77,60 @@ public class BaseTest {
         }
         batch = new BatchInfo(batchName);
         configureApplitoolsEyes();
-        switch (browserType) {
-            case FIREFOX:
-                capabilities = DesiredCapabilities.firefox();
-                driver = new FirefoxDriver(capabilities);
-                baseline += " Firefox";
+        switch (platformType){
+            case MAC:
+            case WINDOWS:
+            switch (browserType) {
+                case FIREFOX:
+                    capabilities = DesiredCapabilities.firefox();
+                    driver = new FirefoxDriver(capabilities);
+                    baseline += " Firefox";
+                    break;
+                case CHROME:
+                    capabilities = DesiredCapabilities.chrome();
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--disable-extensions");
+                    capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                    driver = new ChromeDriver(capabilities);
+                    baseline += " Chrome";
+                    break;
+                case IE:
+                    capabilities = DesiredCapabilities.internetExplorer();
+                    capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+                    capabilities.setJavascriptEnabled(true);
+                    capabilities.setCapability("requireWindowFocus", false);
+                    capabilities.setCapability("enablePersistentHover", false);
+                    capabilities.setCapability("ignoreProtectedModeSettings", true);
+                    capabilities.setCapability(InternetExplorerDriver.ENABLE_ELEMENT_CACHE_CLEANUP, true);
+                    capabilities.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
+                    driver = new InternetExplorerDriver(capabilities);
+                    baseline += " Internet Explorer";
+                    break;
+                case SAFARI:
+                    capabilities = DesiredCapabilities.safari();
+                    driver = new SafariDriver(capabilities);
+                    baseline += " Safari";
+                    break;
+                default:
+                    capabilities = DesiredCapabilities.firefox();
+                    driver = new FirefoxDriver(capabilities);
+            }
+            break;
+            case IOS:
+                capabilities=new DesiredCapabilities();
+                capabilities.setCapability("platformName", "iOS");
+                //For real device this is required
+                //capabilities.setCapability("udid", "0d6503b781436c1ffe74629881f31700ce467c6a");
+                capabilities.setCapability("deviceName", "iPad Air");
+                capabilities.setCapability("automationName", "XCUITest");
+                capabilities.setCapability("platformVersion", "10.3");
+
+                capabilities.setCapability("browserName", browserType);
+                driver = new IOSDriver(capabilities);
                 break;
-            case CHROME:
-                capabilities = DesiredCapabilities.chrome();
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--disable-extensions");
-                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-                driver = new ChromeDriver(capabilities);
-                baseline += " Chrome";
-                break;
-            case IE:
-                capabilities = DesiredCapabilities.internetExplorer();
-                capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-                capabilities.setJavascriptEnabled(true);
-                capabilities.setCapability("requireWindowFocus", false);
-                capabilities.setCapability("enablePersistentHover", false);
-                capabilities.setCapability("ignoreProtectedModeSettings", true);
-                capabilities.setCapability(InternetExplorerDriver.ENABLE_ELEMENT_CACHE_CLEANUP, true);
-                capabilities.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
-                driver = new InternetExplorerDriver(capabilities);
-                baseline += " Internet Explorer";
-                break;
-            default:
-                capabilities = DesiredCapabilities.firefox();
-                driver = new FirefoxDriver(capabilities);
+            case ANDROID:
+                //driver = new AppiumDriver();
+            break;
         }
         try {
             driver.manage().window().maximize();
@@ -109,6 +157,13 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() throws Exception {
+        try {
+            if (appiumServer.checkIfServerIsRunnning(port))
+                appiumServer.stopServer();
+        }
+        catch (NullPointerException e){
+
+        }
         try {
             eyes.close();
         } finally {

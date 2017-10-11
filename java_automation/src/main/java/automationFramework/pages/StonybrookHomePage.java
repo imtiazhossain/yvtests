@@ -168,9 +168,14 @@ public class StonybrookHomePage extends YouvisitBasePage {
         vrClosePanel.click();
     }
     public void clickShareDesktopButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(shareDesktopButton));
         shareDesktopButton.click();
+        shareDesktopButton.click();
+//        shareDesktopButton.click();
+
     }
     public StonybrookSharePage clickShareEmail(){
+        wait.until(ExpectedConditions.visibilityOf(shareEmailButton));
         shareEmailButton.click();
         return pageObjectsHandler.getStonybrookSharePage();
     }

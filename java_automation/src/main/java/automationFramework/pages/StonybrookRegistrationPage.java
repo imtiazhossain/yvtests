@@ -112,6 +112,11 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     }
     public void selectEnrollmentYear(String year){
         enrollmentYearSelect.click();
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         enrollmentYearSelect.findElement(By.xpath("//*[contains(text(), \"" + year + "\")]")).click();
     }
     public void writeAndSelectCurrentSchool(String school){
