@@ -17,7 +17,6 @@ public class VerifyingThatTourNavigates extends YouvisitBaseTest{
     @Test
     public void VerifyingThatTourNavigates() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
-        stonybrookRegistrationPage.navigate();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         eyes.checkWindow("Before navigation");
         stonybrookHomePage.clickNavigateForward();

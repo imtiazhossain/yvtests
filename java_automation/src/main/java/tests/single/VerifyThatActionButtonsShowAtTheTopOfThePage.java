@@ -21,7 +21,6 @@ public class VerifyThatActionButtonsShowAtTheTopOfThePage extends YouvisitBaseTe
     @Test
     public void VerifyThatActionButtonsShowAtTheTopOfThePage() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
-        stonybrookRegistrationPage.navigate();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.waitSevenSeconds();
         Assert.assertTrue(stonybrookHomePage.checkIfTopButtonsArePresent());

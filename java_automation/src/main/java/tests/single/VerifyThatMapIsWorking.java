@@ -16,7 +16,6 @@ public class VerifyThatMapIsWorking extends YouvisitBaseTest{
         @Test
         public void VerifyThatMapIsWorking(){
             stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
-            stonybrookRegistrationPage.navigate();
             stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
             String sceneDescription = stonybrookHomePage.getSceneDescriptionText();
             Assert.assertTrue(stonybrookHomePage.checkMiniMapIsPresent());

@@ -17,7 +17,6 @@ public class VerifyThatActionButtonsOpenLinksToaNewPage extends YouvisitBaseTest
     @Test
     public void VerifyThatActionButtonsOpenLinksToaNewPage() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
-        stonybrookRegistrationPage.navigate();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.waitSevenSeconds();
         stonybrookHomePage.clickOnFirstButton();

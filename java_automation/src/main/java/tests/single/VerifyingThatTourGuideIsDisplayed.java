@@ -17,7 +17,6 @@ public class VerifyingThatTourGuideIsDisplayed extends YouvisitBaseTest{
     @Test
     public void verifyingThatTourLoads() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
-        stonybrookRegistrationPage.navigate();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         assertTrue(stonybrookHomePage.avatarIsDisplayed(), "Avatar was not displayed on startup.");
     }

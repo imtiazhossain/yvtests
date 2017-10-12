@@ -16,5 +16,4 @@
             <class name="tests.single.VerifyThatTheVRpanelOpens" />
         </classes>
     </test>
-    
 </suite>

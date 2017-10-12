@@ -21,7 +21,6 @@ public class VerifyEmailShareWorks extends YouvisitBaseTest{
     @Test
     public void VerifyEmailShareWorks() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
-        stonybrookRegistrationPage.navigate();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.clickShareDesktopButton();
         stonybrookSharePage = stonybrookHomePage.clickShareEmail();

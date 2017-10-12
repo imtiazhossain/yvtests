@@ -17,7 +17,6 @@ public class VerifyThatTheVRpanelOpens extends YouvisitBaseTest{
     @Test
     public void VerifyThatTheVRpanelOpens() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
-        stonybrookRegistrationPage.navigate();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.clickOnVRButton();
         Assert.assertTrue(stonybrookHomePage.checkIfVRpanelIsPresent());

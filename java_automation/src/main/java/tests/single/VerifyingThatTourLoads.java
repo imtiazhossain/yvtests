@@ -17,7 +17,6 @@ public class VerifyingThatTourLoads extends YouvisitBaseTest{
     @Test
     public void verifyingThatTourLoads() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
-        stonybrookRegistrationPage.navigate();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         assertTrue(stonybrookHomePage.navigateForwardButtonIsDisplayed(), "Navigate forward button was not detected.");
     }
