@@ -1,7 +1,6 @@
 package automationFramework.pages;
 
-import automationFramework.handlers.YouvisitPageObjectsHandler;
-import automationFramework.pages.base.YouvisitBasePage;
+import automationFramework.pages.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,24 +11,23 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class StonybrookRegistrationPage extends YouvisitBasePage {
-    public StonybrookRegistrationPage(WebDriver driver, YouvisitPageObjectsHandler handler) {
-        super(driver, handler);
+public class StonybrookRegistrationPage extends BasePage {
+    public StonybrookRegistrationPage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(how = How.XPATH, using = "//*[@title=\"I am a *\"]")
     WebElement imA;
 
     @FindBy(how = How.XPATH, using = "//*[@item-value=\"prospective_student\"]") //item-value="prospective_student"
-    WebElement optionProspectiveStudent;
+            WebElement optionProspectiveStudent;
 
     @FindBy(how = How.XPATH, using = "//*[@item-value=\"hs_grad\"]") //item-value="hs_grad"
-    WebElement optionHighSchoolGraduate;
+            WebElement optionHighSchoolGraduate;
 
     @FindBy(how = How.XPATH, using = "//*[@item-value=\"alumni\"]") //item-value="hs_grad"
-    WebElement optionAlumni;
+            WebElement optionAlumni;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"registration-firstname\"]/div[1]/input")
     WebElement firstName;
@@ -72,22 +70,17 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
     @FindBy(how = How.CLASS_NAME, using = "ui-state-default")
     List<WebElement> datePicker;
 
-    ////*[@id="ui-datepicker-div"]/div/div/select[2]
-
-    public void navigate(){
-        driver.get("http://qa.dev.youvisit.com/tour/stonybrook");
-    }
-
     @Override
     public By getPageLoadedLocator() {
         return By.xpath("//title[contains(text(),'Experience Stony Brook in Virtual Reality')]");
     }
 
-    public void clickImA(){
+    public void clickImA() {
         wait.until(ExpectedConditions.elementToBeClickable(imA));
         imA.click();
     }
-    public void clickOptionProspectiveStudent(){
+
+    public void clickOptionProspectiveStudent() {
         wait.until(ExpectedConditions.elementToBeClickable(optionProspectiveStudent));
         try {
             Thread.sleep(500);
@@ -96,7 +89,8 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
         }
         optionProspectiveStudent.click();
     }
-    public void clickOptionHighSchoolGraduate(){
+
+    public void clickOptionHighSchoolGraduate() {
         wait.until(ExpectedConditions.elementToBeClickable(optionHighSchoolGraduate));
         try {
             Thread.sleep(500);
@@ -105,27 +99,33 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
         }
         optionHighSchoolGraduate.click();
     }
-    public void clickOptionAlumni(){
+
+    public void clickOptionAlumni() {
         wait.until(ExpectedConditions.elementToBeClickable(optionAlumni));
         optionAlumni.click();
     }
-    public void writeCompleteName(String first, String last){
+
+    public void writeCompleteName(String first, String last) {
         firstName.sendKeys(first);
         lastName.sendKeys(last);
     }
-    public void writeEmail(String email){
+
+    public void writeEmail(String email) {
         this.email.sendKeys(email);
     }
-    public void selectGender(String gender){
+
+    public void selectGender(String gender) {
         genderSelect.click();
         genderSelect.findElement(By.xpath("//*[contains(text(), \"" + gender + "\")]")).click();
     }
-    public void selectEnrollmentYear(String year){
+
+    public void selectEnrollmentYear(String year) {
         enrollmentYearSelect.click();
-        enrollmentYearSelect.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER);
+        enrollmentYearSelect.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
         enrollmentYearSelect.findElement(By.xpath("//*[contains(text(), \"" + year + "\")]")).click();
     }
-    public void writeAndSelectCurrentSchool(String school){
+
+    public void writeAndSelectCurrentSchool(String school) {
         highschool.sendKeys(school);
         firstSchool.click();
     }
@@ -134,32 +134,37 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
         majorSelect.click();
         majorSelect.findElement(By.xpath("//*[contains(text(), \"" + major + "\")]")).click();
     }
-    public void writeDateOfBirth(String date){
+
+    public void writeDateOfBirth(String date) {
         dateOfBirth.sendKeys(date);
-        dateOfBirth.sendKeys(Keys.RETURN); 
+        dateOfBirth.sendKeys(Keys.RETURN);
     }
-    public void selectDateOfBirth(String year, String month, String day){
+
+    public void selectDateOfBirth(String year, String month, String day) {
         dateOfBirth.click();
         Select yearAge = new Select(yearSelect);
         yearAge.selectByValue(year);
         Select monthAge = new Select(monthSelect);
         monthAge.selectByVisibleText(month);
-        for(WebElement element : datePicker){
-            if(element.getText().contentEquals(day)){
+        for (WebElement element : datePicker) {
+            if (element.getText().contentEquals(day)) {
                 element.click();
             }
         }
     }
-    public void writePhone(String phone){
+
+    public void writePhone(String phone) {
         this.phone.sendKeys(phone);
     }
-    public void selectCountry(String country){
+
+    public void selectCountry(String country) {
         countrySelect.click();
         countrySelect.findElement(By.xpath("//*[contains(text(), \"" + country + "\")]")).click();
         phone.click();
 
     }
-    public void submitForm(){
+
+    public void submitForm() {
         email.submit();
     }
 
@@ -167,11 +172,13 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
         wait.until(ExpectedConditions.visibilityOf(confirmationMessage));
         return confirmationMessage.isDisplayed();
     }
-    public StonybrookHomePage clickDoneConfirmation(){
+
+    public StonybrookHomePage clickDoneConfirmation() {
         confirmationDone.click();
         return pageObjectsHandler.getStonybrookHomePage();
     }
-    public StonybrookHomePage clickExitButton(){
+
+    public StonybrookHomePage clickExitButton() {
         wait.until(ExpectedConditions.visibilityOf(exitButton));
         exitButton.click();
         return pageObjectsHandler.getStonybrookHomePage();
@@ -179,9 +186,9 @@ public class StonybrookRegistrationPage extends YouvisitBasePage {
 
 
     public boolean assertPopupIsShown() {
-       if(exitButton.isDisplayed()){
-           return true;
-       }
+        if (exitButton.isDisplayed()) {
+            return true;
+        }
         return false;
     }
 }

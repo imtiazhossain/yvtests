@@ -5,11 +5,11 @@ import automationFramework.pages.StonybrookRegistrationPage;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.YouvisitBaseTest;
+import tests.base.BaseTest;
 
 import static org.testng.Assert.assertTrue;
 
-public class VerifyingThatTourNavigates extends YouvisitBaseTest{
+public class VerifyingThatTourNavigates extends BaseTest {
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookHomePage stonybrookHomePage;
 
@@ -18,8 +18,6 @@ public class VerifyingThatTourNavigates extends YouvisitBaseTest{
     public void VerifyingThatTourNavigates() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
-        eyes.checkWindow("Before navigation");
         stonybrookHomePage.clickNavigateForward();
-        eyes.checkWindow("After navigation");
     }
 }

@@ -2,14 +2,13 @@ package tests.single;
 
 import automationFramework.pages.StonybrookHomePage;
 import automationFramework.pages.StonybrookRegistrationPage;
-import automationFramework.pages.base.YouvisitBasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.YouvisitBaseTest;
+import tests.base.BaseTest;
 
-public class VerifyThatActionButtonsOpenLinksToaNewPage extends YouvisitBaseTest {
+public class VerifyThatActionButtonsOpenLinksToaNewPage extends BaseTest {
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookHomePage stonybrookHomePage;
 

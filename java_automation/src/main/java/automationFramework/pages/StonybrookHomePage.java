@@ -1,25 +1,22 @@
 package automationFramework.pages;
 
-import com.applitools.eyes.Eyes;
+import automationFramework.pages.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import automationFramework.pages.base.YouvisitBasePage;
-import automationFramework.handlers.YouvisitPageObjectsHandler;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class StonybrookHomePage extends YouvisitBasePage {
+public class StonybrookHomePage extends BasePage {
 
-    public StonybrookHomePage(WebDriver driver, YouvisitPageObjectsHandler handler) {
-        super(driver, handler);
-        if(!this.isLoaded()){
+    public StonybrookHomePage(WebDriver driver) {
+        super(driver);
+        if (!this.isLoaded()) {
             throw new IllegalStateException("This is not StonybrookHomePage");
         }
     }
@@ -75,19 +72,20 @@ public class StonybrookHomePage extends YouvisitBasePage {
     @FindBy(how = How.ID, using = "stop_241")
     WebElement markerButton;
 
-    public void navigate(){
+    public void navigate() {
         driver.get("http://qa.dev.youvisit.com/tour/stonybrook");
     }
+
     @Override
     public By getPageLoadedLocator() {
         return By.xpath("//title[contains(text(),'Experience Stony Brook in Virtual Reality')]");
     }
 
-    public boolean navigateForwardButtonIsDisplayed(){
+    public boolean navigateForwardButtonIsDisplayed() {
         return navigateForwardButton.isDisplayed();
     }
 
-    public void clickNavigateForward(){
+    public void clickNavigateForward() {
         navigateForwardButton.click();
     }
 
@@ -97,11 +95,12 @@ public class StonybrookHomePage extends YouvisitBasePage {
         int xcoord = buttonsDiv.getX();
         System.out.println(ycoord);
         System.out.println(xcoord);
-        if(ycoord!= 0) {
+        if (ycoord != 0) {
             return false;
         }
         return true;
     }
+
     public void waitSevenSeconds() throws InterruptedException {
         Thread.sleep(7000);
     }
@@ -111,7 +110,7 @@ public class StonybrookHomePage extends YouvisitBasePage {
     }
 
     public boolean assertPageIsNotHomePage() {
-        if(driver.getCurrentUrl().contentEquals("http://www.youvisit.com/tour/stonybrook")){
+        if (driver.getCurrentUrl().contentEquals("http://www.youvisit.com/tour/stonybrook")) {
             return false;
         }
         return true;
@@ -127,7 +126,7 @@ public class StonybrookHomePage extends YouvisitBasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        for(String winHandle : driver.getWindowHandles()){
+        for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
         driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
@@ -137,7 +136,8 @@ public class StonybrookHomePage extends YouvisitBasePage {
         driver.close();
         changeFocusToLastTab();
     }
-    public void hoverOverTourNamesActivation(){
+
+    public void hoverOverTourNamesActivation() {
         Actions builder = new Actions(driver);
         builder.moveToElement(tourNamesActivation).build().perform();
     }
@@ -149,7 +149,8 @@ public class StonybrookHomePage extends YouvisitBasePage {
     public void clickOnThirdButton() {
         applyOnlineButton.click();
     }
-    public boolean avatarIsDisplayed(){
+
+    public boolean avatarIsDisplayed() {
         return avatar.isDisplayed();
     }
 
@@ -164,21 +165,22 @@ public class StonybrookHomePage extends YouvisitBasePage {
                 return true;
             }
             return false;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
+
     public void closeVRpanel() {
         vrClosePanel.click();
     }
-    public void clickShareDesktopButton(){
+
+    public void clickShareDesktopButton() {
+
         wait.until(ExpectedConditions.elementToBeClickable(shareDesktopButton));
         shareDesktopButton.click();
-//        shareDesktopButton.click();
-
     }
-    public StonybrookSharePage clickShareEmail(){
+
+    public StonybrookSharePage clickShareEmail() {
         wait.until(ExpectedConditions.visibilityOf(shareEmailButton));
         shareEmailButton.click();
         return pageObjectsHandler.getStonybrookSharePage();
@@ -211,7 +213,7 @@ public class StonybrookHomePage extends YouvisitBasePage {
     }
 
     public String getSceneDescriptionText() {
-        return  sceneDescriptionDiv.getText();
+        return sceneDescriptionDiv.getText();
     }
 
     public void clickMarkOnMap() {

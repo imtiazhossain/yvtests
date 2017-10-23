@@ -4,16 +4,16 @@ import automationFramework.pages.StonybrookRegistrationPage;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.YouvisitBaseTest;
+import tests.base.BaseTest;
 
 import static org.testng.Assert.assertTrue;
 
-public class SubmittingRegistrationForm extends YouvisitBaseTest{
+public class SubmittingRegistrationForm extends BaseTest {
     private StonybrookRegistrationPage stonybrookRegistrationPage;
 
 
     @Severity(SeverityLevel.NORMAL)
-    @Test
+    @Test(groups = { "SMOKE"})
     public void submittingRegistrationForm() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.getPageLoadedLocator();

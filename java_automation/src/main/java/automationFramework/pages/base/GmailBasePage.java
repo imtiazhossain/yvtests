@@ -1,7 +1,6 @@
 package automationFramework.pages.base;
 
 import automationFramework.handlers.GmailPageObjectsHandler;
-import automationFramework.handlers.YouvisitPageObjectsHandler;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

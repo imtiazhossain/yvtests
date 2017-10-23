@@ -2,7 +2,6 @@ package automationFramework.handlers;
 
 import automationFramework.pages.GmailInboxPage;
 import automationFramework.pages.GmailLoginPage;
-import com.applitools.eyes.Eyes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,31 +12,36 @@ public class GmailPageObjectsHandler extends PageObjectsHandler {
     private GmailInboxPage gmailInboxPage;
     private GmailLoginPage gmailLoginPage;
 
-    protected GmailPageObjectsHandler(WebDriver driver, Eyes eyes) {
-        super(driver, eyes);
+    protected GmailPageObjectsHandler(WebDriver driver) {
+        super(driver);
     }
 
-    public static GmailPageObjectsHandler getInstance(WebDriver driver, Eyes eyes) {
+    public static GmailPageObjectsHandler getInstance(WebDriver driver) {
+
         if (instance == null) {
-            instance = new GmailPageObjectsHandler(driver, eyes);
+            instance = new GmailPageObjectsHandler(driver);
         }
+
         return instance;
     }
 
     public GmailInboxPage getGmailInboxPage() {
+
         if (gmailInboxPage == null) {
             gmailInboxPage = new GmailInboxPage(driver, instance);
             PageFactory.initElements(driver, gmailInboxPage);
-            gmailInboxPage.setEyes(eyes);
         }
+
         return gmailInboxPage;
     }
+
     public GmailLoginPage getGmailLoginPage() {
+
         if (gmailLoginPage == null) {
             gmailLoginPage = new GmailLoginPage(driver, instance);
             PageFactory.initElements(driver, gmailLoginPage);
-            gmailLoginPage.setEyes(eyes);
         }
+
         return gmailLoginPage;
     }
 
