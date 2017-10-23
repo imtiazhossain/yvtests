@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PageObjectsHandler {
 
-    protected static WebDriver driver = null;
-    private static PageObjectsHandler instance = null;
+    protected static WebDriver driver;
+    private static PageObjectsHandler instance;
 
     private StonybrookHomePage stonybrookHomePage;
     private StonybrookRegistrationPage stonybrookRegistrationPage;

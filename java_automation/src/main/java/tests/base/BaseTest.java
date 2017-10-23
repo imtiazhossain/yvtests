@@ -30,9 +30,9 @@ public class BaseTest {
     protected static GetProperties properties = new GetProperties(environment);
     private static String browser = properties.getString("BROWSER").toUpperCase();
     public static String platform = applyDefaultIfMissing(System.getProperty("platform"), properties.getString("PLATFORM").toUpperCase());
-    GetProperties platfotmProperties = new GetProperties(platform);
+    private GetProperties platfotmProperties = new GetProperties(platform);
     private static int port = properties.getInteger("APPIUM_PORT");
-    protected PageObjectsHandler pageObjectsHandler;
+    protected static PageObjectsHandler pageObjectsHandler;
 
     @BeforeMethod
     public void setUp() throws Exception {
@@ -80,7 +80,7 @@ public class BaseTest {
                     switch (browser.toUpperCase()) {
                         case "FIREFOX":
                             FirefoxOptions firefoxOptions = new FirefoxOptions();
-                            firefoxOptions.setCapability("marionette", true);
+                           // firefoxOptions.setCapability("marionette", true);
                             driver = new FirefoxDriver(firefoxOptions);
 
                             break;
@@ -109,8 +109,10 @@ public class BaseTest {
                         default:
 
                             firefoxOptions = new FirefoxOptions();
-                            firefoxOptions.setCapability("marionette", true);
+                            //firefoxOptions.setCapability("marionette", true);
                             driver = new FirefoxDriver(firefoxOptions);
+
+                            break;
                     }
                     break;
                 }

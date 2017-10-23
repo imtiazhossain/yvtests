@@ -21,7 +21,7 @@ public class GmailInboxPage extends GmailBasePage {
     @FindBy(how = How.CLASS_NAME, using = "gs")
     List<WebElement> mailBodyDiv;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\":5\"]/div[2]/div[1]/div/div[2]/div[3]/div/div")
+    @FindBy(how = How.XPATH, using = "//*[@id=':5']/div[2]/div[1]/div/div[2]/div[3]/div/div")
     WebElement deleteMailButton;
 
     @Override

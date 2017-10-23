@@ -67,7 +67,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/main/java/tests/suites/${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <groups>REGRESSION</groups>
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
             </plugin>

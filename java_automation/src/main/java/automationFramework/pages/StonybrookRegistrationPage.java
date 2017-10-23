@@ -17,7 +17,7 @@ public class StonybrookRegistrationPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(how = How.XPATH, using = "//*[@title=\"I am a *\"]")
+    @FindBy(how = How.ID, using = "registration-visitortype")
     WebElement imA;
 
     @FindBy(how = How.XPATH, using = "//*[@item-value=\"prospective_student\"]") //item-value="prospective_student"
@@ -45,7 +45,7 @@ public class StonybrookRegistrationPage extends BasePage {
     WebElement enrollmentYearSelect;
     @FindBy(how = How.XPATH, using = "//*[@id=\"registration-major\"]/div[1]/select")
     WebElement majorSelect;
-    @FindBy(how = How.XPATH, using = "//*[@title=\"Date of Birth *\"]/input")
+    @FindBy(how = How.XPATH, using = "//*[@title='Date of Birth']/input")
     WebElement dateOfBirth;
     @FindBy(how = How.XPATH, using = "//*[@id=\"ui-datepicker-div\"]/div/div/select[2]")
     WebElement birthYearSelect;
@@ -149,6 +149,7 @@ public class StonybrookRegistrationPage extends BasePage {
         for (WebElement element : datePicker) {
             if (element.getText().contentEquals(day)) {
                 element.click();
+                break;
             }
         }
     }

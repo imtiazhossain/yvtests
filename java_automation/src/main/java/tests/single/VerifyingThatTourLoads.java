@@ -2,6 +2,7 @@ package tests.single;
 
 import automationFramework.pages.StonybrookHomePage;
 import automationFramework.pages.StonybrookRegistrationPage;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
@@ -17,6 +18,7 @@ public class VerifyingThatTourLoads extends BaseTest {
     @Test(groups = { "REGRESSION"})
     public void verifyingThatTourLoads() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
+        //stonybrookRegistrationPage = PageFactory.initElements(driver, StonybrookRegistrationPage.class);
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         assertTrue(stonybrookHomePage.navigateForwardButtonIsDisplayed(), "Navigate forward button was not detected.");
     }
