@@ -15,7 +15,9 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.net.URL;
@@ -26,7 +28,7 @@ public class BaseTest {
 
     protected static WebDriver driver;
     private AppiumServerJava appiumServer;
-    private static String environment = applyDefaultIfMissing(System.getProperty("environment"), "QA");
+    private static String environment = applyDefaultIfMissing(System.getProperty("environment"), "PROD");
     protected static GetProperties properties = new GetProperties(environment);
     private static String browser = properties.getString("BROWSER").toUpperCase();
     public static String platform = applyDefaultIfMissing(System.getProperty("platform"), properties.getString("PLATFORM").toUpperCase());
@@ -47,8 +49,8 @@ public class BaseTest {
                     String browserVersion = applyDefaultIfMissing(System.getProperty("browser_version"), platfotmProperties.getString("BROWSER_VERSION"));
                     String os = applyDefaultIfMissing(System.getProperty("os"), platfotmProperties.getString("OS"));
                     String osVersion = applyDefaultIfMissing(System.getProperty("os_version"), platfotmProperties.getString("OS_VERSION"));
-                    String username = System.getenv("CLOUD_USERNAME");
-                    String password = System.getenv("CLOUD_PASSWORD");
+                    String username = "taherbaderkhan";//System.getenv("CLOUD_USERNAME");
+                    String password = "3n24P5pZsMZvVgfTce4u";//System.getenv("CLOUD_PASSWORD");
                     String url = "https://" + username + ":" + password + "@" + platfotmProperties.getString("CLOUD_PROVIDER");
 
                     DesiredCapabilities caps = new DesiredCapabilities();
