@@ -63,6 +63,7 @@ public class BaseTest {
                     caps.setCapability("os_version", osVersion);
                     caps.setCapability("browserstack.debug", "true");
                     caps.setCapability("resolution", "1280x1024");
+                    caps.setCapability("project", "IETests");
 
                     driver = new RemoteWebDriver(new URL(url), caps);
 
