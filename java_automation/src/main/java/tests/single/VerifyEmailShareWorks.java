@@ -29,7 +29,7 @@ public class VerifyEmailShareWorks extends BaseTest {
         stonybrookSharePage.writeMessage("Testing test message");
         gmailLoginPage = stonybrookSharePage.clickSend();
         assertTrue(stonybrookSharePage.isVerificationDisplayed(), "No success text is shown.");
-        gmailLoginPage.navigate();
+       /* gmailLoginPage.navigate();
         gmailLoginPage.writeEmail(recipientEmail);
         gmailLoginPage.clickNextEmail();
         gmailLoginPage.writePassword("abstracta");
@@ -37,6 +37,6 @@ public class VerifyEmailShareWorks extends BaseTest {
         Assert.assertTrue(gmailInboxPage.checkIfFirstMailIsFromYouVisit(),"First email was not from youvisit.");
         gmailInboxPage.clickOnYouVisitMail();
         Assert.assertTrue(gmailInboxPage.isMessageTheSame("Testing test message"));
-        gmailInboxPage.deleteMail();
+        gmailInboxPage.deleteMail();*/
     }
 }

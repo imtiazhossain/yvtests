@@ -3,6 +3,7 @@ package automationFramework.handlers;
 import automationFramework.pages.StonybrookHomePage;
 import automationFramework.pages.StonybrookRegistrationPage;
 import automationFramework.pages.StonybrookSharePage;
+import automationFramework.utils.GetProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -14,6 +15,7 @@ public class PageObjectsHandler {
     private StonybrookHomePage stonybrookHomePage;
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookSharePage stonybrookSharePage;
+    protected GetProperties entrypointProperties = new GetProperties("ENTRYPOINT");
 
     protected PageObjectsHandler(WebDriver driver) {
         this.driver = driver;
@@ -49,6 +51,9 @@ public class PageObjectsHandler {
 
         if (stonybrookRegistrationPage == null) {
             stonybrookRegistrationPage = new StonybrookRegistrationPage(driver);
+            String url = driver.getCurrentUrl();
+            String newurl = url+ entrypointProperties.getString("STONYBROOK");
+            driver.get(newurl);
             PageFactory.initElements(driver, stonybrookRegistrationPage);
         }
 

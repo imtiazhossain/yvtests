@@ -60,7 +60,10 @@ public class StonybrookHomePage extends BasePage {
     @FindBy(how = How.ID, using = "campusmap")
     WebElement miniMapDiv;
 
-    @FindBy(how = How.CSS, using = "#mapFull_button")
+    //@FindBy(how = How.CSS, using = "#mapFull_button")
+    //WebElement expandMapButton;
+
+    @FindBy(how = How.ID, using = "mapFull_button")
     WebElement expandMapButton;
 
     @FindBy(how = How.ID, using = "campusmap")
@@ -69,7 +72,7 @@ public class StonybrookHomePage extends BasePage {
     @FindBy(how = How.ID, using = "scene-description")
     WebElement sceneDescriptionDiv;
 
-    @FindBy(how = How.ID, using = "stop_241")
+    @FindBy(how = How.ID, using = "stop_239")
     WebElement markerButton;
 
     public void navigate() {
@@ -140,6 +143,8 @@ public class StonybrookHomePage extends BasePage {
     public void hoverOverTourNamesActivation() {
         Actions builder = new Actions(driver);
         builder.moveToElement(tourNamesActivation).build().perform();
+        // JavascriptExecutor js = (JavascriptExecutor) driver;
+        //js.executeScript("arguments[0].onmouseover()", tourNamesActivation);
     }
 
     public boolean stopsListIsDisplayed() {
@@ -191,12 +196,16 @@ public class StonybrookHomePage extends BasePage {
     }
 
     public int returnMapHeight() {
+        wait.until(ExpectedConditions.visibilityOf(miniMapDiv));
         return miniMapDiv.getSize().getHeight();
     }
 
     public void hoverOnMiniMap() {
         Actions actions = new Actions(driver);
         actions.moveToElement(miniMapDiv).build().perform();
+
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        //js.executeScript("arguments[0].onmouseover()", miniMapDiv);
     }
 
     public int returnMapWidth() {

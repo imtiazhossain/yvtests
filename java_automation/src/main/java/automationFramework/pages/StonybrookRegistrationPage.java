@@ -55,7 +55,7 @@ public class StonybrookRegistrationPage extends BasePage {
     WebElement birthAllDays;
     @FindBy(how = How.XPATH, using = "//*[@id=\"registration-phone\"]/div[1]/input")
     WebElement phone;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"registration-country\"]/div[1]/select")
+    @FindBy(how = How.ID, using = "country")
     WebElement countrySelect;
     @FindBy(how = How.XPATH, using = "//*[contains(text(), \"Thanks for your submission!\")]")
     WebElement confirmationMessage;
@@ -159,8 +159,10 @@ public class StonybrookRegistrationPage extends BasePage {
     }
 
     public void selectCountry(String country) {
-        countrySelect.click();
-        countrySelect.findElement(By.xpath("//*[contains(text(), \"" + country + "\")]")).click();
+        // countrySelect.click();
+        //countrySelect.findElement(By.xpath("//*[contains(text(), '" + country + "')]")).click();
+        Select dropdown = new Select(countrySelect);
+        dropdown.selectByVisibleText(country);
         phone.click();
 
     }

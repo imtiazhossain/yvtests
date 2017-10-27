@@ -28,13 +28,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.jayway.restassured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>2.9.0</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
             <artifactId>allure-testng-adaptor</artifactId>
             <version>${allure.version}</version>
@@ -45,16 +38,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>5.0.4</version>
-        </dependency>
-        <dependency>
-            <groupId>ru.yandex.qatools.allure</groupId>
-            <artifactId>allure-maven-plugin</artifactId>
-            <version>2.6</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -62,14 +45,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>2.20.1</version>
                 <configuration>
+                    <testFailureIgnore>false</testFailureIgnore>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/main/java/tests/suites/${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <printSummary>true</printSummary>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -93,13 +78,14 @@
             </plugin>
         </plugins>
     </build>
+
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
             <plugin>
                 <groupId>ru.yandex.qatools.allure</groupId>
                 <artifactId>allure-maven-plugin</artifactId>
-                <version>2.6</version>
+                <version>2.5</version>
             </plugin>
         </plugins>
     </reporting>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1509071159909" stop="1509071234450" version="1.4.23" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : YouVisitAutomation</name>
+    <title>Default Suite : YouVisitAutomation</title>
+    <test-cases>
+        <test-case start="1509071173033" stop="1509071227176" status="passed">
+            <name>submittingRegistrationForm</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="1044@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1509071227227" stop="1509071230496" status="passed">
+            <name>submittingRegistrationForm2</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="1044@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

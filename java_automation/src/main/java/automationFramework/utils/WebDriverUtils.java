@@ -1,7 +1,6 @@
 package automationFramework.utils;
 
 import automationFramework.utils.datatypes.Wait;
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
@@ -72,14 +71,14 @@ public class WebDriverUtils {
     }
 
     public static void selectByText(WebElement comboBox, String text) {
-        if (StringUtils.isNotEmpty(text)) {
+        if (!text.isEmpty()) {
             Select select = new Select(comboBox);
             select.selectByVisibleText(text);
         }
     }
 
     public static void selectByValue(WebElement comboBox, String value) {
-        if (StringUtils.isNotEmpty(value)) {
+        if (!value.isEmpty()) {
             Select select = new Select(comboBox);
             select.selectByValue(value);
         }

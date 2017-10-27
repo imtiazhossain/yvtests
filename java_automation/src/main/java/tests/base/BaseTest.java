@@ -1,8 +1,6 @@
 package tests.base;
 
 import automationFramework.handlers.PageObjectsHandler;
-import automationFramework.pages.StonybrookHomePage;
-import automationFramework.utils.AppiumServerJava;
 import automationFramework.utils.GetProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,12 +9,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.safari.SafariOptions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import java.net.URL;
 
@@ -24,43 +22,46 @@ import static automationFramework.utils.Utils.applyDefaultIfMissing;
 
 public class BaseTest {
 
-    protected static WebDriver driver;
-    private AppiumServerJava appiumServer;
-    private static String environment = applyDefaultIfMissing(System.getProperty("environment"), "QA");
-    protected static GetProperties properties = new GetProperties(environment);
-    private static String browser = properties.getString("BROWSER").toUpperCase();
-    public static String platform = applyDefaultIfMissing(System.getProperty("platform"), properties.getString("PLATFORM").toUpperCase());
-    private GetProperties platfotmProperties = new GetProperties(platform);
-    private static int port = properties.getInteger("APPIUM_PORT");
-    protected static PageObjectsHandler pageObjectsHandler;
+    protected WebDriver driver;
+    private String environment = applyDefaultIfMissing(System.getProperty("environment"), "QA");
+    protected GetProperties environmentProperties = new GetProperties(environment);
+    public String platform = applyDefaultIfMissing(System.getProperty("platform"), environmentProperties.getString("PLATFORM").toUpperCase());
+    private GetProperties platformProperties = new GetProperties(platform);
+    private int port = environmentProperties.getInteger("APPIUM_PORT");
+    protected PageObjectsHandler pageObjectsHandler;
+    private String browser;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() throws Exception {
 
-        browser = applyDefaultIfMissing(System.getProperty("browser"), properties.getString("BROWSER"));
+        browser = applyDefaultIfMissing(System.getProperty("browser"), platformProperties.getString("BROWSER")).toUpperCase();
 
         switch (platform.toUpperCase()) {
             case "CLOUD":
-                if (platfotmProperties.getString("MOBILE_EXECUTION").toUpperCase().equalsIgnoreCase("Yes")) {
+                if (platformProperties.getString("MOBILE_EXECUTION").toUpperCase().equalsIgnoreCase("Yes")) {
                     //TODO: Implement Cloud Appium server execution
                 } else {
-                    String browserVersion = applyDefaultIfMissing(System.getProperty("browser_version"), platfotmProperties.getString("BROWSER_VERSION"));
-                    String os = applyDefaultIfMissing(System.getProperty("os"), platfotmProperties.getString("OS"));
-                    String osVersion = applyDefaultIfMissing(System.getProperty("os_version"), platfotmProperties.getString("OS_VERSION"));
-                    String username = System.getenv("CLOUD_USERNAME");
-                    String password = System.getenv("CLOUD_PASSWORD");
-                    String url = "https://" + username + ":" + password + "@" + platfotmProperties.getString("CLOUD_PROVIDER");
+                    String browserVersion = applyDefaultIfMissing(System.getProperty("browser_version"), platformProperties.getString("BROWSER_VERSION"));
+                    String os = applyDefaultIfMissing(System.getProperty("os"), platformProperties.getString("OS"));
+                    String osVersion = applyDefaultIfMissing(System.getProperty("os_version"), platformProperties.getString("OS_VERSION"));
+                    String username = "taherbaderkhan";//System.getenv("CLOUD_USERNAME");
+                    String password = "3n24P5pZsMZvVgfTce4u";//System.getenv("CLOUD_PASSWORD");
+                    String url = "https://" + username + ":" + password + "@" + platformProperties.getString("CLOUD_PROVIDER");
 
                     DesiredCapabilities caps = new DesiredCapabilities();
+                    if (browser.equalsIgnoreCase("firefox")) {
+                        caps.setCapability("browserstack.selenium_version", "2.53.1");
+                    }
                     caps.setCapability("name", "Build: " + System.getenv("BUILD_NUMBER"));
                     caps.setCapability("browser", browser);
 
-                    if (!browserVersion.contains("latest")) caps.setCapability("browser_version", browserVersion);
+                    if (!browserVersion.equalsIgnoreCase("latest"))
+                        caps.setCapability("browser_version", browserVersion);
 
                     caps.setCapability("os", os);
                     caps.setCapability("os_version", osVersion);
                     caps.setCapability("browserstack.debug", "true");
-                    caps.setCapability("resolution", "1280x1024");
+                    caps.setCapability("resolution", "1920x1080");
 
                     driver = new RemoteWebDriver(new URL(url), caps);
 
@@ -73,14 +74,12 @@ public class BaseTest {
 
                 break;
             case "LOCAL":
-                if (platfotmProperties.getString("MOBILE_EXECUTION").toUpperCase().equalsIgnoreCase("Yes")) {
-                    startAppiumServer();
+                if (platformProperties.getString("MOBILE_EXECUTION").toUpperCase().equalsIgnoreCase("Yes")) {
                     //TODO: Implement local Appium server execution
                 } else {
                     switch (browser.toUpperCase()) {
                         case "FIREFOX":
                             FirefoxOptions firefoxOptions = new FirefoxOptions();
-                           // firefoxOptions.setCapability("marionette", true);
                             driver = new FirefoxDriver(firefoxOptions);
 
                             break;
@@ -92,24 +91,18 @@ public class BaseTest {
                             break;
                         case "IE":
                             InternetExplorerOptions internetExplorerOptions = new InternetExplorerOptions();
-                            internetExplorerOptions.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-                            internetExplorerOptions.setCapability(CapabilityType.SUPPORTS_JAVASCRIPT, true);
-                            internetExplorerOptions.setCapability("requireWindowFocus", false);
-                            internetExplorerOptions.setCapability("enablePersistentHover", false);
-                            internetExplorerOptions.setCapability("ignoreProtectedModeSettings", true);
-                            internetExplorerOptions.setCapability(InternetExplorerDriver.ENABLE_ELEMENT_CACHE_CLEANUP, true);
-                            internetExplorerOptions.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
-                            driver = new InternetExplorerDriver(internetExplorerOptions);
+                            driver = new InternetExplorerDriver();
 
                             break;
                         case "SAFARI":
-                            driver = new SafariDriver();
+                            SafariOptions safariOptions = new SafariOptions();
+                            safariOptions.setUseTechnologyPreview(true);
+                            safariOptions.setUseCleanSession(true);
+                            driver = new SafariDriver(safariOptions);
 
                             break;
                         default:
-
                             firefoxOptions = new FirefoxOptions();
-                            //firefoxOptions.setCapability("marionette", true);
                             driver = new FirefoxDriver(firefoxOptions);
 
                             break;
@@ -117,28 +110,19 @@ public class BaseTest {
                     break;
                 }
         }
+
         pageObjectsHandler = PageObjectsHandler.getInstance(driver);
         driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         navigateToHome();
-
     }
 
     private void navigateToHome() {
-        String BASE_URL = properties.getString("BASE_URL");
+        String BASE_URL = environmentProperties.getString("BASE_URL");
         driver.get(BASE_URL);
     }
 
-    private void startAppiumServer() {
-        appiumServer = new AppiumServerJava();
-
-        if (!appiumServer.checkIfServerIsRunnning(port)) {
-            appiumServer.startServer();
-        } else {
-            System.out.println("Appium Server already running on Port - " + port);
-        }
-    }
-
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
 
         PageObjectsHandler.setInstanceNull();

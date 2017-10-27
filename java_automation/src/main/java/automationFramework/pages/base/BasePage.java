@@ -21,7 +21,6 @@ public abstract class BasePage {
     protected static GetProperties properties = new GetProperties(environment);
     protected static PageObjectsHandler pageObjectsHandler;
 
-
     public BasePage(WebDriver driver) {
         BasePage.driver = driver;
         addWait(Wait.SHORT_WAIT);

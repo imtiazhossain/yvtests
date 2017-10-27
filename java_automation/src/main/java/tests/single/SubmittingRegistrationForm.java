@@ -13,14 +13,14 @@ public class SubmittingRegistrationForm extends BaseTest {
 
 
     @Severity(SeverityLevel.NORMAL)
-    @Test(groups = { "SMOKE"})
+    @Test(groups = {"SMOKE"})
     public void submittingRegistrationForm() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.getPageLoadedLocator();
         stonybrookRegistrationPage.clickImA();
         stonybrookRegistrationPage.clickOptionProspectiveStudent();
         stonybrookRegistrationPage.clickOptionHighSchoolGraduate();
-        stonybrookRegistrationPage.writeCompleteName("testing","testing");
+        stonybrookRegistrationPage.writeCompleteName("testing", "testing");
         stonybrookRegistrationPage.writeEmail("testingyv+" + Math.random() + "@gmail.com");
         stonybrookRegistrationPage.selectEnrollmentYear("2017");
         stonybrookRegistrationPage.writeAndSelectCurrentSchool("Dodgeville high school");
@@ -28,7 +28,7 @@ public class SubmittingRegistrationForm extends BaseTest {
         stonybrookRegistrationPage.selectGender("Male");
         stonybrookRegistrationPage.selectDateOfBirth("1996", "Nov", "3");
         stonybrookRegistrationPage.writePhone("+59892555555");
-        stonybrookRegistrationPage.selectCountry("Uruguay");
+        stonybrookRegistrationPage.selectCountry("Canada");
         stonybrookRegistrationPage.submitForm();
         assertTrue(stonybrookRegistrationPage.getConfirmationMessageDisplayed(),
                 "After submitting registration user was not shown the confirmation screen.");

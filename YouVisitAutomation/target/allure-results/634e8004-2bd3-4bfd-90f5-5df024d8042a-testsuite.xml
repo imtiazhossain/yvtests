@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1508799457675" stop="1508799838655" version="1.4.23" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Complete Suite : Demo Flow chrome</name>
+    <title>Complete Suite : Demo Flow chrome</title>
+    <test-cases>
+        <test-case start="1508799483760" stop="1508799496599" status="passed">
+            <name>submittingRegistrationForm</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1508799522988" stop="1508799526969" status="passed">
+            <name>VerifyEmailShareWorks</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1508799556374" stop="1508799556710" status="passed">
+            <name>verifyingThatTourLoads</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1508799582663" stop="1508799583011" status="passed">
+            <name>verifyingThatTourLoads</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1508799609182" stop="1508799609700" status="passed">
+            <name>VerifyingThatTourNavigates</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1508799639865" stop="1508799640428" status="passed">
+            <name>verifyingThatTourLoads</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1508799671563" stop="1508799701617" status="passed">
+            <name>VerifyThatActionButtonsOpenLinksToaNewPage</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1508799741746" stop="1508799749092" status="passed">
+            <name>VerifyThatActionButtonsShowAtTheTopOfThePage</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1508799779853" stop="1508799792748" status="passed">
+            <name>VerifyThatMapIsWorking</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1508799828785" stop="1508799838562" status="passed">
+            <name>VerifyThatTheVRpanelOpens</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="37582@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
