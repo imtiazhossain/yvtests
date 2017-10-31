@@ -41,23 +41,23 @@ public class BaseTest {
                 if (platformProperties.getString("MOBILE_EXECUTION").toUpperCase().equalsIgnoreCase("Yes")) {
                     //TODO: Implement Cloud Appium server execution
                 } else {
-                    String browserVersion = applyDefaultIfMissing(System.getProperty("browser_version"), platformProperties.getString("BROWSER_VERSION"));
-                    String os = applyDefaultIfMissing(System.getProperty("os"), platformProperties.getString("OS"));
-                    String osVersion = applyDefaultIfMissing(System.getProperty("os_version"), platformProperties.getString("OS_VERSION"));
+                    String browserVersion = applyDefaultIfMissing(System.getProperty("browserVersion"), platformProperties.getString("BROWSER_VERSION"));
+                    String os = applyDefaultIfMissing(System.getProperty("os"), platformProperties.getString("OS")).toUpperCase();
+                    String osVersion = applyDefaultIfMissing(System.getProperty("osVersion"), platformProperties.getString("OS_VERSION"));
                     String username = "taherbaderkhan";//System.getenv("CLOUD_USERNAME");
                     String password = "3n24P5pZsMZvVgfTce4u";//System.getenv("CLOUD_PASSWORD");
                     String url = "https://" + username + ":" + password + "@" + platformProperties.getString("CLOUD_PROVIDER");
 
                     DesiredCapabilities caps = new DesiredCapabilities();
+                    caps.setCapability("browser_version", browserVersion);
+
                     if (browser.equalsIgnoreCase("firefox")) {
                         caps.setCapability("browserstack.selenium_version", "2.53.1");
+                        caps.setCapability("browser_version", "47.0.2");
                     }
+
                     caps.setCapability("name", "Build: " + System.getenv("BUILD_NUMBER"));
                     caps.setCapability("browser", browser);
-
-                    if (!browserVersion.equalsIgnoreCase("latest"))
-                        caps.setCapability("browser_version", browserVersion);
-
                     caps.setCapability("os", os);
                     caps.setCapability("os_version", osVersion);
                     caps.setCapability("browserstack.debug", "true");

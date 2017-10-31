@@ -1,6 +1,8 @@
 package tests.single;
 
 import automationFramework.pages.StonybrookRegistrationPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
@@ -13,14 +15,14 @@ public class SubmittingRegistrationForm extends BaseTest {
 
 
     @Severity(SeverityLevel.NORMAL)
-    @Test(groups = {"SMOKE"})
+    @Test(groups = { "SMOKE"})
     public void submittingRegistrationForm() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.getPageLoadedLocator();
         stonybrookRegistrationPage.clickImA();
         stonybrookRegistrationPage.clickOptionProspectiveStudent();
         stonybrookRegistrationPage.clickOptionHighSchoolGraduate();
-        stonybrookRegistrationPage.writeCompleteName("testing", "testing");
+        stonybrookRegistrationPage.writeCompleteName("testing","testing");
         stonybrookRegistrationPage.writeEmail("testingyv+" + Math.random() + "@gmail.com");
         stonybrookRegistrationPage.selectEnrollmentYear("2017");
         stonybrookRegistrationPage.writeAndSelectCurrentSchool("Dodgeville high school");
