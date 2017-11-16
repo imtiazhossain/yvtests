@@ -114,7 +114,7 @@ public class BaseTest {
 
         pageObjectsHandler = PageObjectsHandler.getInstance(driver);
         driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
         navigateToHome();
     }
 
