@@ -2,6 +2,7 @@ package tests.base;
 
 import automationFramework.handlers.PageObjectsHandler;
 import automationFramework.utils.GetProperties;
+import com.applitools.eyes.selenium.Eyes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
