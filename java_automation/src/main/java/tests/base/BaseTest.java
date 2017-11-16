@@ -2,7 +2,6 @@ package tests.base;
 
 import automationFramework.handlers.PageObjectsHandler;
 import automationFramework.utils.GetProperties;
-import com.applitools.eyes.selenium.Eyes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -24,7 +23,7 @@ import static automationFramework.utils.Utils.applyDefaultIfMissing;
 public class BaseTest {
 
     protected WebDriver driver;
-    private String environment = applyDefaultIfMissing(System.getProperty("environment"), "QA");
+    private String environment = applyDefaultIfMissing(System.getProperty("environment"), "DEV");
     protected GetProperties environmentProperties = new GetProperties(environment);
     public String platform = applyDefaultIfMissing(System.getProperty("platform"), environmentProperties.getString("PLATFORM").toUpperCase());
     private GetProperties platformProperties = new GetProperties(platform);
