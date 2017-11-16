@@ -66,9 +66,9 @@ public class PageObjectsHandler {
 
         if (swarovskiPage == null) {
             swarovskiPage = new SwarovskiPage(driver);
-//            String url = driver.getCurrentUrl();
-//            String newurl = url+ entrypointProperties.getString("SWAROVSKI");
-//            driver.get(newurl);
+            String url = driver.getCurrentUrl();
+            String newurl = url + entrypointProperties.getString("SWAROVSKI");
+            driver.get(newurl);
             PageFactory.initElements(driver, swarovskiPage);
         }
 

@@ -27,7 +27,7 @@ public class BaseTest {
     protected GetProperties environmentProperties = new GetProperties(environment);
     public String platform = applyDefaultIfMissing(System.getProperty("platform"), environmentProperties.getString("PLATFORM").toUpperCase());
     private GetProperties platformProperties = new GetProperties(platform);
-    private int port = environmentProperties.getInteger("APPIUM_PORT");
+//    private int port = environmentProperties.getInteger("APPIUM_PORT");
     protected PageObjectsHandler pageObjectsHandler;
     private String browser;
 

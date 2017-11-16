@@ -11,9 +11,6 @@ public class SwarovskiPage extends BasePage {
 
     public SwarovskiPage(WebDriver driver) {
         super(driver);
-        if (!this.isLoaded()) {
-            throw new IllegalStateException("This is not Swarovski");
-        }
     }
 
     @FindBy(how = How.ID, using = "skip_intro")
