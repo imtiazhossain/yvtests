@@ -22,8 +22,8 @@ public class RenaissancePage extends BasePage {
     @FindBy(how = How.ID, using = "video_0")
     WebElement introVideo;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div/div[2]")
-    WebElement buyButton;
+    @FindBy(how = How.ID, using = "play_button")
+    WebElement playButton;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div/div[1]/div[2]/div[5]/div[3]/div[2]")
     WebElement checkoutButton;
@@ -79,13 +79,12 @@ public class RenaissancePage extends BasePage {
         application.click();
     }
 
-    public void introVideo() throws InterruptedException {
+    public void introVideo() {
         introVideo.isDisplayed();
     }
 
-    public void clickBuy() throws InterruptedException {
-        buyButton.click();
-        Thread.sleep(500);
+    public void playButton() {
+        playButton.click();
     }
 
     public void clickCheckout() {

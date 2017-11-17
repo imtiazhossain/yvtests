@@ -55,6 +55,9 @@ public class StonybrookHomePage extends BasePage {
     @FindBy(how = How.ID, using = "share_desktop_button")
     WebElement shareDesktopButton;
 
+    @FindBy(how = How.ID, using = "share_menu")
+    public WebElement shareMenu;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"share_menu\"]/div[2]/div[1]/div")
     WebElement shareEmailButton;
 
@@ -193,7 +196,6 @@ public class StonybrookHomePage extends BasePage {
     }
 
     public void clickShareDesktopButton() {
-
         wait.until(ExpectedConditions.elementToBeClickable(shareDesktopButton));
         shareDesktopButton.click();
     }

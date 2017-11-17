@@ -3,6 +3,7 @@ package tests.single;
 import automationFramework.pages.*;
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.selenium.Eyes;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
@@ -29,7 +30,7 @@ public class VerifyEmailShareWorks extends BaseTest {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.clickShareDesktopButton();
-        eyes.checkWindow("Hello!");
+        eyes.checkRegion(stonybrookHomePage.shareMenu);
         stonybrookSharePage = stonybrookHomePage.clickShareEmail();
         stonybrookSharePage.writeName("Test");
         stonybrookSharePage.writeRecipient(recipientEmail);
