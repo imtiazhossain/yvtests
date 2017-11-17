@@ -24,8 +24,7 @@ public class VerifyEmailShareWorks extends BaseTest {
     public void VerifyEmailShareWorks() throws Exception {
         Eyes eyes = new Eyes();
         eyes.setApiKey("Ca0uy5Nkl2XEWFKtWMk99NZvuKuihv5aM100V102lmYhEBA110");
-        eyes.open(driver, "Hello World!", "My first Selenium Java test!",
-                new RectangleSize(800, 600));
+        eyes.open(driver, "YouVisit", Thread.currentThread().getStackTrace()[1].getMethodName());
 
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();

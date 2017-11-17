@@ -21,7 +21,6 @@ public class VerifyActNowPromptIsDisplayed extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 2)
     public void VerifyActNowPromptOptionsAreDisplayed() {
-
         Assert.assertTrue(actNowPromptPage.isRegisterNowButtonDisplayed(), "Act Now 'Register Now' button is Not displayed");
         Assert.assertTrue(actNowPromptPage.isScheduleButtonVisitDisplayed(), "Act Now 'Schedule Visit' button is Not displayed");
         Assert.assertTrue(actNowPromptPage.isApplyOnlineButtonDisplayed(), "Act Now 'Apply Online' button is Not displayed");

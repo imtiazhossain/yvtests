@@ -15,6 +15,7 @@ public class PageObjectsHandler {
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookSharePage stonybrookSharePage;
     private SwarovskiPage swarovskiPage;
+    private RenaissancePage renaissancePage;
     private ActNowPromptPage actNowPromptPage;
     protected GetProperties entrypointProperties = new GetProperties("ENTRYPOINT");
 
@@ -28,7 +29,6 @@ public class PageObjectsHandler {
         }
         return instance;
     }
-
 
     public StonybrookHomePage getStonybrookHomePage() {
         if (stonybrookHomePage == null) {
@@ -72,6 +72,19 @@ public class PageObjectsHandler {
         }
 
         return swarovskiPage;
+    }
+
+    public RenaissancePage getRenaissancePage() {
+
+        if (renaissancePage == null) {
+            renaissancePage = new RenaissancePage(driver);
+            String url = driver.getCurrentUrl();
+            String newurl = url + entrypointProperties.getString("RENAISSANCE");
+            driver.get(newurl);
+            PageFactory.initElements(driver, renaissancePage);
+        }
+
+        return renaissancePage;
     }
 
     public ActNowPromptPage getActNowPromptPage() {
