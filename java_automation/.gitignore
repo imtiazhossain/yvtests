@@ -8,7 +8,7 @@
 
 # Maven
 log/
-target/
+.target/
 
 # Drivers
 chromedriver

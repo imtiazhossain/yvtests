@@ -2,7 +2,9 @@ package automationFramework.utils;
 
 import automationFramework.utils.datatypes.Wait;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -23,6 +25,24 @@ public class WebDriverUtils {
 
         return oAux;
     }
+
+    public static boolean isElementPresent(WebDriver driver, WebElement element) {
+        boolean oAux = true;
+
+
+        (new WebDriverWait(driver, Constants.TIMEOUT))
+                .until(ExpectedConditions.elementToBeClickable(element));
+
+        try {
+            element.isDisplayed();
+
+        } catch (NoSuchElementException e) {
+            oAux = false;
+        }
+
+        return oAux;
+    }
+
 
     public static void waitTime(WebDriver driver, int time) {
         driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
@@ -101,5 +121,14 @@ public class WebDriverUtils {
     public static void sendText(WebElement element, String text) {
         clear(element);
         element.sendKeys(text);
+    }
+
+    public static void waitSeconds(int seconds) {
+
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

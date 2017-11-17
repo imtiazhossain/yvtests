@@ -1,6 +1,7 @@
 package automationFramework.pages;
 
 import automationFramework.pages.base.BasePage;
+import automationFramework.utils.WebDriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -75,9 +76,21 @@ public class StonybrookHomePage extends BasePage {
     @FindBy(how = How.ID, using = "stop_211")
     WebElement markerButton;
 
-    public void navigate() {
-        driver.get("http://qa.dev.youvisit.com/tour/stonybrook");
-    }
+    @FindBy(how = How.ID, using = "info_button")
+    WebElement infoBtn;
+
+    @FindBy(how = How.ID, using = "context_audio_button_button")
+    WebElement audioBtn;
+
+    @FindBy(how = How.ID, using = "language_button")
+    WebElement languageBtn;
+
+    @FindBy(how = How.ID, using = "supplemental_media_button")
+    WebElement supplementalMediaBtn;
+
+    @FindBy(how = How.ID, using = "fullscreen_button")
+    WebElement fullScreenBtn;
+
 
     @Override
     public By getPageLoadedLocator() {
@@ -229,4 +242,28 @@ public class StonybrookHomePage extends BasePage {
         markerButton.click();
     }
 
+    public boolean isInformationButtonDisplayed() {
+
+        return WebDriverUtils.isElementPresent(driver, infoBtn);//infoBtn.isDisplayed();
+    }
+
+    public boolean isAudioButtonDisplayed() {
+
+        return WebDriverUtils.isElementPresent(driver, audioBtn);//audioBtn.isDisplayed();
+    }
+
+    public boolean islanguageBtnDisplayed() {
+
+        return WebDriverUtils.isElementPresent(driver, languageBtn);//audioBtn.isDisplayed();
+    }
+
+    public boolean isSupplementalMediaButtonDisplayed() {
+
+        return WebDriverUtils.isElementPresent(driver, supplementalMediaBtn);//supplementalMediaBtn.isDisplayed();
+    }
+
+    public boolean isFullScreenButtonDisplayed() {
+
+        return WebDriverUtils.isElementPresent(driver, fullScreenBtn);//fullScreenBtn.isDisplayed();
+    }
 }
