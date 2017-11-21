@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 28, Failures: 1, Errors: 0, Skipped: 26, Time elapsed: 482.965 s <<< FAILURE! - in TestSuite
+setUp(tests.single.VerifyEmailShareWorks)  Time elapsed: 467.466 s  <<< FAILURE!
+org.openqa.selenium.ScriptTimeoutException: 
+Timed out waiting for page load.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'mac-208-52-145-10.browserstack.com', ip: '208.52.145.10', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.6', java.version: '1.8.0_51'
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+Caused by: org.openqa.selenium.TimeoutException: 
+Timed out waiting for page load.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'mac-208-52-145-10.browserstack.com', ip: '208.52.145.10', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.6', java.version: '1.8.0_51'
+Driver info: driver.version: unknown
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T15:28:36.4Z'
+System info: host: 'SlinkiAir', ip: '172.20.10.2', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.6', java.version: '1.8.0_20'
+Driver info: driver.version: unknown
+

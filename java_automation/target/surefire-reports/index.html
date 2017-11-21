@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Complete_Suite">
+              <span class="suite-name border-skipped">Complete Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Complete_Suite">
+                    <span>CompleteSuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Complete_Suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Complete_Suite">
+                    <span>2 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Complete_Suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Complete_Suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Complete_Suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Complete_Suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">10 methods,  9 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Complete_Suite" class="hide-methods skipped suite-Complete_Suite"> (hide)</a> <!-- hide-methods skipped suite-Complete_Suite -->
+                      <a href="#" panel-name="suite-Complete_Suite" class="show-methods skipped suite-Complete_Suite"> (show)</a> <!-- show-methods skipped suite-Complete_Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Complete_Suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.VerifyEmailShareWorks" hash-for-method="VerifyEmailShareWorks">VerifyEmailShareWorks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.VerifyThatActionButtonsOpenLinksToaNewPage" hash-for-method="VerifyThatActionButtonsOpenLinksToaNewPage">VerifyThatActionButtonsOpenLinksToaNewPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage" hash-for-method="VerifyThatActionButtonsShowAtTheTopOfThePage">VerifyThatActionButtonsShowAtTheTopOfThePage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.VerifyThatMapIsWorking" hash-for-method="VerifyThatMapIsWorking">VerifyThatMapIsWorking</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.VerifyThatTheVRpanelOpens" hash-for-method="VerifyThatTheVRpanelOpens">VerifyThatTheVRpanelOpens</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.VerifyingThatTourNavigates" hash-for-method="VerifyingThatTourNavigates">VerifyingThatTourNavigates</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.VerifyingThatTourLoads" hash-for-method="verifyingThatTourLoads">verifyingThatTourLoads</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.VerifyScenePanelOpensOnHover" hash-for-method="verifyingThatTourLoads">verifyingThatTourLoads</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.VerifyingThatTourGuideIsDisplayed" hash-for-method="verifyingThatTourLoads">verifyingThatTourLoads</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Complete_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Complete_Suite" class="hide-methods passed suite-Complete_Suite"> (hide)</a> <!-- hide-methods passed suite-Complete_Suite -->
+                      <a href="#" panel-name="suite-Complete_Suite" class="show-methods passed suite-Complete_Suite"> (show)</a> <!-- show-methods passed suite-Complete_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Complete_Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Complete_Suite" title="tests.single.SubmittingRegistrationForm" hash-for-method="submittingRegistrationForm">submittingRegistrationForm</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Complete_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Complete_Suite" class="panel Complete_Suite">
+          <div class="suite-Complete_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.single.VerifyEmailShareWorks</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyEmailShareWorks">
+                  </a> <!-- VerifyEmailShareWorks -->
+                  <span class="method-name">VerifyEmailShareWorks</span>
+                  <div class="stack-trace">org.openqa.selenium.ScriptTimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
+	at tests.base.BaseTest.navigateToHome(BaseTest.java:122)
+	at tests.base.BaseTest.setUp(BaseTest.java:117)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;SlinkiAir&apos;, ip: &apos;172.20.10.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_20&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-skipped -->
+          <div class="suite-Complete_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.single.VerifyingThatTourGuideIsDisplayed</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyingThatTourLoads">
+                  </a> <!-- verifyingThatTourLoads -->
+                  <span class="method-name">verifyingThatTourLoads</span>
+                  <div class="stack-trace">org.openqa.selenium.ScriptTimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
+	at tests.base.BaseTest.navigateToHome(BaseTest.java:122)
+	at tests.base.BaseTest.setUp(BaseTest.java:117)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;SlinkiAir&apos;, ip: &apos;172.20.10.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_20&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-skipped -->
+          <div class="suite-Complete_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.single.VerifyScenePanelOpensOnHover</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyingThatTourLoads">
+                  </a> <!-- verifyingThatTourLoads -->
+                  <span class="method-name">verifyingThatTourLoads</span>
+                  <div class="stack-trace">org.openqa.selenium.ScriptTimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
+	at tests.base.BaseTest.navigateToHome(BaseTest.java:122)
+	at tests.base.BaseTest.setUp(BaseTest.java:117)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;SlinkiAir&apos;, ip: &apos;172.20.10.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_20&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-skipped -->
+          <div class="suite-Complete_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.single.VerifyingThatTourLoads</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyingThatTourLoads">
+                  </a> <!-- verifyingThatTourLoads -->
+                  <span class="method-name">verifyingThatTourLoads</span>
+                  <div class="stack-trace">org.openqa.selenium.ScriptTimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
+	at tests.base.BaseTest.navigateToHome(BaseTest.java:122)
+	at tests.base.BaseTest.setUp(BaseTest.java:117)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;SlinkiAir&apos;, ip: &apos;172.20.10.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_20&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-skipped -->
+          <div class="suite-Complete_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.single.VerifyThatTheVRpanelOpens</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyThatTheVRpanelOpens">
+                  </a> <!-- VerifyThatTheVRpanelOpens -->
+                  <span class="method-name">VerifyThatTheVRpanelOpens</span>
+                  <div class="stack-trace">org.openqa.selenium.ScriptTimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
+	at tests.base.BaseTest.navigateToHome(BaseTest.java:122)
+	at tests.base.BaseTest.setUp(BaseTest.java:117)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;SlinkiAir&apos;, ip: &apos;172.20.10.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_20&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-skipped -->
+          <div class="suite-Complete_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.single.VerifyThatMapIsWorking</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyThatMapIsWorking">
+                  </a> <!-- VerifyThatMapIsWorking -->
+                  <span class="method-name">VerifyThatMapIsWorking</span>
+                  <div class="stack-trace">org.openqa.selenium.ScriptTimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
+	at tests.base.BaseTest.navigateToHome(BaseTest.java:122)
+	at tests.base.BaseTest.setUp(BaseTest.java:117)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;SlinkiAir&apos;, ip: &apos;172.20.10.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_20&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-skipped -->
+          <div class="suite-Complete_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.single.VerifyThatActionButtonsOpenLinksToaNewPage</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyThatActionButtonsOpenLinksToaNewPage">
+                  </a> <!-- VerifyThatActionButtonsOpenLinksToaNewPage -->
+                  <span class="method-name">VerifyThatActionButtonsOpenLinksToaNewPage</span>
+                  <div class="stack-trace">org.openqa.selenium.ScriptTimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
+	at tests.base.BaseTest.navigateToHome(BaseTest.java:122)
+	at tests.base.BaseTest.setUp(BaseTest.java:117)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;SlinkiAir&apos;, ip: &apos;172.20.10.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_20&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-skipped -->
+          <div class="suite-Complete_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyThatActionButtonsShowAtTheTopOfThePage">
+                  </a> <!-- VerifyThatActionButtonsShowAtTheTopOfThePage -->
+                  <span class="method-name">VerifyThatActionButtonsShowAtTheTopOfThePage</span>
+                  <div class="stack-trace">org.openqa.selenium.ScriptTimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
+	at tests.base.BaseTest.navigateToHome(BaseTest.java:122)
+	at tests.base.BaseTest.setUp(BaseTest.java:117)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;SlinkiAir&apos;, ip: &apos;172.20.10.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_20&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-skipped -->
+          <div class="suite-Complete_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.single.VerifyingThatTourNavigates</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyingThatTourNavigates">
+                  </a> <!-- VerifyingThatTourNavigates -->
+                  <span class="method-name">VerifyingThatTourNavigates</span>
+                  <div class="stack-trace">org.openqa.selenium.ScriptTimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
+	at tests.base.BaseTest.navigateToHome(BaseTest.java:122)
+	at tests.base.BaseTest.setUp(BaseTest.java:117)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;SlinkiAir&apos;, ip: &apos;172.20.10.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_20&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/3y/zz_w6_s56sl__vcrf3r5bhzr0000hr/T/anonymous4908091433739722278webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-skipped -->
+          <div class="suite-Complete_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.single.SubmittingRegistrationForm</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="submittingRegistrationForm">
+                  </a> <!-- submittingRegistrationForm -->
+                  <span class="method-name">submittingRegistrationForm</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Complete_Suite-class-passed -->
+        </div> <!-- panel Complete_Suite -->
+        <div panel-name="test-xml-Complete_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/Users/alexis/automatedtests/java_automation/src/main/java/tests/suites/CompleteSuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Complete Suite&quot;&gt;
+  &lt;test name=&quot;Demo Flow chrome&quot;&gt;
+    &lt;packages&gt;
+      &lt;package name=&quot;tests.single&quot;/&gt;
+    &lt;/packages&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.single.SubmittingRegistrationForm&quot;/&gt;
+      &lt;class name=&quot;tests.single.VerifyEmailShareWorks&quot;/&gt;
+      &lt;class name=&quot;tests.single.VerifyingThatTourGuideIsDisplayed&quot;/&gt;
+      &lt;class name=&quot;tests.single.VerifyingThatTourLoads&quot;/&gt;
+      &lt;class name=&quot;tests.single.VerifyingThatTourNavigates&quot;/&gt;
+      &lt;class name=&quot;tests.single.VerifyScenePanelOpensOnHover&quot;/&gt;
+      &lt;class name=&quot;tests.single.VerifyThatActionButtonsOpenLinksToaNewPage&quot;/&gt;
+      &lt;class name=&quot;tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage&quot;/&gt;
+      &lt;class name=&quot;tests.single.VerifyThatMapIsWorking&quot;/&gt;
+      &lt;class name=&quot;tests.single.VerifyThatTheVRpanelOpens&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Demo Flow chrome --&gt;
+&lt;/suite&gt; &lt;!-- Complete Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Complete_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Complete Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Demo Flow chrome (10 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Complete_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Complete Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">REGRESSION</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyingThatTourLoads</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">SMOKE</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">VerifyEmailShareWorks</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">submittingRegistrationForm</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyingThatTourLoads</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Complete_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Complete Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Complete_Suite');
+function tableData_Complete_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(10);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'submittingRegistrationForm')
+data.setCell(0, 2, 'tests.single.SubmittingRegistrationForm')
+data.setCell(0, 3, 52831);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyingThatTourLoads')
+data.setCell(1, 2, 'tests.single.VerifyingThatTourLoads')
+data.setCell(1, 3, 0);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'VerifyThatActionButtonsShowAtTheTopOfThePage')
+data.setCell(2, 2, 'tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage')
+data.setCell(2, 3, 0);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'VerifyingThatTourNavigates')
+data.setCell(3, 2, 'tests.single.VerifyingThatTourNavigates')
+data.setCell(3, 3, 0);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'VerifyEmailShareWorks')
+data.setCell(4, 2, 'tests.single.VerifyEmailShareWorks')
+data.setCell(4, 3, 0);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyingThatTourLoads')
+data.setCell(5, 2, 'tests.single.VerifyScenePanelOpensOnHover')
+data.setCell(5, 3, 0);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'VerifyThatMapIsWorking')
+data.setCell(6, 2, 'tests.single.VerifyThatMapIsWorking')
+data.setCell(6, 3, 0);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verifyingThatTourLoads')
+data.setCell(7, 2, 'tests.single.VerifyingThatTourGuideIsDisplayed')
+data.setCell(7, 3, 0);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'VerifyThatTheVRpanelOpens')
+data.setCell(8, 2, 'tests.single.VerifyThatTheVRpanelOpens')
+data.setCell(8, 3, 0);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'VerifyThatActionButtonsOpenLinksToaNewPage')
+data.setCell(9, 2, 'tests.single.VerifyThatActionButtonsOpenLinksToaNewPage')
+data.setCell(9, 3, 0);
+window.suiteTableData['Complete_Suite']= { tableData: data, tableDiv: 'times-div-Complete_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 52 seconds</span>
+              <div id="times-div-Complete_Suite">
+              </div> <!-- times-div-Complete_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Complete_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Complete Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Complete_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Complete_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.single.SubmittingRegistrationForm</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">submittingRegistrationForm</span>
+                <span class="method-start">14672 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">67565 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.single.VerifyEmailShareWorks</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">setUp</span>
+                <span class="method-start">67987 ms</span>
+              </div> <!-- configuration-class before -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

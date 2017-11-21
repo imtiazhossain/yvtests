@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Complete Suite" verbose="1" >
+<suite name="Complete Suite" verbose="1" configfailurepolicy="continue" >
     <test name="Demo Flow chrome">
         <packages>
             <package name="tests.single"/>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Complete Suite]">
+  <test name="Demo Flow chrome(failed)">
+    <classes>
+      <class name="tests.single.VerifyEmailShareWorks">
+        <methods>
+          <include name="setUp"/>
+          <include name="VerifyEmailShareWorks"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.single.VerifyEmailShareWorks -->
+      <class name="tests.single.VerifyingThatTourGuideIsDisplayed">
+        <methods>
+          <include name="verifyingThatTourLoads"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.single.VerifyingThatTourGuideIsDisplayed -->
+      <class name="tests.single.VerifyScenePanelOpensOnHover">
+        <methods>
+          <include name="verifyingThatTourLoads"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.single.VerifyScenePanelOpensOnHover -->
+      <class name="tests.single.VerifyingThatTourLoads">
+        <methods>
+          <include name="verifyingThatTourLoads"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.single.VerifyingThatTourLoads -->
+      <class name="tests.single.VerifyThatTheVRpanelOpens">
+        <methods>
+          <include name="setUp"/>
+          <include name="VerifyThatTheVRpanelOpens"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.single.VerifyThatTheVRpanelOpens -->
+      <class name="tests.single.VerifyThatMapIsWorking">
+        <methods>
+          <include name="VerifyThatMapIsWorking"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.single.VerifyThatMapIsWorking -->
+      <class name="tests.single.VerifyThatActionButtonsOpenLinksToaNewPage">
+        <methods>
+          <include name="setUp"/>
+          <include name="VerifyThatActionButtonsOpenLinksToaNewPage"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.single.VerifyThatActionButtonsOpenLinksToaNewPage -->
+      <class name="tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage">
+        <methods>
+          <include name="setUp"/>
+          <include name="VerifyThatActionButtonsShowAtTheTopOfThePage"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage -->
+      <class name="tests.single.VerifyingThatTourNavigates">
+        <methods>
+          <include name="setUp"/>
+          <include name="VerifyingThatTourNavigates"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.single.VerifyingThatTourNavigates -->
+    </classes>
+  </test> <!-- Demo Flow chrome(failed) -->
+</suite> <!-- Failed suite [Complete Suite] -->

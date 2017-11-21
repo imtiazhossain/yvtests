@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="482.965" tests="28" errors="0" skipped="26" failures="1">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/alexis/automatedtests/java_automation/target/test-classes:/Users/alexis/automatedtests/java_automation/target/classes:/Users/alexis/.m2/repository/org/testng/testng/6.11/testng-6.11.jar:/Users/alexis/.m2/repository/com/beust/jcommander/1.64/jcommander-1.64.jar:/Users/alexis/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-java/3.6.0/selenium-java-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-api/3.6.0/selenium-api-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.6.0/selenium-chrome-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.6.0/selenium-edge-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.6.0/selenium-firefox-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.6.0/selenium-ie-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.6.0/selenium-opera-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.6.0/selenium-remote-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.6.0/selenium-safari-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-support/3.6.0/selenium-support-3.6.0.jar:/Users/alexis/.m2/repository/net/bytebuddy/byte-buddy/1.7.5/byte-buddy-1.7.5.jar:/Users/alexis/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/alexis/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/alexis/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/alexis/.m2/repository/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar:/Users/alexis/.m2/repository/com/google/guava/guava/23.0/guava-23.0.jar:/Users/alexis/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/alexis/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.jar:/Users/alexis/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/alexis/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/alexis/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/Users/alexis/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/alexis/.m2/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar:/Users/alexis/.m2/repository/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-testng-adaptor/1.4.23/allure-testng-adaptor-1.4.23.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-java-aspects/1.4.23/allure-java-aspects-1.4.23.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-java-adaptor-api/1.4.23/allure-java-adaptor-api-1.4.23.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-java-annotations/1.4.23/allure-java-annotations-1.4.23.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-model/1.4.23/allure-model-1.4.23.jar:/Users/alexis/.m2/repository/org/jvnet/jaxb2_commons/jaxb2-basics-runtime/0.9.3/jaxb2-basics-runtime-0.9.3.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/properties/properties-loader/1.5/properties-loader-1.5.jar:/Users/alexis/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.3/commons-beanutils-core-1.8.3.jar:/Users/alexis/.m2/repository/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar:/Users/alexis/.m2/repository/org/apache/tika/tika-core/1.7/tika-core-1.7.jar:/Users/alexis/.m2/repository/org/aspectj/aspectjrt/1.8.3/aspectjrt-1.8.3.jar:/Users/alexis/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.20.1/surefire-testng-utils-2.20.1.jar:/Users/alexis/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.20.1/surefire-grouper-2.20.1.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Montevideo"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib"/>
+    <property name="sun.java.command" value="/Users/alexis/automatedtests/java_automation/target/surefire/surefirebooter1245930143958004124.jar /Users/alexis/automatedtests/java_automation/target/surefire 2017-10-31T16-04-56_699-jvmRun1 surefire308143014191310794tmp surefire_06868434003033285474tmp"/>
+    <property name="surefire.test.class.path" value="/Users/alexis/automatedtests/java_automation/target/test-classes:/Users/alexis/automatedtests/java_automation/target/classes:/Users/alexis/.m2/repository/org/testng/testng/6.11/testng-6.11.jar:/Users/alexis/.m2/repository/com/beust/jcommander/1.64/jcommander-1.64.jar:/Users/alexis/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-java/3.6.0/selenium-java-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-api/3.6.0/selenium-api-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.6.0/selenium-chrome-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.6.0/selenium-edge-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.6.0/selenium-firefox-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.6.0/selenium-ie-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.6.0/selenium-opera-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.6.0/selenium-remote-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.6.0/selenium-safari-driver-3.6.0.jar:/Users/alexis/.m2/repository/org/seleniumhq/selenium/selenium-support/3.6.0/selenium-support-3.6.0.jar:/Users/alexis/.m2/repository/net/bytebuddy/byte-buddy/1.7.5/byte-buddy-1.7.5.jar:/Users/alexis/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/alexis/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/alexis/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/alexis/.m2/repository/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar:/Users/alexis/.m2/repository/com/google/guava/guava/23.0/guava-23.0.jar:/Users/alexis/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/alexis/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.jar:/Users/alexis/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/alexis/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/alexis/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/Users/alexis/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/alexis/.m2/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar:/Users/alexis/.m2/repository/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-testng-adaptor/1.4.23/allure-testng-adaptor-1.4.23.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-java-aspects/1.4.23/allure-java-aspects-1.4.23.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-java-adaptor-api/1.4.23/allure-java-adaptor-api-1.4.23.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-java-annotations/1.4.23/allure-java-annotations-1.4.23.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/allure/allure-model/1.4.23/allure-model-1.4.23.jar:/Users/alexis/.m2/repository/org/jvnet/jaxb2_commons/jaxb2-basics-runtime/0.9.3/jaxb2-basics-runtime-0.9.3.jar:/Users/alexis/.m2/repository/ru/yandex/qatools/properties/properties-loader/1.5/properties-loader-1.5.jar:/Users/alexis/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.3/commons-beanutils-core-1.8.3.jar:/Users/alexis/.m2/repository/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar:/Users/alexis/.m2/repository/org/apache/tika/tika-core/1.7/tika-core-1.7.jar:/Users/alexis/.m2/repository/org/aspectj/aspectjrt/1.8.3/aspectjrt-1.8.3.jar:/Users/alexis/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.20.1/surefire-testng-utils-2.20.1.jar:/Users/alexis/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.20.1/surefire-grouper-2.20.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/alexis"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre"/>
+    <property name="basedir" value="/Users/alexis/automatedtests/java_automation"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/alexis/automatedtests/java_automation/target/surefire/surefirebooter1245930143958004124.jar"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_20-b26"/>
+    <property name="user.name" value="alexis"/>
+    <property name="path.separator" value=":"/>
+    <property name="platform" value="Cloud"/>
+    <property name="os.version" value="10.12.6"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="osVersion" value="Sierra"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="browser" value="Firefox"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/alexis/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/fn/23r9y1915s1855tvk3_2nd7r0000gn/T/"/>
+    <property name="os" value="OSX"/>
+    <property name="java.version" value="1.8.0_20"/>
+    <property name="user.dir" value="/Users/alexis/automatedtests/java_automation"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="environment" value="QA"/>
+    <property name="java.library.path" value="/Users/alexis/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="suite" value="CompleteSuite"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.20-b23"/>
+    <property name="java.ext.dirs" value="/Users/alexis/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="submittingRegistrationForm" classname="tests.single.SubmittingRegistrationForm" time="52.832"/>
+  <testcase name="setUp" classname="tests.single.VerifyEmailShareWorks" time="467.466">
+    <failure message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds" type="org.openqa.selenium.ScriptTimeoutException">org.openqa.selenium.ScriptTimeoutException: 
+Timed out waiting for page load.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'mac-208-52-145-10.browserstack.com', ip: '208.52.145.10', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.6', java.version: '1.8.0_51'
+Driver info: driver.version: unknown
+Command duration or timeout: 0 milliseconds
+Caused by: org.openqa.selenium.TimeoutException: 
+Timed out waiting for page load.
+Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+System info: host: 'mac-208-52-145-10.browserstack.com', ip: '208.52.145.10', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.6', java.version: '1.8.0_51'
+Driver info: driver.version: unknown
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T15:28:36.4Z'
+System info: host: 'SlinkiAir', ip: '172.20.10.2', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.6', java.version: '1.8.0_20'
+Driver info: driver.version: unknown
+</failure>
+    <system-out><![CDATA[# Operating System: OSX
+# Operating System Version: Sierra
+# Browser: FIREFOX
+# Browser Version: 11
+]]></system-out>
+    <system-err><![CDATA[Oct 31, 2017 4:06:17 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+]]></system-err>
+  </testcase>
+  <testcase name="VerifyEmailShareWorks" classname="tests.single.VerifyEmailShareWorks" time="0">
+    <skipped message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds"/>
+  </testcase>
+  <testcase name="tearDown" classname="tests.single.VerifyEmailShareWorks" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="tests.single.VerifyingThatTourGuideIsDisplayed" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="verifyingThatTourLoads" classname="tests.single.VerifyingThatTourGuideIsDisplayed" time="0">
+    <skipped message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds"/>
+  </testcase>
+  <testcase name="tearDown" classname="tests.single.VerifyingThatTourGuideIsDisplayed" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="tests.single.VerifyingThatTourLoads" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="verifyingThatTourLoads" classname="tests.single.VerifyingThatTourLoads" time="0">
+    <skipped message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds"/>
+  </testcase>
+  <testcase name="tearDown" classname="tests.single.VerifyingThatTourLoads" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="tests.single.VerifyingThatTourNavigates" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="VerifyingThatTourNavigates" classname="tests.single.VerifyingThatTourNavigates" time="0">
+    <skipped message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds"/>
+  </testcase>
+  <testcase name="tearDown" classname="tests.single.VerifyingThatTourNavigates" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="tests.single.VerifyScenePanelOpensOnHover" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="verifyingThatTourLoads" classname="tests.single.VerifyScenePanelOpensOnHover" time="0">
+    <skipped message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds"/>
+  </testcase>
+  <testcase name="tearDown" classname="tests.single.VerifyScenePanelOpensOnHover" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="tests.single.VerifyThatActionButtonsOpenLinksToaNewPage" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="VerifyThatActionButtonsOpenLinksToaNewPage" classname="tests.single.VerifyThatActionButtonsOpenLinksToaNewPage" time="0">
+    <skipped message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds"/>
+  </testcase>
+  <testcase name="tearDown" classname="tests.single.VerifyThatActionButtonsOpenLinksToaNewPage" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="VerifyThatActionButtonsShowAtTheTopOfThePage" classname="tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage" time="0">
+    <skipped message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds"/>
+  </testcase>
+  <testcase name="tearDown" classname="tests.single.VerifyThatActionButtonsShowAtTheTopOfThePage" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="tests.single.VerifyThatMapIsWorking" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="VerifyThatMapIsWorking" classname="tests.single.VerifyThatMapIsWorking" time="0">
+    <skipped message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds"/>
+  </testcase>
+  <testcase name="tearDown" classname="tests.single.VerifyThatMapIsWorking" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="tests.single.VerifyThatTheVRpanelOpens" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="VerifyThatTheVRpanelOpens" classname="tests.single.VerifyThatTheVRpanelOpens" time="0">
+    <skipped message="Timed out waiting for page load.&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;&#10;System info: host: &apos;mac-208-52-145-10.browserstack.com&apos;, ip: &apos;208.52.145.10&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;1.8.0_51&apos;&#10;Driver info: driver.version: unknown&#10;Command duration or timeout: 0 milliseconds"/>
+  </testcase>
+  <testcase name="tearDown" classname="tests.single.VerifyThatTheVRpanelOpens" time="0">
+    <skipped/>
+  </testcase>
+</testsuite>
