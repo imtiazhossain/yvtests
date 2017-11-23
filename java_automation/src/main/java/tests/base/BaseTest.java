@@ -5,7 +5,6 @@ import automationFramework.utils.GetProperties;
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.MatchLevel;
 import com.applitools.eyes.RectangleSize;
-import com.applitools.eyes.StdoutLogHandler;
 import com.applitools.eyes.selenium.Eyes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,7 +17,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -42,9 +40,7 @@ public class BaseTest {
 
     @BeforeSuite
     public void beforeSuiteSetUp() {
-
         batchInfo = new BatchInfo(System.getenv("BUILD_NUMBER"));
-        //batchInfo.setId(System.getenv("APPLITOOLS_BATCH_ID"));
     }
 
     @BeforeClass
@@ -69,9 +65,10 @@ public class BaseTest {
                     String mobileOS = applyDefaultIfMissing(System.getProperty("mobileOS"), platformProperties.getString("MOBILE_OS"));
                     String mobileOsVersion = applyDefaultIfMissing(System.getProperty("mobileOsVersion"), platformProperties.getString("MOBILE_OS_VERSION"));
 
-                    caps.setCapability("device", mobileDevice);
-                    caps.setCapability("os", mobileOS);
-                    caps.setCapability("os_version", mobileOsVersion);
+                    caps.setCapability("device", "iPhone 7");
+                    caps.setCapability("realMobile", "true");
+                    caps.setCapability("os_version", "10.0");
+
 
                 } else {
                     String browserVersion = applyDefaultIfMissing(System.getProperty("browserVersion"), platformProperties.getString("BROWSER_VERSION"));
@@ -139,11 +136,16 @@ public class BaseTest {
         }
 
         configureApplitoolsEyes();
-        //eyes.setLogHandler(new StdoutLogHandler(true));
-        driver = eyes.open(driver, "YouvisitAppName", testName, new RectangleSize(1024, 768));
+
+        if (platformProperties.getString("MOBILE_EXECUTION").toUpperCase().equalsIgnoreCase("YES")) {
+            driver = eyes.open(driver, "YouvisitAppName", testName);
+        } else {
+            driver = eyes.open(driver, "YouvisitAppName", testName, new RectangleSize(1024, 768));
+            driver.manage().window().maximize();
+            driver.manage().deleteAllCookies();
+        }
+
         pageObjectsHandler = PageObjectsHandler.getInstance(driver);
-        driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
         navigateToHome();
     }
 
@@ -165,21 +167,10 @@ public class BaseTest {
     @AfterClass
     public void tearDown() {
 
-        //ITestResult result
         PageObjectsHandler.setInstanceNull();
         //Abort eyes if it is not closed
         eyes.close();
         eyes.abortIfNotClosed();
         driver.quit();
-
-        ////
-       /* TestResults testResult = eyes.close(false);
-
-        if (!testResult.isPassed()) {
-            ITestContext tc = Reporter.getCurrentTestResult().getTestContext();
-            tc.getPassedTests().addResult(result, result.getMethod());
-            tc.getPassedTests().getAllMethods().remove(result.getMethod());
-            result.setStatus(ITestResult.FAILURE);
-            tc.getFailedTests().addResult(result, result.getMethod());*/
     }
 }
