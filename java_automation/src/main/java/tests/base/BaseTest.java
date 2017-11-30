@@ -4,7 +4,6 @@ import automationFramework.handlers.PageObjectsHandler;
 import automationFramework.utils.GetProperties;
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.MatchLevel;
-import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.selenium.Eyes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -140,7 +139,8 @@ public class BaseTest {
         if (platformProperties.getString("MOBILE_EXECUTION").toUpperCase().equalsIgnoreCase("YES")) {
             driver = eyes.open(driver, "YouvisitAppName", testName);
         } else {
-            driver = eyes.open(driver, "YouvisitAppName", testName, new RectangleSize(1024, 768));
+            //driver = eyes.open(driver, "YouvisitAppName", testName, new RectangleSize(1024, 768));
+            driver = eyes.open(driver, "YouvisitAppName", testName);
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
         }
@@ -166,11 +166,15 @@ public class BaseTest {
 
     @AfterClass
     public void tearDown() {
+        try {
+            PageObjectsHandler.setInstanceNull();
+            eyes.close();
+            //Abort eyes if it is not closed
+            eyes.abortIfNotClosed();
+        } catch (Exception e) {
 
-        PageObjectsHandler.setInstanceNull();
-        //Abort eyes if it is not closed
-        eyes.close();
-        eyes.abortIfNotClosed();
-        driver.quit();
+        } finally {
+            driver.quit();
+        }
     }
 }

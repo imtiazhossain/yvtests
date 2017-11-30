@@ -2,16 +2,27 @@ package automationFramework.utils;
 
 import automationFramework.utils.datatypes.Wait;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.event.InputEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static automationFramework.utils.Constants.*;
 
 public class WebDriverUtils {
+
+    public static WebElement getElementWhenClickeable(WebElement element, int timeout, WebDriver driver) {
+        new WebDriverWait(driver, timeout)
+                .ignoring(NoSuchElementException.class)
+                .until(ExpectedConditions.elementToBeClickable(element));
+
+        return element;
+    }
 
     public static boolean isElementPresent(WebDriver driver, final By Locator) {
         boolean oAux = true;
@@ -130,5 +141,24 @@ public class WebDriverUtils {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void scrollToBottomofPage(WebDriver driver) {
+        ((JavascriptExecutor) driver)
+                .executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
+
+    public static void mouseoverElement(WebDriver driver, WebElement element) {
+
+        Actions action = new Actions(driver);
+        action.moveToElement(element).build().perform();
+    }
+
+    public static void click(int x, int y) throws AWTException {
+        Robot bot = new Robot();
+        bot.mouseMove(x, y);
+        bot.mousePress(InputEvent.BUTTON1_MASK);
+        bot.mouseRelease(InputEvent.BUTTON1_MASK);
     }
 }

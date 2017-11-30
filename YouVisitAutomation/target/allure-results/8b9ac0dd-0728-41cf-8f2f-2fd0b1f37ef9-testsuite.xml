@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1511840321967" stop="1511840442242" version="1.4.23" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : YouVisitAutomation</name>
+    <title>Default Suite : YouVisitAutomation</title>
+    <test-cases>
+        <test-case start="1511840359797" stop="1511840439295" status="passed">
+            <name>VisitedSceneCheckMark</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="1836@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

@@ -17,6 +17,9 @@ public class PageObjectsHandler {
     private SwarovskiPage swarovskiPage;
     private RenaissancePage renaissancePage;
     private ActNowPromptPage actNowPromptPage;
+    private DarthMouthRegistrationPage darthMouthRegistrationPage;
+    private DarthMouthHomePage darthMouthHomePage;
+    private IubRegistrationPage iubRegistrationPage;
     protected GetProperties entrypointProperties = new GetProperties("ENTRYPOINT");
 
     protected PageObjectsHandler(WebDriver driver) {
@@ -96,6 +99,42 @@ public class PageObjectsHandler {
         }
 
         return actNowPromptPage;
+    }
+
+    public DarthMouthRegistrationPage getDarthMouthRegistrationPage() {
+
+        if (darthMouthRegistrationPage == null) {
+            darthMouthRegistrationPage = new DarthMouthRegistrationPage(driver);
+            String url = driver.getCurrentUrl();
+            String newurl = url + entrypointProperties.getString("DARTHMOUTH");
+            driver.get(newurl);
+            PageFactory.initElements(driver, darthMouthRegistrationPage);
+        }
+
+        return darthMouthRegistrationPage;
+    }
+
+    public DarthMouthHomePage getDarthMouthHomePage() {
+
+        if (darthMouthHomePage == null) {
+            darthMouthHomePage = new DarthMouthHomePage(driver);
+            PageFactory.initElements(driver, DarthMouthHomePage.class);
+        }
+
+        return darthMouthHomePage;
+    }
+
+    public IubRegistrationPage getIubRegistrationPage() {
+
+        if (iubRegistrationPage == null) {
+            iubRegistrationPage = new IubRegistrationPage(driver);
+            String url = driver.getCurrentUrl();
+            String newurl = url + entrypointProperties.getString("IUB");
+            driver.get(newurl);
+            PageFactory.initElements(driver, iubRegistrationPage);
+        }
+
+        return iubRegistrationPage;
     }
 
     public static void setInstanceNull() {

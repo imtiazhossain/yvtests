@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1511926455437" stop="1511926650561" version="1.4.23" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : YouVisitAutomation</name>
+    <title>Default Suite : YouVisitAutomation</title>
+    <test-cases>
+        <test-case start="1511926568008" stop="1511926650559" status="broken">
+            <name>VisitedSceneCheckMark</name>
+            <failure>
+                <message>Test was interrupted</message>
+            </failure>
+            <labels>
+                <label name="severity" value="normal"/>
+                <label name="host" value="SlinkiAir"/>
+                <label name="thread" value="17164@SlinkiAir.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1511926455437" stop="1511926650560" status="broken">
+            <name>Default Suite : YouVisitAutomation</name>
+            <title>Default Suite : YouVisitAutomation</title>
+            <failure>
+                <message>Test suite was interrupted, some test cases may be lost</message>
+            </failure>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
