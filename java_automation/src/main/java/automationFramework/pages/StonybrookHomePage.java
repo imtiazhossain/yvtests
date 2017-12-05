@@ -1,6 +1,7 @@
 package automationFramework.pages;
 
 import automationFramework.pages.base.BasePage;
+import automationFramework.pages.base.HomePageBasePage;
 import automationFramework.utils.WebDriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
@@ -13,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.concurrent.TimeUnit;
 
-public class StonybrookHomePage extends BasePage {
+public class StonybrookHomePage extends HomePageBasePage {
 
     public StonybrookHomePage(WebDriver driver) {
         super(driver);

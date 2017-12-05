@@ -12,6 +12,12 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DarthMouthExperiencePage extends ExperienceBasePage {
 
+    @FindBy(how = How.XPATH, using = "//a[@title='Dartmouth Athletics']")
+    WebElement expDarthMouthAthletics;
+
+    @FindBy(how = How.XPATH, using = "//text[text()='Dartmouth College']")
+    WebElement expDartmouthCollege;
+
     public DarthMouthExperiencePage(WebDriver driver) {
         super(driver);
         if (!this.isLoaded()) {
@@ -19,14 +25,11 @@ public class DarthMouthExperiencePage extends ExperienceBasePage {
         }
     }
 
-    @FindBy(how = How.XPATH, using = "//a[@title='Dartmouth Athletics']")
-    WebElement expDarthMouthAthletics;
-
     public DarthMouthHomePage closeExperiencePage() {
 
         WebDriverUtils.waitSeconds(5);
-
         super.clickExitButton();
+        WebDriverUtils.waitSeconds(5);
 
         return PageFactory.initElements(driver, DarthMouthHomePage.class);
     }
@@ -41,7 +44,16 @@ public class DarthMouthExperiencePage extends ExperienceBasePage {
         WebDriverUtils.mouseoverElement(driver, expDarthMouthAthletics);
     }
 
+    public DarthMouthHomePage selectExpDartmouthCollege() {
+
+        WebDriverUtils.getElementWhenClickeable(expDartmouthCollege, Constants.TIMEOUT, driver).click();
+
+        return PageFactory.initElements(driver, DarthMouthHomePage.class);
+    }
+
+
     @Override
+
     public By getPageLoadedLocator() {
         return By.xpath("//div[contains(text(),'Select an Experience')]");
     }

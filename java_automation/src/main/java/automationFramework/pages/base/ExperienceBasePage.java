@@ -1,16 +1,11 @@
 package automationFramework.pages.base;
 
-import automationFramework.pages.StonybrookHomePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import automationFramework.utils.WebDriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
 
 public abstract class ExperienceBasePage extends BasePage {
     public ExperienceBasePage(WebDriver driver) {
@@ -25,7 +20,10 @@ public abstract class ExperienceBasePage extends BasePage {
 
     public void clickExitButton() {
         wait.until(ExpectedConditions.visibilityOf(closeBtn));
-        closeBtn.click();
+
+        if (WebDriverUtils.isElementPresent(driver, closeBtn)) {
+            closeBtn.click();
+        }
     }
 
     public void clickSkipIntro() {

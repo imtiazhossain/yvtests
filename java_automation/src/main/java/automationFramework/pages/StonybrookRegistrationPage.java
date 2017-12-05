@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -193,5 +194,19 @@ public class StonybrookRegistrationPage extends BasePage {
             return true;
         }
         return false;
+    }
+
+    public StonybrookExperiencePage closeRegistrattionModal(){
+
+        clickExitButton();
+
+        return PageFactory.initElements(driver, StonybrookExperiencePage.class);
+    }
+
+    public StonybrookHomePage closeRegistration(){
+
+        clickExitButton();
+
+        return PageFactory.initElements(driver, StonybrookHomePage.class);
     }
 }

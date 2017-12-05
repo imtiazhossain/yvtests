@@ -1,5 +1,6 @@
 package automationFramework.utils;
 
+import automationFramework.utils.datatypes.KEYS;
 import automationFramework.utils.datatypes.Wait;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -161,4 +162,34 @@ public class WebDriverUtils {
         bot.mousePress(InputEvent.BUTTON1_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_MASK);
     }
+
+    public static void closePopUpWhenPresent(WebDriver driver) {
+
+        int i = 0;
+        while (i < 120) {
+            if (WebDriverUtils.isElementPresent(driver, By.xpath("//div/img[contains(@class,'closeButton')]"))) {
+                //WebDriverUtils.click(driver,By.xpath("(//div[contains(@class,'closeButton')]/img)[2]"));
+                driver.navigate().refresh();
+                break;
+            } else {
+                WebDriverUtils.waitSeconds(1);
+                i++;
+            }
+        }
+        WebDriverUtils.waitSeconds(10);
+    }
+
+    public static void click(WebDriver driver, By locator) {
+
+        WebElement element = driver.findElement(locator);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    public static void pressKey (WebDriver driver, Keys key){
+
+        driver.findElement(By.tagName("body")).sendKeys(key);
+    }
 }
+
+
