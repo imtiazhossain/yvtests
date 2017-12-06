@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.awt.*;
 
-public class DarthMouthHomePage extends HomePageBasePage {
+public class DarthmouthHomePage extends HomePageBasePage {
 
     @FindBy(how = How.XPATH, using = "//span[contains(text(),'Dartmouth Athletics')]")
     WebElement lblDarthMouthAthletics;
@@ -31,18 +31,18 @@ public class DarthMouthHomePage extends HomePageBasePage {
 
     }
 
-    public DarthMouthHomePage(WebDriver driver) {
+    public DarthmouthHomePage(WebDriver driver) {
         super(driver);
         if (!this.isLoaded()) {
             throw new IllegalStateException("This is not DarthMouth HomePage");
         }
     }
 
-    public DarthMouthExperiencePage navigateToExperiences() {
+    public DarthmouthExperiencePage navigateToExperiences() {
 
         navigateToExperience();
 
-        return PageFactory.initElements(driver, DarthMouthExperiencePage.class);
+        return PageFactory.initElements(driver, DarthmouthExperiencePage.class);
     }
 
     public boolean verifyExperienceDrawerIsNotDisplayed() {
@@ -87,11 +87,11 @@ public class DarthMouthHomePage extends HomePageBasePage {
         return lblDartmouthCollege.isDisplayed();
     }
 
-    public DarthMouthExperiencePage clickDarrhMouthCollegueExperienceLbl() {
+    public DarthmouthExperiencePage clickDarrhMouthCollegueExperienceLbl() {
 
         lblDartmouthCollege.click();
 
-        return PageFactory.initElements(driver, DarthMouthExperiencePage.class);
+        return PageFactory.initElements(driver, DarthmouthExperiencePage.class);
     }
 
     @Override

@@ -7,18 +7,18 @@ import ru.yandex.qatools.allure.model.SeverityLevel;
 import tests.base.BaseTest;
 
 public class C2 extends BaseTest {
-    private DarthMouthRegistrationPage darthMouthRegistrationPage;
-    private DarthMouthExperiencePage darthMouthExperiencePage;
-    private DarthMouthHomePage darthMouthHomePage;
+    private DarthmouthRegistrationPage darthmouthRegistrationPage;
+    private DarthmouthExperiencePage darthmouthExperiencePage;
+    private DarthmouthHomePage darthmouthHomePage;
 
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 1)
     public void SelectExperience() {
-        darthMouthRegistrationPage = pageObjectsHandler.getDarthMouthRegistrationPage();
-        darthMouthExperiencePage = darthMouthRegistrationPage.closeRegistrattionModal();
-        darthMouthHomePage = darthMouthExperiencePage.closeExperiencePage();
+        darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
 
-        darthMouthHomePage.navigateToExperiences().selectAthleticExperience();
+        darthmouthHomePage.navigateToExperiences().selectAthleticExperience();
 
     }
 }

@@ -17,8 +17,8 @@ public class PageObjectsHandler {
     private SwarovskiPage swarovskiPage;
     private RenaissancePage renaissancePage;
     private ActNowPromptPage actNowPromptPage;
-    private DarthMouthRegistrationPage darthMouthRegistrationPage;
-    private DarthMouthHomePage darthMouthHomePage;
+    private DarthmouthRegistrationPage darthmouthRegistrationPage;
+    private DarthmouthHomePage darthmouthHomePage;
     private IubRegistrationPage iubRegistrationPage;
     protected GetProperties entrypointProperties = new GetProperties("ENTRYPOINT");
 
@@ -101,27 +101,27 @@ public class PageObjectsHandler {
         return actNowPromptPage;
     }
 
-    public DarthMouthRegistrationPage getDarthMouthRegistrationPage() {
+    public DarthmouthRegistrationPage getDarthmouthRegistrationPage() {
 
-        if (darthMouthRegistrationPage == null) {
-            darthMouthRegistrationPage = new DarthMouthRegistrationPage(driver);
+        if (darthmouthRegistrationPage == null) {
+            darthmouthRegistrationPage = new DarthmouthRegistrationPage(driver);
             String url = driver.getCurrentUrl();
             String newurl = url + entrypointProperties.getString("DARTHMOUTH");
             driver.get(newurl);
-            PageFactory.initElements(driver, darthMouthRegistrationPage);
+            PageFactory.initElements(driver, darthmouthRegistrationPage);
         }
 
-        return darthMouthRegistrationPage;
+        return darthmouthRegistrationPage;
     }
 
-    public DarthMouthHomePage getDarthMouthHomePage() {
+    public DarthmouthHomePage getDarthmouthHomePage() {
 
-        if (darthMouthHomePage == null) {
-            darthMouthHomePage = new DarthMouthHomePage(driver);
-            PageFactory.initElements(driver, DarthMouthHomePage.class);
+        if (darthmouthHomePage == null) {
+            darthmouthHomePage = new DarthmouthHomePage(driver);
+            PageFactory.initElements(driver, DarthmouthHomePage.class);
         }
 
-        return darthMouthHomePage;
+        return darthmouthHomePage;
     }
 
     public IubRegistrationPage getIubRegistrationPage() {
