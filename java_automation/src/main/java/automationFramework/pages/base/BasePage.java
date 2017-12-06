@@ -17,7 +17,7 @@ public abstract class BasePage {
 
     protected static WebDriver driver;
     protected static WebDriverWait wait;
-    private static String environment = applyDefaultIfMissing(System.getProperty("environment"), "QA");
+    private static String environment = applyDefaultIfMissing(System.getProperty("environment"), "PROD");
     protected static GetProperties properties = new GetProperties(environment);
     protected static PageObjectsHandler pageObjectsHandler;
 
