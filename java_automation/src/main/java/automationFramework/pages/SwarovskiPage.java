@@ -22,38 +22,41 @@ public class SwarovskiPage extends BasePage {
     @FindBy(how = How.CSS, using = "#main > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > div > div:nth-child(2) > div > div > div:nth-child(3)")
     WebElement candleHotspot;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div/div[2]")
+    @FindBy(how = How.XPATH, using = "//div[contains(text(), 'Buy')]")
     WebElement buyButton;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div/div[1]/div[2]/div[5]/div[3]/div[2]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[5]/div[3]")
     WebElement checkoutButton;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/div/input")
+    @FindBy(how = How.NAME, using = "fullName")
     WebElement fullNameField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div[1]/div[1]/div[2]/div[2]/div/input")
+    @FindBy(how = How.NAME, using = "address")
     WebElement addressField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div[1]/div[1]/div[2]/div[3]/div/input")
+    @FindBy(how = How.NAME, using = "zipcode")
     WebElement zipcodeField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div[1]/div[1]/div[2]/div[7]/div/input")
+    @FindBy(how = How.NAME, using = "email")
     WebElement emailField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div/div[2]")
+    @FindBy(how = How.XPATH, using = "//div[contains(text(), 'Continue')]")
     WebElement continueButton;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div/div[1]/div[2]/div[1]/input")
+    @FindBy(how = How.NAME, using = "cardholder-name")
     WebElement cardNameField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/form/span[2]/label")
+    @FindBy(how = How.NAME, using = "cardnumber")
     WebElement cardNumberInputField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/form/span[2]/label")
+    @FindBy(how = How.NAME, using = "exp-date")
     WebElement dateInputField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[5]/div[2]/div/div[3]/div[2]/div/div[2]")
-    WebElement submitButton;
+    @FindBy(how = How.NAME, using = "cvc")
+    WebElement cvcField;
+
+    @FindBy(how = How.XPATH, using = "//div[contains(text(), 'Proceed to Checkout')]")
+    WebElement proceedButton;
 
     @FindBy(how = How.XPATH, using = "//div[contains(text(), 'Place Order')]")
     WebElement placeOrderButton;
@@ -132,12 +135,12 @@ public class SwarovskiPage extends BasePage {
 
     public void inputCVC(String number) {
         driver.switchTo().frame("__privateStripeFrame6");
-        dateInputField.sendKeys(number);
+        cvcField.sendKeys(number);
         driver.switchTo().defaultContent();
     }
 
     public void clickSubmit() {
-        submitButton.click();
+        proceedButton.click();
     }
 
     public void clickPlaceOrder() {
