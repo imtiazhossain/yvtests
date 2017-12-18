@@ -46,7 +46,7 @@ public class StonybrookRegistrationPage extends BasePage {
     WebElement enrollmentYearSelect;
     @FindBy(how = How.XPATH, using = "//*[@id=\"registration-major\"]/div[1]/select")
     WebElement majorSelect;
-    @FindBy(how = How.XPATH, using = "//*[@title='Date of Birth']/input")
+    @FindBy(how = How.XPATH, using = "//*[@title='Date of Birth *']/input")
     WebElement dateOfBirth;
     @FindBy(how = How.XPATH, using = "//*[@id=\"ui-datepicker-div\"]/div/div/select[2]")
     WebElement birthYearSelect;

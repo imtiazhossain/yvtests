@@ -30,9 +30,9 @@ public class VerifyThatMapIsWorking extends BaseTest {
             int widthMapMax = stonybrookHomePage.returnMapWidth();
             Assert.assertTrue(heightMapBig<heightMapMax && widthMapBig<widthMapMax, "Map was same size after clicking fullscreen");
             Assert.assertTrue(stonybrookHomePage.checkIfCampusMapIsPresent());
-            stonybrookHomePage.clickMarkOnMap();
-            String sceneDescriptionChanged = stonybrookHomePage.getSceneDescriptionText();
-            Assert.assertTrue(sceneDescription!= sceneDescriptionChanged);
+//            stonybrookHomePage.clickMarkOnMap();
+//            String sceneDescriptionChanged = stonybrookHomePage.getSceneDescriptionText();
+//            Assert.assertTrue(sceneDescription!= sceneDescriptionChanged);
         }
 }
 

@@ -16,13 +16,13 @@ public class ActNowPromptPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'ctaButtonArea')]")
     WebElement actNowPrompt;
 
-    @FindBy(how = How.XPATH, using = "//a//div[contains(text(),'Register Now')]")
+    @FindBy(how = How.XPATH, using = "//a//span[contains(text(),'Register Now')]")
     WebElement registerNowBtn;
 
-    @FindBy(how = How.XPATH, using = "//a//div[contains(text(),'Schedule Visit')]")
+    @FindBy(how = How.XPATH, using = "//a//span[contains(text(),'Schedule Visit')]")
     WebElement scheduleVisitBtn;
 
-    @FindBy(how = How.XPATH, using = "//a//div[contains(text(),'Apply Online')]")
+    @FindBy(how = How.XPATH, using = "//a//span[contains(text(),'Apply Online')]")
     WebElement applyOnlineBtn;
 
     @FindBy(how = How.XPATH, using = "//*[@id='modalsContainer']//img[contains(@class,'closeButton')]")
