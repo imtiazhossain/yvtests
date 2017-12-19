@@ -17,7 +17,7 @@ public class C738 extends BaseTest {
     @Test(priority = 1)
     public void CurrentSelectionHighlighted () {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         eyes.checkWindow("Current location should be highlighted");
     }
 }

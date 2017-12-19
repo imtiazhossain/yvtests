@@ -11,7 +11,7 @@ public class DarthmouthRegistrationPage extends RegistrationBasePage {
     }
 
 
-    public DarthmouthExperiencePage closeRegistrattionModal(){
+    public DarthmouthExperiencePage closeRegistrationModal(){
 
         clickExitButton();
 

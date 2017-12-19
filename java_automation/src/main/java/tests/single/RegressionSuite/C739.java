@@ -17,7 +17,7 @@ public class C739 extends BaseTest {
     @Test(priority = 1)
     public void CurrentSelectionHighlighted() {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthExperiencePage.mouseOverExpDarthMouthAthletics();
         eyes.checkWindow("Highlight location on hover");
     }

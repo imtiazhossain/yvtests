@@ -17,7 +17,7 @@ public class C716_17_18 extends BaseTest {
     @Test(priority = 1)
     public void SceneListShownOnHover() {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         darthmouthHomePage.hoverLeftSide(100, 250);
         eyes.checkWindow("Scene list show when hovering over scene list indicator on left");

@@ -27,7 +27,7 @@ import static automationFramework.utils.Utils.applyDefaultIfMissing;
 public class BaseTest {
 
     protected WebDriver driver;
-    private String environment = applyDefaultIfMissing(System.getProperty("environment"), "DEV");
+    private String environment = applyDefaultIfMissing(System.getProperty("environment"), "PROD");
     protected GetProperties environmentProperties = new GetProperties(environment);
     public String platform = applyDefaultIfMissing(System.getProperty("platform"), environmentProperties.getString("PLATFORM").toUpperCase());
     private GetProperties platformProperties = new GetProperties(platform);

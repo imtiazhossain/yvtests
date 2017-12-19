@@ -18,7 +18,7 @@ public class C6 extends BaseTest {
     @Test(priority = 1)
     public void CloseSelectorDrawer() {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
 
         Assert.assertFalse(darthmouthHomePage.navigateToExperiences().selectAthleticExperience().verifyExperienceDrawerIsNotDisplayed());

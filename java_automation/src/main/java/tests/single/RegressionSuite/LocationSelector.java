@@ -6,7 +6,7 @@ import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 import tests.base.BaseTest;
 
-public class C2 extends BaseTest {
+public class LocationSelector extends BaseTest {
     private DarthmouthRegistrationPage darthmouthRegistrationPage;
     private DarthmouthExperiencePage darthmouthExperiencePage;
     private DarthmouthHomePage darthmouthHomePage;
@@ -15,7 +15,7 @@ public class C2 extends BaseTest {
     @Test(priority = 1)
     public void SelectExperience() {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
 
         darthmouthHomePage.navigateToExperiences().selectAthleticExperience();

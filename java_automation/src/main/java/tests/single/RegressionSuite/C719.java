@@ -17,7 +17,7 @@ public class C719 extends BaseTest {
     @Test(priority = 1)
     public void HoverSceneHighlight() {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         darthmouthHomePage.hoverLeftSide(100, 250);
         darthmouthHomePage.hoverScene();

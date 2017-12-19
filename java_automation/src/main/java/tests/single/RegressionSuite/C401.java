@@ -17,7 +17,7 @@ public class C401 extends BaseTest {
     @Test(priority = 1)
     public void VerifyClickExpNameOpenMenu() {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         darthmouthHomePage.clickDarrhMouthCollegueExperienceLbl();
     }

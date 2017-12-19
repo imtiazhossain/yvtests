@@ -18,7 +18,7 @@ public class C741 extends BaseTest {
     @Test(priority = 1)
     public void SelectDifferentExperience() {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         darthmouthHomePage.navigateToExperiences().selectAthleticExperience();
 

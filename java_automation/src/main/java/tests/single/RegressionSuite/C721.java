@@ -20,7 +20,7 @@ public class C721 extends BaseTest {
     @Test(priority = 1)
     public void VisitedSceneCheckMark() throws AWTException {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         darthmouthHomePage.hoverLeftSide(100, 250);
         darthmouthHomePage.selectDartmoutHallScene();

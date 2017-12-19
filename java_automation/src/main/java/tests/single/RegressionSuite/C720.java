@@ -18,7 +18,7 @@ public class C720 extends BaseTest {
     @Test(priority = 1)
     public void SceneListShownOnHover() {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         darthmouthHomePage.hoverLeftSide(100, 250);
         darthmouthHomePage.hoverScene();

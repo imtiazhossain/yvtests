@@ -17,7 +17,7 @@ public class C740 extends BaseTest {
     @Test(priority = 1)
     public void CloseLocationSelector() {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
-        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrattionModal();
+        darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         eyes.checkWindow("Home Page is Displayed");
     }
