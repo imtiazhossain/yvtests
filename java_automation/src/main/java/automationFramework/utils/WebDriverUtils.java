@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import tests.base.TestBase;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
@@ -15,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import static automationFramework.utils.Constants.*;
 
-public class WebDriverUtils {
+public class WebDriverUtils extends TestBase{
 
     public static WebElement getElementWhenClickeable(WebElement element, int timeout, WebDriver driver) {
         new WebDriverWait(driver, timeout)
@@ -136,7 +137,6 @@ public class WebDriverUtils {
     }
 
     public static void waitSeconds(int seconds) {
-
         try {
             Thread.sleep(seconds * 1000);
         } catch (InterruptedException e) {
@@ -144,6 +144,11 @@ public class WebDriverUtils {
         }
     }
 
+    public void waitForElement(WebElement locator) {
+        WebDriverWait wait = new WebDriverWait(driver, 500);
+        wait.until(ExpectedConditions.visibilityOfElementLocated((By) locator));
+
+    }
     public static void scrollToBottomofPage(WebDriver driver) {
         ((JavascriptExecutor) driver)
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");

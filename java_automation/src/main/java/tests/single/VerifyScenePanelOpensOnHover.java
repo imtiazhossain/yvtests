@@ -5,11 +5,11 @@ import automationFramework.pages.StonybrookRegistrationPage;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.BaseTest;
+import tests.base.TestBase;
 
 import static org.testng.Assert.assertTrue;
 
-public class VerifyScenePanelOpensOnHover extends BaseTest {
+public class VerifyScenePanelOpensOnHover extends TestBase {
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookHomePage stonybrookHomePage;
 

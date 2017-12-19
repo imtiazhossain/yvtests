@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class PageObjectsHandler {
+public class PageObjectsHandler extends WebDriverUtils{
 
     protected static WebDriver driver;
     private static PageObjectsHandler instance;

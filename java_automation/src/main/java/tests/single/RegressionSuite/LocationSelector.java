@@ -4,9 +4,9 @@ import automationFramework.pages.*;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.BaseTest;
+import tests.base.TestBase;
 
-public class LocationSelector extends BaseTest {
+public class LocationSelector extends TestBase {
     private DarthmouthRegistrationPage darthmouthRegistrationPage;
     private DarthmouthExperiencePage darthmouthExperiencePage;
     private DarthmouthHomePage darthmouthHomePage;

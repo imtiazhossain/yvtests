@@ -6,9 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.BaseTest;
+import tests.base.TestBase;
 
-public class VerifyThatMapIsWorking extends BaseTest {
+public class VerifyThatMapIsWorking extends TestBase {
         public StonybrookRegistrationPage stonybrookRegistrationPage;
         public StonybrookHomePage stonybrookHomePage;
 

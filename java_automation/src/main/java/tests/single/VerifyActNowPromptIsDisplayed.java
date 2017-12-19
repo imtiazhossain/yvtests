@@ -5,9 +5,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.BaseTest;
+import tests.base.TestBase;
 
-public class VerifyActNowPromptIsDisplayed extends BaseTest {
+public class VerifyActNowPromptIsDisplayed extends TestBase {
     private ActNowPromptPage actNowPromptPage;
 
     @Severity(SeverityLevel.NORMAL)

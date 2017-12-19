@@ -1,13 +1,12 @@
 package tests.single.RegressionSuite;
 
 import automationFramework.pages.*;
-import automationFramework.utils.WebDriverUtils;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.BaseTest;
+import tests.base.TestBase;
 
-public class C723 extends BaseTest {
+public class C723 extends TestBase {
 
 
     private StonybrookRegistrationPage stonybrookRegistrationPage;

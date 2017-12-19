@@ -1,18 +1,14 @@
 package tests.single;
 
 import automationFramework.pages.*;
-import com.applitools.eyes.RectangleSize;
-import com.applitools.eyes.selenium.Eyes;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.BaseTest;
+import tests.base.TestBase;
 
 import static org.testng.Assert.assertTrue;
 
-public class VerifyEmailShareWorks extends BaseTest {
+public class VerifyEmailShareWorks extends TestBase {
 
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookHomePage stonybrookHomePage;

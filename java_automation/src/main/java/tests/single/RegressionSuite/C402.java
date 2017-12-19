@@ -6,9 +6,9 @@ import automationFramework.pages.DarthmouthRegistrationPage;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.BaseTest;
+import tests.base.TestBase;
 
-public class C402 extends BaseTest {
+public class C402 extends TestBase {
     private DarthmouthRegistrationPage darthmouthRegistrationPage;
     private DarthmouthExperiencePage darthmouthExperiencePage;
     private DarthmouthHomePage darthmouthHomePage;

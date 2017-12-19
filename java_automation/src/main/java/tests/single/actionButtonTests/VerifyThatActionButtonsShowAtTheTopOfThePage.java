@@ -6,11 +6,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.BaseTest;
+import tests.base.TestBase;
 
 import static org.testng.Assert.assertTrue;
 
-public class VerifyThatActionButtonsShowAtTheTopOfThePage extends BaseTest {
+public class VerifyThatActionButtonsShowAtTheTopOfThePage extends TestBase {
 
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookHomePage stonybrookHomePage;

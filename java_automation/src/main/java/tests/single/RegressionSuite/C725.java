@@ -7,9 +7,9 @@ import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.model.SeverityLevel;
-import tests.base.BaseTest;
+import tests.base.TestBase;
 
-public class C725 extends BaseTest {
+public class C725 extends TestBase {
 
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookHomePage stonybrookHomePage;

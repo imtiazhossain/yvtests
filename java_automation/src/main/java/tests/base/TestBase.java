@@ -24,7 +24,7 @@ import java.net.URL;
 
 import static automationFramework.utils.Utils.applyDefaultIfMissing;
 
-public class BaseTest {
+public class TestBase {
 
     protected WebDriver driver;
     private String environment = applyDefaultIfMissing(System.getProperty("environment"), "PROD");
