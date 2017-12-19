@@ -144,11 +144,6 @@ public class WebDriverUtils extends TestBase{
         }
     }
 
-    public void waitForElement(WebElement locator) {
-        WebDriverWait wait = new WebDriverWait(driver, 500);
-        wait.until(ExpectedConditions.visibilityOfElementLocated((By) locator));
-
-    }
     public static void scrollToBottomofPage(WebDriver driver) {
         ((JavascriptExecutor) driver)
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");

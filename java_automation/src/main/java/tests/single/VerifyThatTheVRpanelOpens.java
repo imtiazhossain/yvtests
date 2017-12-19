@@ -21,8 +21,6 @@ public class VerifyThatTheVRpanelOpens extends TestBase {
     public void VerifyThatTheVRpanelOpens() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
-        WebDriverWait wait = new WebDriverWait(driver, 500);
-        wait.until(ExpectedConditions.visibilityOfElementLocated((By) stonybrookHomePage.vrButton));
         stonybrookHomePage.clickOnVRButton();
         Assert.assertTrue(stonybrookHomePage.checkIfVRpanelIsPresent());
         stonybrookHomePage.closeVRpanel();
