@@ -24,7 +24,7 @@ public class SubmittingRegistrationForm extends BaseTest {
         stonybrookRegistrationPage.clickOptionHighSchoolGraduate();
         stonybrookRegistrationPage.writeCompleteName("testing","testing");
         stonybrookRegistrationPage.writeEmail("testingyv+" + Math.random() + "@gmail.com");
-        stonybrookRegistrationPage.selectEnrollmentYear("2017");
+        stonybrookRegistrationPage.selectEnrollmentYear("2020");
         stonybrookRegistrationPage.writeAndSelectCurrentSchool("Dodgeville high school");
         stonybrookRegistrationPage.selectMajor("Computer Engineering");
         stonybrookRegistrationPage.selectGender("Male");
