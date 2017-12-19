@@ -1,4 +1,4 @@
-package tests.single;
+package tests.single.actionButtonTests;
 
 import automationFramework.pages.StonybrookHomePage;
 import automationFramework.pages.StonybrookRegistrationPage;
@@ -20,7 +20,7 @@ public class VerifyThatActionButtonsShowAtTheTopOfThePage extends BaseTest {
     public void VerifyThatActionButtonsShowAtTheTopOfThePage() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
-        stonybrookHomePage.waitSevenSeconds();
+        stonybrookHomePage.waitForActionButtons();
         Assert.assertTrue(stonybrookHomePage.checkIfTopButtonsArePresent());
 
     }

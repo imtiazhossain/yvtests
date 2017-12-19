@@ -23,10 +23,6 @@ public class VerifyEmailShareWorks extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Test(groups = { "SMOKE"})
     public void VerifyEmailShareWorks() throws Exception {
-        Eyes eyes = new Eyes();
-        eyes.setApiKey("Ca0uy5Nkl2XEWFKtWMk99NZvuKuihv5aM100V102lmYhEBA110");
-        eyes.open(driver, "YouVisit", Thread.currentThread().getStackTrace()[1].getMethodName());
-
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.clickShareDesktopButton();
@@ -37,7 +33,7 @@ public class VerifyEmailShareWorks extends BaseTest {
         stonybrookSharePage.writeMessage("Testing test message");
         gmailLoginPage = stonybrookSharePage.clickSend();
         assertTrue(stonybrookSharePage.isVerificationDisplayed(), "No success text is shown.");
-        eyes.close();
+
        /* gmailLoginPage.navigate();
         gmailLoginPage.writeEmail(recipientEmail);
         gmailLoginPage.clickNextEmail();

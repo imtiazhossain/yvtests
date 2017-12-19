@@ -63,7 +63,10 @@ public class StonybrookHomePage extends HomePageBasePage {
     WebElement shareEmailButton;
 
     @FindBy(how = How.ID, using = "campusmap")
-    WebElement miniMapDiv;
+    public WebElement miniMapDiv;
+
+    @FindBy(how = How.LINK_TEXT, using = "Interactive Map")
+    public WebElement interactiveMapButton;
 
     //@FindBy(how = How.CSS, using = "#mapFull_button")
     //WebElement expandMapButton;
@@ -113,16 +116,14 @@ public class StonybrookHomePage extends HomePageBasePage {
         Point buttonsDiv = actionButtonsDiv.getLocation();
         int ycoord = buttonsDiv.getY();
         int xcoord = buttonsDiv.getX();
-        System.out.println(ycoord);
-        System.out.println(xcoord);
         if (ycoord != 0) {
             return false;
         }
         return true;
     }
 
-    public void waitSevenSeconds() throws InterruptedException {
-        Thread.sleep(7000);
+    public void waitForActionButtons() throws InterruptedException {
+        Thread.sleep(5500);
     }
 
     public void clickOnFirstButton() {
@@ -209,6 +210,10 @@ public class StonybrookHomePage extends HomePageBasePage {
 
     public boolean checkMiniMapIsPresent() {
         return miniMapDiv.isDisplayed();
+    }
+
+    public boolean checkInteractiveMapButtonIsPresent() {
+        return interactiveMapButton.isDisplayed();
     }
 
     public int returnMapHeight() {

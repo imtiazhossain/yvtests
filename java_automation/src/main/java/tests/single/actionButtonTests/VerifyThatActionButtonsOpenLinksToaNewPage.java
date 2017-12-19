@@ -1,4 +1,4 @@
-package tests.single;
+package tests.single.actionButtonTests;
 
 import automationFramework.pages.StonybrookHomePage;
 import automationFramework.pages.StonybrookRegistrationPage;
@@ -17,7 +17,7 @@ public class VerifyThatActionButtonsOpenLinksToaNewPage extends BaseTest {
     public void VerifyThatActionButtonsOpenLinksToaNewPage() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
-        stonybrookHomePage.waitSevenSeconds();
+        stonybrookHomePage.waitForActionButtons();
         stonybrookHomePage.clickOnFirstButton();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.clickOnSecondButton();

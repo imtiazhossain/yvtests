@@ -3,6 +3,7 @@ package automationFramework.handlers;
 import automationFramework.pages.*;
 import automationFramework.utils.GetProperties;
 import automationFramework.utils.WebDriverUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -91,8 +92,16 @@ public class PageObjectsHandler {
     }
 
     public ActNowPromptPage getActNowPromptPage() {
-
-        WebDriverUtils.waitSeconds(120);
+        WebDriverUtils.waitSeconds(30);
+        //do something to prevent browserstack from stopping test due to idle timeout
+        driver.findElement(By.id("info_button")).click();
+        WebDriverUtils.waitSeconds(30);
+        //do something to prevent browserstack from stopping test due to idle timeout
+        driver.findElement(By.id("info_button")).click();
+        WebDriverUtils.waitSeconds(30);
+        //do something to prevent browserstack from stopping test due to idle timeout
+        driver.findElement(By.id("info_button")).click();
+        WebDriverUtils.waitSeconds(30);
         if (actNowPromptPage == null) {
             actNowPromptPage = new ActNowPromptPage(driver);
             PageFactory.initElements(driver, actNowPromptPage);

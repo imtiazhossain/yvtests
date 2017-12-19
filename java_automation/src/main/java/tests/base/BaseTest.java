@@ -35,7 +35,7 @@ public class BaseTest {
     private String browser;
     BatchInfo batchInfo;
     protected Eyes eyes;
-    String apiKey = "wLyhbsIVo5WcAl111M3S2M9S8CvKp7sreC5sivufEj1108E110";
+    String apiKey = "Ca0uy5Nkl2XEWFKtWMk99NZvuKuihv5aM100V102lmYhEBA110";
 
     @BeforeSuite
     public void beforeSuiteSetUp() {

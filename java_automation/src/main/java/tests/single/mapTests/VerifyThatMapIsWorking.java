@@ -1,4 +1,4 @@
-package tests.single;
+package tests.single.mapTests;
 
 import automationFramework.pages.StonybrookHomePage;
 import automationFramework.pages.StonybrookRegistrationPage;
@@ -9,8 +9,8 @@ import ru.yandex.qatools.allure.model.SeverityLevel;
 import tests.base.BaseTest;
 
 public class VerifyThatMapIsWorking extends BaseTest {
-        private StonybrookRegistrationPage stonybrookRegistrationPage;
-        private StonybrookHomePage stonybrookHomePage;
+        public StonybrookRegistrationPage stonybrookRegistrationPage;
+        public StonybrookHomePage stonybrookHomePage;
 
         @Severity(SeverityLevel.NORMAL)
         @Test
@@ -30,9 +30,6 @@ public class VerifyThatMapIsWorking extends BaseTest {
             int widthMapMax = stonybrookHomePage.returnMapWidth();
             Assert.assertTrue(heightMapBig<heightMapMax && widthMapBig<widthMapMax, "Map was same size after clicking fullscreen");
             Assert.assertTrue(stonybrookHomePage.checkIfCampusMapIsPresent());
-//            stonybrookHomePage.clickMarkOnMap();
-//            String sceneDescriptionChanged = stonybrookHomePage.getSceneDescriptionText();
-//            Assert.assertTrue(sceneDescription!= sceneDescriptionChanged);
         }
 }
 
