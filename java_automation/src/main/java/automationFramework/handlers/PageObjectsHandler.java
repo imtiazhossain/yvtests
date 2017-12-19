@@ -101,7 +101,7 @@ public class PageObjectsHandler {
         WebDriverUtils.waitSeconds(30);
         //do something to prevent browserstack from stopping test due to idle timeout
         driver.findElement(By.id("info_button")).click();
-        WebDriverUtils.waitSeconds(30);
+        WebDriverUtils.waitSeconds(60);
         if (actNowPromptPage == null) {
             actNowPromptPage = new ActNowPromptPage(driver);
             PageFactory.initElements(driver, actNowPromptPage);
