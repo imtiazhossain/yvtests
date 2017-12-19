@@ -6,6 +6,10 @@ import automationFramework.utils.WebDriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class PageObjectsHandler {
 
@@ -92,16 +96,8 @@ public class PageObjectsHandler {
     }
 
     public ActNowPromptPage getActNowPromptPage() {
-        WebDriverUtils.waitSeconds(30);
-        //do something to prevent browserstack from stopping test due to idle timeout
-        driver.findElement(By.id("info_button")).click();
-        WebDriverUtils.waitSeconds(30);
-        //do something to prevent browserstack from stopping test due to idle timeout
-        driver.findElement(By.id("info_button")).click();
-        WebDriverUtils.waitSeconds(30);
-        //do something to prevent browserstack from stopping test due to idle timeout
-        driver.findElement(By.id("info_button")).click();
-        WebDriverUtils.waitSeconds(60);
+        WebDriverWait wait = new WebDriverWait(driver, 500);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'ctaButtonArea')]")));
         if (actNowPromptPage == null) {
             actNowPromptPage = new ActNowPromptPage(driver);
             PageFactory.initElements(driver, actNowPromptPage);

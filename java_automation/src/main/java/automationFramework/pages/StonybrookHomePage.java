@@ -48,7 +48,7 @@ public class StonybrookHomePage extends HomePageBasePage {
     WebElement avatar;
 
     @FindBy(how = How.CSS, using = "#vr_button > div > svg")
-    WebElement vrButton;
+    public WebElement vrButton;
 
     @FindBy(how = How.ID, using = "close_button")
     WebElement vrClosePanel;

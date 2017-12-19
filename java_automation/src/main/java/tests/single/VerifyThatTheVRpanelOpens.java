@@ -2,6 +2,9 @@ package tests.single;
 
 import automationFramework.pages.StonybrookHomePage;
 import automationFramework.pages.StonybrookRegistrationPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Severity;
@@ -18,7 +21,8 @@ public class VerifyThatTheVRpanelOpens extends BaseTest {
     public void VerifyThatTheVRpanelOpens() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
-        Thread.sleep(5000);
+        WebDriverWait wait = new WebDriverWait(driver, 500);
+        wait.until(ExpectedConditions.visibilityOfElementLocated((By) stonybrookHomePage.vrButton));
         stonybrookHomePage.clickOnVRButton();
         Assert.assertTrue(stonybrookHomePage.checkIfVRpanelIsPresent());
         stonybrookHomePage.closeVRpanel();
