@@ -12,7 +12,7 @@ public class VerifyActNowPromptIsDisplayed extends TestBase {
 
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 1)
-    public void VerifyActNowPromptAreaIsDisplayed() {
+    public void VerifyActNowPromptIsDisplayed() {
         pageObjectsHandler.getStonybrookRegistrationPage().clickExitButton();
         actNowPromptPage = pageObjectsHandler.getActNowPromptPage();
         Assert.assertTrue(actNowPromptPage.isActNowPromptDisplayed(), "Act Now Prompt is Not displayed");
@@ -21,14 +21,4 @@ public class VerifyActNowPromptIsDisplayed extends TestBase {
         Assert.assertTrue(actNowPromptPage.isApplyOnlineButtonDisplayed(), "Act Now 'Apply Online' button is Not displayed");
         Assert.assertTrue(actNowPromptPage.isCloseButtonDisplayed(), "Act Now 'Close' button is Not displayed");
     }
-
-//    @Severity(SeverityLevel.NORMAL)
-//    @Test(priority = 2)
-//    public void VerifyActNowPromptOptionsAreDisplayed() {
-//        System.out.println("act now found");
-//        Assert.assertTrue(actNowPromptPage.isRegisterNowButtonDisplayed(), "Act Now 'Register Now' button is Not displayed");
-//        Assert.assertTrue(actNowPromptPage.isScheduleButtonVisitDisplayed(), "Act Now 'Schedule Visit' button is Not displayed");
-//        Assert.assertTrue(actNowPromptPage.isApplyOnlineButtonDisplayed(), "Act Now 'Apply Online' button is Not displayed");
-//        Assert.assertTrue(actNowPromptPage.isCloseButtonDisplayed(), "Act Now 'Close' button is Not displayed");
-//    }
 }

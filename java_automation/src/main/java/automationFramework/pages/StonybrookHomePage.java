@@ -17,6 +17,8 @@ import java.util.concurrent.TimeUnit;
 
 public class StonybrookHomePage extends HomePageBasePage {
 
+    private WebDriverUtils webDriverUtils;
+
     public StonybrookHomePage(WebDriver driver) {
         super(driver);
         if (!this.isLoaded()) {
@@ -24,7 +26,7 @@ public class StonybrookHomePage extends HomePageBasePage {
         }
     }
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"navigation_F_button\"]")
+    @FindBy(how = How.ID, using = "navigation_F_button")
     WebElement navigateForwardButton;
 
     @FindBy(how = How.CLASS_NAME, using = "actionButtons")
@@ -109,7 +111,8 @@ public class StonybrookHomePage extends HomePageBasePage {
         return navigateForwardButton.isDisplayed();
     }
 
-    public void clickNavigateForward() {
+    public void clickNavigateForward() throws InterruptedException {
+        Thread.sleep(4000);
         navigateForwardButton.click();
     }
 
