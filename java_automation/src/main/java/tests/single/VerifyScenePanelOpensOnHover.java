@@ -18,6 +18,7 @@ public class VerifyScenePanelOpensOnHover extends TestBase {
     public void verifyingThatTourLoads() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
+        Thread.sleep(5000);
         stonybrookHomePage.hoverOverTourNamesActivation();
         assertTrue(stonybrookHomePage.stopsListIsDisplayed(), "Navigate forward button was not detected.");
     }
