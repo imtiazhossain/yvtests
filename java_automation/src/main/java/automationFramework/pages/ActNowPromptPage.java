@@ -40,7 +40,6 @@ public class ActNowPromptPage extends BasePage {
     }
 
     public boolean isRegisterNowButtonDisplayed() {
-
         return registerNowBtn.isDisplayed();
     }
 
