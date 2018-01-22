@@ -18,6 +18,10 @@ public class StonybrookRegistrationPage extends BasePage {
         super(driver);
     }
 
+    @FindBy(how = How.XPATH, using = "//*[contains(text(), \"Continue in browser\")]")
+    WebElement contInBrowser;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/div/div/div[1]/div/div[2]/a")
+    WebElement start;
     @FindBy(how = How.ID, using = "registration-visitortype")
     WebElement imA;
 
@@ -76,6 +80,14 @@ public class StonybrookRegistrationPage extends BasePage {
         return By.xpath("//title[contains(text(),'Experience Stony Brook in Virtual Reality')]");
     }
 
+    public void clickContInBrowser(){
+        wait.until(ExpectedConditions.elementToBeClickable(contInBrowser));
+        contInBrowser.click();
+    }
+    public void clickStart(){
+        wait.until(ExpectedConditions.elementToBeClickable(start));
+        start.click();
+    }
     public void clickImA() {
         wait.until(ExpectedConditions.elementToBeClickable(imA));
         imA.click();

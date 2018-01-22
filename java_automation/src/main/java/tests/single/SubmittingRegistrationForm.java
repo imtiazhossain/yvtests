@@ -17,6 +17,8 @@ public class SubmittingRegistrationForm extends TestBase {
     public void submittingRegistrationForm() throws Exception {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookRegistrationPage.getPageLoadedLocator();
+        stonybrookRegistrationPage.clickContInBrowser();
+        stonybrookRegistrationPage.clickStart();
         stonybrookRegistrationPage.clickImA();
         stonybrookRegistrationPage.clickOptionProspectiveStudent();
         stonybrookRegistrationPage.clickOptionHighSchoolGraduate();
