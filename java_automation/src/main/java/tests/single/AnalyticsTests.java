@@ -57,6 +57,8 @@ public class AnalyticsTests extends TestBase {
 
     @Test(groups = { "REGRESSION"})
     public void verifyingArrowButtonAnalytics() throws Exception {
+        driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         assertTrue(stonybrookHomePage.navigateForwardButtonIsDisplayed(), "Navigate forward button was not detected.");
