@@ -16,7 +16,7 @@ public class IntroVideoTests extends TestBase {
         renaissancePage = pageObjectsHandler.getRenaissancePage();
         renaissancePage.getPageLoadedLocator();
         renaissancePage.introVideo();
-        renaissancePage.playButton();
+//        renaissancePage.playButton();
     }
 }
 

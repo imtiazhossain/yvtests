@@ -66,7 +66,6 @@ public class AnalyticsTests extends TestBase {
         stonybrookHomePage.clickNavigateForward();
         stonybrookHomePage.clickNavigateForward();
 
-
         driver.navigate().refresh();
 
         //Get userkey
@@ -79,7 +78,7 @@ public class AnalyticsTests extends TestBase {
     }
 
     //Parse JSON and assert values
-    public void parseJSON(String analyticsURL) throws Exception {
+    private void parseJSON(String analyticsURL) throws Exception {
         JSONParser parser = new JSONParser();
         try {
             URL url = new URL(analyticsURL);
