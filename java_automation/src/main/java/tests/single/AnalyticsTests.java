@@ -35,7 +35,7 @@ public class AnalyticsTests extends TestBase {
     private String plaintext = "YVAuto-" + dateFormat.format(date);
     private String auth = DigestUtils.md5Hex( plaintext);
 
-    @Test(groups = { "REGRESSION"})
+    @Test(priority = 1)
     public void verifyingNextButtonAnalytics() throws Exception {
             stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
             stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
@@ -55,7 +55,7 @@ public class AnalyticsTests extends TestBase {
             parseJSON(analyticsURL);
     }
 
-    @Test(groups = { "REGRESSION"})
+    @Test(priority = 2)
     public void verifyingArrowButtonAnalytics() throws Exception {
         driver.manage().deleteAllCookies();
         driver.navigate().refresh();
