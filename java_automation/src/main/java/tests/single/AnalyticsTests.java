@@ -15,6 +15,7 @@ import tests.base.TestBase;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DateFormat;
@@ -28,9 +29,14 @@ public class AnalyticsTests extends TestBase {
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookHomePage stonybrookHomePage;
 
-    @Severity(SeverityLevel.NORMAL)
+    //Generate auth key
+    private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private Date date = new Date();
+    private String plaintext = "YVAuto-" + dateFormat.format(date);
+    private String auth = DigestUtils.md5Hex( plaintext);
+
     @Test(groups = { "REGRESSION"})
-    public void verifyingThatTourLoads() throws Exception {
+    public void verifyingNextButtonAnalytics() throws Exception {
             stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
             stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
             assertTrue(stonybrookHomePage.navigateForwardButtonIsDisplayed(), "Navigate forward button was not detected.");
@@ -38,40 +44,62 @@ public class AnalyticsTests extends TestBase {
             stonybrookHomePage.clickNextButton();
             stonybrookHomePage.clickNextButton();
 
-            //Generate auth key
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            Date date = new Date();
-            String plaintext = "YVAuto-" + dateFormat.format(date);
-            String auth = DigestUtils.md5Hex( plaintext);
-            System.out.println( auth );
-
-            //Go to analytics JSON url
-            String userkey = driver.manage().getCookieNamed("userkey").getValue();
             driver.navigate().refresh();
+
+            //Get userkey
+            String userkey = driver.manage().getCookieNamed("userkey").getValue();
+            //Create analyticsURL
             String analyticsURL = BASE_URL + "/internals/validator/analytics/" + userkey + "?auth=" + auth + "&stops=3";
             System.out.println(analyticsURL);
+            //Parse JSON from URL
+            parseJSON(analyticsURL);
+    }
 
-            //Parse JSON and assert values
-            JSONParser parser = new JSONParser();
-            try {
-                URL url = new URL(analyticsURL);
-                URLConnection yc = url.openConnection();
-                BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+    @Test(groups = { "REGRESSION"})
+    public void verifyingArrowButtonAnalytics() throws Exception {
+        stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
+        stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
+        assertTrue(stonybrookHomePage.navigateForwardButtonIsDisplayed(), "Navigate forward button was not detected.");
+        stonybrookHomePage.clickNavigateForward();
+        stonybrookHomePage.clickNavigateRight();
+        stonybrookHomePage.clickNavigateForwardLeft();
+        stonybrookHomePage.clickNavigateForward();
+        stonybrookHomePage.clickNavigateForward();
 
-                String inputLine;
-                while ((inputLine = in.readLine()) != null) {
-                    JSONObject a = (JSONObject) parser.parse(inputLine);
 
-                    Boolean id = (Boolean) a.get("success");
-                    if (!id) {
-                        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                        System.out.println(gson.toJson(a));
-                    }
-                    assertTrue(id);
-                    }
-                in.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+        driver.navigate().refresh();
+
+        //Get userkey
+        String userkey = driver.manage().getCookieNamed("userkey").getValue();
+        //Create analyticsURL
+        String analyticsURL = BASE_URL + "/internals/validator/analytics/" + userkey + "?auth=" + auth + "&stops=2";
+        System.out.println(analyticsURL);
+        //Parse JSON from URL
+        parseJSON(analyticsURL);
+    }
+
+    //Parse JSON and assert values
+    public void parseJSON(String analyticsURL) throws Exception {
+        JSONParser parser = new JSONParser();
+        try {
+            URL url = new URL(analyticsURL);
+            URLConnection yc = url.openConnection();
+            BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+
+            String inputLine;
+            while ((inputLine = in.readLine()) != null) {
+                JSONObject a = (JSONObject) parser.parse(inputLine);
+
+                Boolean id = (Boolean) a.get("success");
+                if (!id) {
+                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                    System.out.println(gson.toJson(a));
+                }
+                assertTrue(id);
             }
+            in.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
