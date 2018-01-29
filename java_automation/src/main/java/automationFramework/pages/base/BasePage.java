@@ -29,19 +29,19 @@ public abstract class BasePage {
     }
 
     public void addWait(Wait wait) {
-        WebDriverUtils.addWait(this.driver, wait);
+        WebDriverUtils.addWait(driver, wait);
     }
 
     public WebElement findElement(final By locator) {
-        return WebDriverUtils.findElement(this.driver, locator);
+        return WebDriverUtils.findElement(driver, locator);
     }
 
     public List<WebElement> findElements(final By locator) {
-        return WebDriverUtils.findElements(this.driver, locator);
+        return WebDriverUtils.findElements(driver, locator);
     }
 
     public void scrollToElement(WebElement element) {
-        WebDriverUtils.scrollToElement(this.driver, element);
+        WebDriverUtils.scrollToElement(driver, element);
     }
 
     public void selectByText(WebElement select, String text) {
@@ -69,7 +69,7 @@ public abstract class BasePage {
     }
 
     protected final boolean isLoaded() {
-        return WebDriverUtils.isElementPresent(this.driver, this.getPageLoadedLocator());
+        return WebDriverUtils.isElementPresent(driver, this.getPageLoadedLocator());
     }
 
     public abstract By getPageLoadedLocator();

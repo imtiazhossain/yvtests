@@ -28,7 +28,7 @@ public class PageObjectsHandler extends WebDriverUtils{
     protected GetProperties entrypointProperties = new GetProperties("ENTRYPOINT");
 
     protected PageObjectsHandler(WebDriver driver) {
-        this.driver = driver;
+        PageObjectsHandler.driver = driver;
     }
 
     public static PageObjectsHandler getInstance(WebDriver driver) {
