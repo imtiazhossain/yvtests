@@ -149,8 +149,8 @@ public class TestBase {
         navigateToHome();
     }
 
+    public String BASE_URL = environmentProperties.getString("BASE_URL");
     private void navigateToHome() {
-        String BASE_URL = environmentProperties.getString("BASE_URL");
         driver.get(BASE_URL);
     }
 
