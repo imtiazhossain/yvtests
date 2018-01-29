@@ -28,6 +28,13 @@ public class StonybrookHomePage extends HomePageBasePage {
 
     @FindBy(how = How.ID, using = "navigation_F_button")
     WebElement navigateForwardButton;
+    @FindBy(how = How.ID, using = "navigation_R_button")
+    WebElement navigateRightButton;
+    @FindBy(how = How.ID, using = "navigation_F_BL_button")
+    WebElement navigateFLButton;
+
+    @FindBy(how = How.ID, using = "next_button")
+    WebElement nextButton;
 
     @FindBy(how = How.CLASS_NAME, using = "actionButtons")
     WebElement actionButtonsDiv;
@@ -111,19 +118,31 @@ public class StonybrookHomePage extends HomePageBasePage {
         return navigateForwardButton.isDisplayed();
     }
 
+    public void clickNextButton() throws InterruptedException {
+        nextButton.isDisplayed();
+        nextButton.click();
+    }
+
     public void clickNavigateForward() throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         navigateForwardButton.click();
+    }
+
+    public void clickNavigateRight() throws InterruptedException {
+        Thread.sleep(3000);
+        navigateRightButton.click();
+    }
+
+    public void clickNavigateForwardLeft() throws InterruptedException {
+        Thread.sleep(3000);
+        navigateFLButton.click();
     }
 
     public boolean checkIfTopButtonsArePresent() {
         Point buttonsDiv = actionButtonsDiv.getLocation();
         int ycoord = buttonsDiv.getY();
         int xcoord = buttonsDiv.getX();
-        if (ycoord != 0) {
-            return false;
-        }
-        return true;
+        return ycoord == 0;
     }
 
     public void waitForActionButtons() throws InterruptedException {
@@ -135,10 +154,7 @@ public class StonybrookHomePage extends HomePageBasePage {
     }
 
     public boolean assertPageIsNotHomePage() {
-        if (driver.getCurrentUrl().contentEquals("http://www.youvisit.com/tour/stonybrook")) {
-            return false;
-        }
-        return true;
+        return !driver.getCurrentUrl().contentEquals("http://www.youvisit.com/tour/stonybrook");
     }
 
     public void clickOnSecondButton() {
@@ -190,10 +206,7 @@ public class StonybrookHomePage extends HomePageBasePage {
     public boolean checkIfVRpanelIsPresent() throws InterruptedException {
         Thread.sleep(2000);
         try {
-            if (vrClosePanel.isDisplayed()) {
-                return true;
-            }
-            return false;
+            return vrClosePanel.isDisplayed();
         } catch (Exception e) {
             return false;
         }
