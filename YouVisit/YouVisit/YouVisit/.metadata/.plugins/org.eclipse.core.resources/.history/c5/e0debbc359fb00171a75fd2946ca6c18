@@ -1,0 +1,33 @@
+package tests.single;
+
+import static org.testng.Assert.assertTrue;
+
+import org.testng.annotations.Test;
+
+import automationFramework.pages.DarthmouthExperiencePage;
+import automationFramework.pages.DarthmouthHomePage;
+import automationFramework.pages.DarthmouthRegistrationPage;
+import ru.yandex.qatools.allure.annotations.Severity;
+import ru.yandex.qatools.allure.model.SeverityLevel;
+import tests.base.TestBase;
+
+public class PauseTourGuid extends TestBase {
+	  private DarthmouthRegistrationPage darthmouthRegistrationPage;
+	  private DarthmouthHomePage darthmouthHomePage;
+	  private DarthmouthExperiencePage darthmouthExperiencePage;
+	@Severity(SeverityLevel.NORMAL)
+    @Test
+    public void hoveringOverMiniMapShouldShowSemiExpandedMap()
+    {
+		darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage(); 
+		darthmouthRegistrationPage.closeRegistrationModal();
+				
+		darthmouthHomePage = pageObjectsHandler.getDarthmouthHomePage();
+		darthmouthExperiencePage = darthmouthHomePage.navigateToExperiences();
+		darthmouthExperiencePage.selectAthleticExperience();
+		darthmouthHomePage = darthmouthRegistrationPage.closeRegistrationModalinHomePage();
+		darthmouthHomePage.isSemiExpandedMapDisplyed();
+		assertTrue(darthmouthHomePage.isSemiExpandedMapDisplyed());
+		
+    }
+}

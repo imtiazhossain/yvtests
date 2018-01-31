@@ -1,0 +1,26 @@
+package automationFramework.pages;
+
+import automationFramework.pages.base.RegistrationBasePage;
+import automationFramework.utils.WebDriverUtils;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+public class DarthmouthRegistrationPage extends RegistrationBasePage {
+
+	
+    public DarthmouthRegistrationPage(WebDriver driver) {
+        super(driver);
+    }
+
+   public DarthmouthExperiencePage closeRegistrationModal(){
+
+        clickExitButton();
+
+        return PageFactory.initElements(driver, DarthmouthExperiencePage.class);
+    }
+
+}

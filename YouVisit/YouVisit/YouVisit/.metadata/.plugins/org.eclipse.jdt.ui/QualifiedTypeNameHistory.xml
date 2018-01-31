@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="io.github.bonigarcia.wdm.ChromeDriverManager"/>
+<fullyQualifiedTypeName name="io.github.bonigarcia.wdm.InternetExplorerDriverManager"/>
+<fullyQualifiedTypeName name="automationFramework.handlers.PageObjectsHandler"/>
+<fullyQualifiedTypeName name="automationFramework.pages.DarthmouthExperiencePage"/>
+<fullyQualifiedTypeName name="automationFramework.pages.DarthmouthHomePage"/>
+<fullyQualifiedTypeName name="automationFramework.pages.DarthmouthRegistrationPage"/>
+<fullyQualifiedTypeName name="automationFramework.utils.WebDriverUtils"/>
+</qualifiedTypeNameHistroy>

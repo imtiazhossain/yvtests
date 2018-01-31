@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+    <!-- 
+      <class name="tests.single.VerifyScenePanelOpensOnHover"/>
+      <class name="tests.single.RegressionSuite.C716_17_18"/>
+      <class name="tests.single.IntroVideoTests"/>
+      <class name="tests.single.VerifyingThatTourGuideIsDisplayed"/>
+      <class name="tests.single.SubmittingRegistrationForm"/>
+      <class name="tests.base.TestBase"/>
+      <class name="tests.single.RegressionSuite.C740"/>
+      <class name="tests.single.RegressionSuite.C741"/>
+      <class name="tests.single.RegressionSuite.C720"/>
+      <class name="tests.single.RegressionSuite.C401"/>
+      <class name="tests.single.RegressionSuite.C742"/>
+      <class name="tests.single.RegressionSuite.C721"/>
+      <class name="tests.single.RegressionSuite.C402"/>
+      <class name="tests.single.RegressionSuite.C723"/>
+      <class name="tests.single.RegressionSuite.C724"/>
+      <class name="tests.single.RegressionSuite.C725"/>
+      <class name="tests.single.RegressionSuite.LocationSelector"/>
+      <class name="tests.single.RegressionSuite.C726"/>
+      <class name="tests.single.RegressionSuite.C727"/>
+      <class name="tests.single.RegressionSuite.C6"/>
+      <class name="tests.single.VerifyingThatTourLoads"/>
+      <class name="tests.single.ApplitoolsTestBase"/>
+      <class name="tests.single.PauseTourGuid"/>
+      <class name="tests.single.PaymentsTests"/>
+      <class name="tests.single.mapTests.MapInteractiveButton"/>
+      <class name="tests.single.VerifyButtons"/>
+      <class name="tests.single.RegressionSuite.C737"/>
+      <class name="tests.single.RegressionSuite.C738"/>
+      <class name="tests.single.RegressionSuite.C739"/>
+      <class name="tests.single.RegressionSuite.C719"/>
+       -->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

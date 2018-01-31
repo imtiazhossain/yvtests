@@ -1,0 +1,44 @@
+package automationFramework.pages;
+
+import automationFramework.pages.base.RegistrationBasePage;
+import automationFramework.utils.WebDriverUtils;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+public class DarthmouthRegistrationPage extends RegistrationBasePage {
+
+	
+    public DarthmouthRegistrationPage(WebDriver driver) {
+        super(driver);
+    }
+
+    @FindBy(how=How.ID, using ="mapFloat")
+    WebElement map;
+    
+    @FindBy(how = How.ID, using ="map_minus_button")
+    WebElement mapMinusButton;
+
+    public DarthmouthExperiencePage closeRegistrationModal(){
+
+        clickExitButton();
+
+        return PageFactory.initElements(driver, DarthmouthExperiencePage.class);
+    }
+
+    public boolean isSemiExpandedMapDisplyed()
+    {
+    	//WebDriverUtils.wai
+    	
+     	/*WebElement _map = driver.findElement(By.id("mapFloat"));
+     	System.out.println(_map);*/
+    	System.out.println(map);
+    	map.getText();
+    	WebDriverUtils.mouseoverElement(driver, map);
+    	 
+    	return WebDriverUtils.isElementPresent(driver, mapMinusButton);
+    }
+}

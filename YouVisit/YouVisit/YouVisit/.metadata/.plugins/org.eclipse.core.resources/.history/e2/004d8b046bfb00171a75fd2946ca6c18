@@ -1,0 +1,154 @@
+package automationFramework.pages;
+
+import automationFramework.pages.base.HomePageBasePage;
+import automationFramework.utils.WebDriverUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import java.awt.*;
+
+public class DarthmouthHomePage extends HomePageBasePage {
+
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Dartmouth Athletics')]")
+    WebElement lblDarthMouthAthletics;
+
+    @FindBy(how = How.XPATH, using = "//div[contains(@style,'opacity: 1')]/div[text()='DARTMOUTH ATHLETICS'] ")
+    WebElement lblDarthMouthAthleticsLocation;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='stopsListItem1']/div[text()='Dartmouth Hall']")
+    WebElement DartmoutHallScene;
+
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Dartmouth College')]")
+    WebElement lblDartmouthCollege;
+
+   @FindBy(how=How.ID, using ="mapFloat")
+    WebElement map;
+    
+    @FindBy(how = How.ID, using ="map_minus_button")
+    WebElement mapMinusButton;
+
+    @FindBy(how = How.ID, using ="mapMinArrow_button")
+    WebElement mapMinArrowButton;
+    
+    @FindBy(how = How.XPATH, using = "//div[@id='mapMin_button']")
+    WebElement mapMiniButton;
+     
+    @FindBy(how = How.XPATH, using = "//div[@id='mapFull_button']")
+    WebElement mapFullScreenButton;
+    
+    public boolean isDarthMouthAthleticsExpLoaded() {
+        return WebDriverUtils.isElementPresent(driver, lblDarthMouthAthletics);
+
+    }
+
+    public DarthmouthHomePage(WebDriver driver) {
+        super(driver);
+        if (!this.isLoaded()) {
+            throw new IllegalStateException("This is not DarthMouth HomePage");
+        }
+    }
+
+    public DarthmouthExperiencePage navigateToExperiences() {
+
+        //navigateToExperience();
+
+        return PageFactory.initElements(driver, DarthmouthExperiencePage.class);
+    }
+
+    public boolean verifyExperienceDrawerIsNotDisplayed() {
+
+        return WebDriverUtils.isElementPresent(driver, By.xpath("//div[contains(text(),'Select an Experience')]"));
+    }
+
+    public boolean verifySceneLocationIsHighlightedAndDisplayed() {
+
+        return WebDriverUtils.isElementPresent(driver, lblDarthMouthAthleticsLocation);
+    }
+
+    public void hoverLeftSide(int x, int y) {
+
+        WebDriverUtils.waitSeconds(5);
+
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+        robot.mouseMove(x, y);
+
+        WebDriverUtils.waitSeconds(3);
+    }
+
+    public void hoverScene() {
+        WebDriverUtils.mouseoverElement(driver, DartmoutHallScene);
+        WebDriverUtils.waitSeconds(3);
+    }
+
+
+    public void selectDartmoutHallScene() {
+
+        DartmoutHallScene.click();
+        WebDriverUtils.waitSeconds(5);
+    }
+
+    public boolean wasDartmoutHallSceneSelected() {
+
+        return lblDartmouthCollege.isDisplayed();
+    }
+
+    public DarthmouthExperiencePage clickDarrhMouthCollegueExperienceLbl() {
+
+        lblDartmouthCollege.click();
+
+        return PageFactory.initElements(driver, DarthmouthExperiencePage.class);
+    }
+    
+    public boolean isSemiExpandedMapDisplyed()
+    {
+    	WebDriverUtils.mouseoverElement(driver, map);
+    	 
+    	return WebDriverUtils.isElementPresent(driver, mapMinusButton);
+    }
+    
+    public void minimizeMap()
+    {
+    	Dimension dim = mapMinArrowButton.getSize();
+    	int x = dim.getHeight();
+    	int y = dim.getWidth();
+    	try {
+			WebDriverUtils.click(x, y);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	WebDriverUtils.waitSeconds(5);
+    }
+        
+    public void isMapMinimized()
+    {
+    	String tabIndex = mapMiniButton.getAttribute("tabindex");
+    	Assert.assertEquals(tabIndex, "-1");
+    }
+    
+    public void clickFullScreenButton()
+    {
+    	Dimension dim = mapMinArrowButton.getSize();
+    	int x = dim.getHeight();
+    	int y = dim.getWidth();
+    	
+    }
+
+    @Override
+    public By getPageLoadedLocator() {
+        return By.xpath("//*[@id='info_button']");
+    }
+    
+   
+}
