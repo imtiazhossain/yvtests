@@ -1,0 +1,16 @@
+---
+- name: I open "p1"
+  uid: 73ecbe27-79e1-447c-bb89-8d7f23707f3a
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: I search for "p1"
+  uid: 7dd34284-4112-4028-905c-50bef607d0f6
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: a link to "p1" is shown in the results
+  uid: 67914cca-ad69-458a-8a4b-226d3d073c4c
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
