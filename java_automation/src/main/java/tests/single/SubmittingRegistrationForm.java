@@ -33,5 +33,7 @@ public class SubmittingRegistrationForm extends TestBase {
         assertTrue(stonybrookRegistrationPage.getConfirmationMessageDisplayed(),
                 "After submitting registration user was not shown the confirmation screen.");
 
+        parseJSON(analyticsURL("&stops=0&actions=0&modules=1&registration=1"));
+
     }
 }

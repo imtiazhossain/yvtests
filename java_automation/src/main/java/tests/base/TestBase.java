@@ -5,6 +5,11 @@ import automationFramework.utils.GetProperties;
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.MatchLevel;
 import com.applitools.eyes.selenium.Eyes;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,9 +23,17 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.*;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.net.URL;
+import java.net.URLConnection;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static automationFramework.utils.Utils.applyDefaultIfMissing;
+import static org.testng.Assert.assertTrue;
 
 public class TestBase {
 
@@ -162,6 +175,42 @@ public class TestBase {
         eyes.setBatch(batchInfo);
     }
 
+    //Parse JSON and assert values
+    protected void parseJSON(String analyticsURL) throws Exception {
+        JSONParser parser = new JSONParser();
+        try {
+            URL url = new URL(analyticsURL);
+            URLConnection yc = url.openConnection();
+            BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+            System.out.println(url);
+
+            String inputLine;
+            while ((inputLine = in.readLine()) != null) {
+                JSONObject a = (JSONObject) parser.parse(inputLine);
+
+                Boolean id = (Boolean) a.get("success");
+                if (!id) {
+                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                    System.out.println(gson.toJson(a));
+                }
+                assertTrue(id);
+            }
+            in.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Generate auth key
+    private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private Date date = new Date();
+    private String plaintext = "YVAuto-" + dateFormat.format(date);
+    private String auth = DigestUtils.md5Hex( plaintext);
+
+    protected String analyticsURL(String params) {
+        return BASE_URL + "/internals/validator/analytics/" + driver.manage().getCookieNamed("userkey").getValue() + "?auth=" + auth + params + "&clean=1";
+    }
+
     @AfterClass
     public void tearDown() {
         try {
@@ -170,7 +219,7 @@ public class TestBase {
             //Abort eyes if it is not closed
             eyes.abortIfNotClosed();
         } catch (Exception e) {
-
+            //
         } finally {
             driver.quit();
         }
