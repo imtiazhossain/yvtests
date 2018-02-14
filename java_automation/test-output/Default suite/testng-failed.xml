@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="tests.single.Stonybrook_ResponsiveView">
+        <methods>
+          <include name="LastName"/>
+          <include name="Street"/>
+          <include name="EnrollYear"/>
+          <include name="Select_DOB"/>
+          <include name="COnnectBrowserStack"/>
+          <include name="Select_School"/>
+          <include name="ButtonClick"/>
+          <include name="Select_Major"/>
+          <include name="PhoneNum"/>
+          <include name="Select_drpcountry"/>
+          <include name="FirstName"/>
+          <include name="Select_Gender"/>
+          <include name="Registration_Visitor"/>
+          <include name="Startbutton"/>
+          <include name="Zip"/>
+          <include name="Email"/>
+        </methods>
+      </class> <!-- tests.single.Stonybrook_ResponsiveView -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
