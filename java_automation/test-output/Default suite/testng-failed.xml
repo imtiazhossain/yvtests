@@ -6,7 +6,6 @@
       <class name="tests.single.Stonybrook_ResponsiveView">
         <methods>
           <include name="LastName"/>
-          <include name="Street"/>
           <include name="EnrollYear"/>
           <include name="Select_DOB"/>
           <include name="COnnectBrowserStack"/>
@@ -18,8 +17,6 @@
           <include name="FirstName"/>
           <include name="Select_Gender"/>
           <include name="Registration_Visitor"/>
-          <include name="Startbutton"/>
-          <include name="Zip"/>
           <include name="Email"/>
         </methods>
       </class> <!-- tests.single.Stonybrook_ResponsiveView -->

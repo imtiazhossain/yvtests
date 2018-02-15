@@ -74,6 +74,7 @@ public void ContinueInBrowser()
 	{
 	
 	element = driver.findElement(By.xpath(continueinbrowser));
+	element.click();
 	}
 	
 	@Test
