@@ -14,18 +14,18 @@ public class ApplitoolsTestBase extends TestBase {
     private StonybrookRegistrationPage stonybrookRegistrationPage;
     private StonybrookHomePage stonybrookHomePage;
 
-    @Severity(SeverityLevel.NORMAL)
-    @Test(priority = 1)
-    public void VerifyActNowPromptAreaIsDisplayed() {
-        stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
-        eyes.checkWindow("Stony Brooks Registration Page");
-        stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
-        WebDriverUtils.addWait(driver, Wait.MEDIUM_WAIT);
-        Assert.assertTrue(stonybrookHomePage.isInformationButtonDisplayed(), "'Information' button is Not displayed");
-        Assert.assertTrue(stonybrookHomePage.isAudioButtonDisplayed(), "'Audio' button is Not displayed");
-        Assert.assertTrue(stonybrookHomePage.islanguageBtnDisplayed(), "'Language' button is Not displayed");
-        Assert.assertTrue(stonybrookHomePage.isSupplementalMediaButtonDisplayed(), "'Supplemental Media' is Not displayed");
-        Assert.assertTrue(stonybrookHomePage.isFullScreenButtonDisplayed(), "'Full Screen' button is Not displayed");
-        eyes.checkWindow("Stony Brooks Home Page");
-    }
+//    @Severity(SeverityLevel.NORMAL)
+//    @Test(priority = 1)
+//    public void VerifyActNowPromptAreaIsDisplayed() {
+//        stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
+//        eyes.checkWindow("Stony Brooks Registration Page");
+//        stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
+//        WebDriverUtils.addWait(driver, Wait.MEDIUM_WAIT);
+//        Assert.assertTrue(stonybrookHomePage.isInformationButtonDisplayed(), "'Information' button is Not displayed");
+//        Assert.assertTrue(stonybrookHomePage.isAudioButtonDisplayed(), "'Audio' button is Not displayed");
+//        Assert.assertTrue(stonybrookHomePage.islanguageBtnDisplayed(), "'Language' button is Not displayed");
+//        Assert.assertTrue(stonybrookHomePage.isSupplementalMediaButtonDisplayed(), "'Supplemental Media' is Not displayed");
+//        Assert.assertTrue(stonybrookHomePage.isFullScreenButtonDisplayed(), "'Full Screen' button is Not displayed");
+//        eyes.checkWindow("Stony Brooks Home Page");
+//    }
 }

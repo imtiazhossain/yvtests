@@ -22,7 +22,7 @@ public class VerifyEmailShareWorks extends TestBase {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.clickShareDesktopButton();
-        eyes.checkRegion(stonybrookHomePage.shareMenu);
+//        eyes.checkRegion(stonybrookHomePage.shareMenu);
         stonybrookSharePage = stonybrookHomePage.clickShareEmail();
         stonybrookSharePage.writeName("Test");
         stonybrookSharePage.writeRecipient(recipientEmail);

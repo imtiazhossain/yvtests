@@ -19,6 +19,6 @@ public class VerifyingThatTourNavigates extends TestBase {
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         stonybrookHomePage.clickNavigateForward();
-        eyes.checkWindow();
+//        eyes.checkWindow();
     }
 }
