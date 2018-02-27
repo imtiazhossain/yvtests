@@ -21,6 +21,6 @@ public class C726 extends TestBase {
         stonybrookHomePage = stonybrookRegistrationPage.closeRegistration();
 
         WebDriverUtils.pressKey(driver, Keys.ARROW_UP);
-        eyes.checkWindow("Up key should take user to next stop");
+//        eyes.checkWindow("Up key should take user to next stop");
     }
 }

@@ -20,7 +20,7 @@ public class C716_17_18 extends TestBase {
         darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         darthmouthHomePage.hoverLeftSide(100, 250);
-        eyes.checkWindow("Scene list show when hovering over scene list indicator on left");
+//        eyes.checkWindow("Scene list show when hovering over scene list indicator on left");
     }
 }
 

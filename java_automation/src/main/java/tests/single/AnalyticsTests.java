@@ -21,16 +21,12 @@ public class AnalyticsTests extends TestBase {
             stonybrookHomePage.clickNextButton();
             stonybrookHomePage.clickNextButton();
 
-            driver.navigate().refresh();
-
-            //Parse JSON from URL
-            parseJSON(analyticsURL("&stops=4&actions=0&modules=2"));
+            assertAnalytics("&stops=4&actions=0&modules=1");
     }
 
     @Test(priority = 4)
     public void verifyingArrowButtonAnalytics() throws Exception {
-        driver.manage().deleteAllCookies();
-        driver.navigate().refresh();
+        driver.get(BASE_URL + "stonybrook");
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         assertTrue(stonybrookHomePage.navigateForwardButtonIsDisplayed(), "Navigate forward button was not detected.");
@@ -40,9 +36,6 @@ public class AnalyticsTests extends TestBase {
         stonybrookHomePage.clickNavigateForward();
         stonybrookHomePage.clickNavigateForward();
 
-        driver.navigate().refresh();
-
-        //Parse JSON from URL
-        parseJSON(analyticsURL("&stops=2&actions=0&modules=2"));
+        assertAnalytics("&stops=2&actions=0&modules=1");
     }
 }

@@ -21,6 +21,6 @@ public class C724 extends TestBase {
         stonybrookHomePage = stonybrookRegistrationPage.closeRegistration();
 
         WebDriverUtils.pressKey(driver, Keys.ARROW_RIGHT);
-        eyes.checkWindow("Right key on keyboard should take user to next scene");
+//        eyes.checkWindow("Right key on keyboard should take user to next scene");
     }
 }

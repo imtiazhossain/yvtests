@@ -27,6 +27,8 @@ public class PageObjectsHandler extends WebDriverUtils{
     private IubRegistrationPage iubRegistrationPage;
     protected GetProperties entrypointProperties = new GetProperties("ENTRYPOINT");
 
+    protected String url = BASE_URL;
+
     protected PageObjectsHandler(WebDriver driver) {
         PageObjectsHandler.driver = driver;
     }
@@ -60,9 +62,8 @@ public class PageObjectsHandler extends WebDriverUtils{
 
         if (stonybrookRegistrationPage == null) {
             stonybrookRegistrationPage = new StonybrookRegistrationPage(driver);
-            String url = driver.getCurrentUrl();
-            String newurl = url + entrypointProperties.getString("STONYBROOK");
-            driver.get(newurl);
+            String expUrl = url + entrypointProperties.getString("STONYBROOK");
+            driver.get(expUrl);
             PageFactory.initElements(driver, stonybrookRegistrationPage);
         }
 
@@ -73,9 +74,8 @@ public class PageObjectsHandler extends WebDriverUtils{
 
         if (swarovskiPage == null) {
             swarovskiPage = new SwarovskiPage(driver);
-            String url = driver.getCurrentUrl();
-            String newurl = url + entrypointProperties.getString("SWAROVSKI");
-            driver.get(newurl);
+            String expUrl = url + entrypointProperties.getString("SWAROVSKI");
+            driver.get(expUrl);
             PageFactory.initElements(driver, swarovskiPage);
         }
 
@@ -86,9 +86,8 @@ public class PageObjectsHandler extends WebDriverUtils{
 
         if (renaissancePage == null) {
             renaissancePage = new RenaissancePage(driver);
-            String url = driver.getCurrentUrl();
-            String newurl = url + entrypointProperties.getString("RENAISSANCE");
-            driver.get(newurl);
+            String expUrl = url + entrypointProperties.getString("RENAISSANCE");
+            driver.get(expUrl);
             PageFactory.initElements(driver, renaissancePage);
         }
 
@@ -110,9 +109,8 @@ public class PageObjectsHandler extends WebDriverUtils{
 
         if (darthmouthRegistrationPage == null) {
             darthmouthRegistrationPage = new DarthmouthRegistrationPage(driver);
-            String url = driver.getCurrentUrl();
-            String newurl = url + entrypointProperties.getString("DARTHMOUTH");
-            driver.get(newurl);
+            String expUrl = url + entrypointProperties.getString("DARTHMOUTH");
+            driver.get(expUrl);
             PageFactory.initElements(driver, darthmouthRegistrationPage);
         }
 
@@ -133,9 +131,8 @@ public class PageObjectsHandler extends WebDriverUtils{
 
         if (iubRegistrationPage == null) {
             iubRegistrationPage = new IubRegistrationPage(driver);
-            String url = driver.getCurrentUrl();
-            String newurl = url + entrypointProperties.getString("IUB");
-            driver.get(newurl);
+            String expUrl = url + entrypointProperties.getString("IUB");
+            driver.get(expUrl);
             PageFactory.initElements(driver, iubRegistrationPage);
         }
 

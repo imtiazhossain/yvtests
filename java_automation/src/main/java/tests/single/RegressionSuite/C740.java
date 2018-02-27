@@ -19,6 +19,6 @@ public class C740 extends TestBase {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
         darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
-        eyes.checkWindow("Home Page is Displayed");
+//        eyes.checkWindow("Home Page is Displayed");
     }
 }

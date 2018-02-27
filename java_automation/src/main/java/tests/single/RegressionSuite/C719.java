@@ -21,7 +21,7 @@ public class C719 extends TestBase {
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         darthmouthHomePage.hoverLeftSide(100, 250);
         darthmouthHomePage.hoverScene();
-        eyes.checkWindow("Hovering over scene should highlight scene");
+//        eyes.checkWindow("Hovering over scene should highlight scene");
     }
 }
 

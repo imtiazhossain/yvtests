@@ -18,6 +18,6 @@ public class C738 extends TestBase {
     public void CurrentSelectionHighlighted () {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
         darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
-        eyes.checkWindow("Current location should be highlighted");
+//        eyes.checkWindow("Current location should be highlighted");
     }
 }

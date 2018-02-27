@@ -19,6 +19,6 @@ public class C739 extends TestBase {
         darthmouthRegistrationPage = pageObjectsHandler.getDarthmouthRegistrationPage();
         darthmouthExperiencePage = darthmouthRegistrationPage.closeRegistrationModal();
         darthmouthExperiencePage.mouseOverExpDarthMouthAthletics();
-        eyes.checkWindow("Highlight location on hover");
+//        eyes.checkWindow("Highlight location on hover");
     }
 }

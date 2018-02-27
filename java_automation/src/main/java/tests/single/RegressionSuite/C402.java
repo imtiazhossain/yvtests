@@ -21,7 +21,7 @@ public class C402 extends TestBase {
         darthmouthHomePage = darthmouthExperiencePage.closeExperiencePage();
         darthmouthHomePage.clickDarrhMouthCollegueExperienceLbl();
         darthmouthExperiencePage.selectExpDartmouthCollege();
-        eyes.checkWindow("Clicking Experience Name when menu is open should collapse the menu and change nothing");
+//        eyes.checkWindow("Clicking Experience Name when menu is open should collapse the menu and change nothing");
     }
 }
 

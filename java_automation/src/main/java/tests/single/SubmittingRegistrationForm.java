@@ -11,7 +11,6 @@ import static org.testng.Assert.assertTrue;
 public class SubmittingRegistrationForm extends TestBase {
     private StonybrookRegistrationPage stonybrookRegistrationPage;
 
-
     @Severity(SeverityLevel.NORMAL)
     @Test(groups = { "SMOKE"})
     public void submittingRegistrationForm() throws Exception {
@@ -33,7 +32,7 @@ public class SubmittingRegistrationForm extends TestBase {
         assertTrue(stonybrookRegistrationPage.getConfirmationMessageDisplayed(),
                 "After submitting registration user was not shown the confirmation screen.");
 
-        parseJSON(analyticsURL("&stops=0&actions=0&modules=1&registration=1"));
+        assertAnalytics("&stops=1&actions=0&modules=1&registration=1");
 
     }
 }

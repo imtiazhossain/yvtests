@@ -20,6 +20,6 @@ public class C723 extends TestBase {
         stonybrookHomePage = stonybrookRegistrationPage.closeRegistration();
         stonybrookHomePage.navigateFrontButton();
         stonybrookHomePage.navigateBackButton();
-        eyes.checkWindow("Navigation Arrows Check");
+//        eyes.checkWindow("Navigation Arrows Check");
     }
 }

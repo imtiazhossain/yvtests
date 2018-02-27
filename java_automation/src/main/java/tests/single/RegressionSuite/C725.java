@@ -21,6 +21,6 @@ public class C725 extends TestBase {
         stonybrookHomePage = stonybrookRegistrationPage.closeRegistration();
 
         WebDriverUtils.pressKey(driver, Keys.LEFT);
-        eyes.checkWindow("Left key should take user to previous scene");
+//        eyes.checkWindow("Left key should take user to previous scene");
     }
 }
