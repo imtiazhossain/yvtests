@@ -10,9 +10,9 @@ public class PaymentsTests extends TestBase {
 
     private SwarovskiPage swarovskiPage;
 
-    @Severity(SeverityLevel.NORMAL)
-    @Test(groups = { "SMOKE"})
-    public void submitting() throws Exception {
+//    @Severity(SeverityLevel.NORMAL)
+//    @Test(groups = { "SMOKE"})
+//    public void submitting() throws Exception {
 //        swarovskiPage = pageObjectsHandler.getSwarovskiPage();
 //        swarovskiPage.getPageLoadedLocator();
 //        swarovskiPage.clickSkipIntro();
@@ -32,6 +32,6 @@ public class PaymentsTests extends TestBase {
 //        swarovskiPage.clickSubmit();
 //        swarovskiPage.clickPlaceOrder();
 //        swarovskiPage.clickContinueExp();
-    }
+//    }
 }
 
