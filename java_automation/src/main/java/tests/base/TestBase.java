@@ -214,6 +214,11 @@ public class TestBase {
         driver.navigate().refresh();
     }
 
+    private void deleteAnalytics() {
+        String userkey = driver.manage().getCookieNamed("userkey").getValue();
+        driver.get(analyticsURL(userkey, "&clean=1"));
+    }
+
     protected void assertAnalytics(String params) throws Exception {
         //Get userkey
         String userkey = driver.manage().getCookieNamed("userkey").getValue();
@@ -224,7 +229,7 @@ public class TestBase {
 
     @AfterClass
     public void tearDown() throws Exception {
-        assertAnalytics("&stops=1&actions=0&modules=1");
+        deleteAnalytics();
         driver.quit();
 //        try {
 //            PageObjectsHandler.setInstanceNull();
