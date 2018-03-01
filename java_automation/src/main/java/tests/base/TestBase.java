@@ -88,7 +88,8 @@ public class TestBase {
                         caps.setCapability("browser_version", "47.0.2");
                     }
 
-                    caps.setCapability("name", "Build: " + System.getenv("BUILD_NUMBER"));
+                    caps.setCapability("build", System.getenv("BUILD_NUMBER"));
+                    caps.setCapability("name", getClass().getName());
                     caps.setCapability("browser", browser);
                     caps.setCapability("os", os);
                     caps.setCapability("os_version", osVersion);
@@ -154,7 +155,7 @@ public class TestBase {
 //        }
 
         pageObjectsHandler = PageObjectsHandler.getInstance(driver);
-        driver.manage().deleteAllCookies();
+//        driver.manage().deleteAllCookies();
     }
 
     protected String BASE_URL = environmentProperties.getString("BASE_URL");
