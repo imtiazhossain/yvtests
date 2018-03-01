@@ -96,11 +96,8 @@ public class TestBase {
                     caps.setCapability("browserstack.debug", "true");
                     caps.setCapability("resolution", "1920x1080");
 
-                    // Console log configuration - Informative
-                    System.out.println("# Operating System: " + os);
-                    System.out.println("# Operating System Version: " + osVersion);
-                    System.out.println("# Browser: " + browser);
-                    System.out.println("# Browser Version: " + browserVersion);
+                    // Console log class name
+                    System.out.println(getClass().getName());
                 }
 
                 driver = new RemoteWebDriver(new URL(url), caps);
