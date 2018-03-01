@@ -211,7 +211,7 @@ public class TestBase {
 
     private void deleteCookiesAndRefresh(){
         driver.manage().deleteAllCookies();
-        driver.navigate().refresh();
+        driver.get("https://www.otigjoigjroigrt.com");
     }
 
     private void deleteAnalytics() {
