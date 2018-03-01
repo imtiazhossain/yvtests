@@ -93,7 +93,7 @@ public class StonybrookHomePage extends HomePageBasePage {
     @FindBy(how = How.ID, using = "stop_211")
     WebElement markerButton;
 
-    @FindBy(how = How.ID, using = "info_button")
+    @FindBy(how = How.ID, using = "toggle_description_button")
     WebElement infoBtn;
 
     @FindBy(how = How.ID, using = "context_audio_button_button")
