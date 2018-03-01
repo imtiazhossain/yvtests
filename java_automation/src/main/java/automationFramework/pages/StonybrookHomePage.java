@@ -216,7 +216,8 @@ public class StonybrookHomePage extends HomePageBasePage {
         vrClosePanel.click();
     }
 
-    public void clickShareDesktopButton() {
+    public void clickShareDesktopButton() throws InterruptedException {
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(shareDesktopButton));
         shareDesktopButton.click();
     }

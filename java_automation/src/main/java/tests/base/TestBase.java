@@ -155,7 +155,7 @@ public class TestBase {
 //        }
 
         pageObjectsHandler = PageObjectsHandler.getInstance(driver);
-//        driver.manage().deleteAllCookies();
+        driver.manage().deleteAllCookies();
     }
 
     protected String BASE_URL = environmentProperties.getString("BASE_URL");
