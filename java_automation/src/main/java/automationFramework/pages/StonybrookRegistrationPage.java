@@ -182,9 +182,10 @@ public class StonybrookRegistrationPage extends BasePage {
         return pageObjectsHandler.getStonybrookHomePage();
     }
 
-    public StonybrookHomePage clickExitButton() {
+    public StonybrookHomePage clickExitButton() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOf(exitButton));
         exitButton.click();
+        Thread.sleep(3000);
         return pageObjectsHandler.getStonybrookHomePage();
     }
 
