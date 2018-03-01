@@ -211,12 +211,12 @@ public class TestBase {
 
     private void deleteCookiesAndRefresh(){
         driver.manage().deleteAllCookies();
-        driver.get("https://www.otigjoigjroigrt.com");
+        driver.navigate().refresh();
     }
 
     private void deleteAnalytics() {
         String userkey = driver.manage().getCookieNamed("userkey").getValue();
-        driver.get(analyticsURL(userkey, "&clean=1"));
+        driver.get(analyticsURL(userkey, ""));
     }
 
     protected void assertAnalytics(String params) throws Exception {
@@ -229,6 +229,7 @@ public class TestBase {
 
     @AfterClass
     public void tearDown() throws Exception {
+        PageObjectsHandler.setInstanceNull();
         deleteAnalytics();
         driver.quit();
 //        try {

@@ -26,7 +26,6 @@ public class AnalyticsTests extends TestBase {
 
     @Test(priority = 4)
     public void verifyingArrowButtonAnalytics() throws Exception {
-        driver.get(BASE_URL + "stonybrook");
         stonybrookRegistrationPage = pageObjectsHandler.getStonybrookRegistrationPage();
         stonybrookHomePage = stonybrookRegistrationPage.clickExitButton();
         assertTrue(stonybrookHomePage.navigateForwardButtonIsDisplayed(), "Navigate forward button was not detected.");
