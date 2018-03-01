@@ -119,6 +119,7 @@ public class StonybrookHomePage extends HomePageBasePage {
     }
 
     public void clickNextButton() throws InterruptedException {
+        Thread.sleep(3000);
         nextButton.isDisplayed();
         nextButton.click();
     }
